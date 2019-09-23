@@ -8,9 +8,9 @@ const IndexPage = () => (
   <Layout>
     <SEO title='Home' />
     <div className='my-24 font-body text-main'>
-      <h1 className='font-extrabold text-3xl w-4/5 md:w-7/12 mb-6 leading-none md:text-6xl'>
-        Tentative title of the project
-        <span id='hero-gradient-text'> for the study.</span>
+      <h1 className='font-extrabold text-4xl w-full md:w-7/12 mb-6 leading-none md:text-6xl'>
+        How iterations in UI / UX implementation impact
+        <span id='hero-gradient-text'> metrics and behavior.</span>
       </h1>
       <div className='items-center flex flex-wrap flex-row'>
         <svg
