@@ -40,7 +40,8 @@ html {
 }
 
 #hero-gradient-text {
-  background-image: linear-gradient(to right, #ec77ab -30%, #7873f5 100%);
+  background-image: linear-gradient(to right, #ec77ab -150%, #7873f5 100%);
+
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

@@ -51,7 +51,7 @@ const IndexPage = () => (
         <p className='md:text-xl leading-snug'>
           Daily life and product interaction heavily relies on the effective use
           of UI and UX principles to provide high-quality services and
-          experiences – the establishment of influence on metrics due to
+          experiences – the establishment of influence on metrics¹ due to
           specific elements and iteration can serve as a fundamental guide in
           improving design and interaction.
         </p>
@@ -66,7 +66,7 @@ const IndexPage = () => (
         <ol className='md:text-2xl pl-12 list-decimal'>
           <li className='py-5'>Develop and implement A/B iterations</li>
           <li className='py-5'>
-            Analyze associated user behavior and patterns
+            Analyze associated user behavior and patterns²
           </li>
           <li className='py-5'>
             Iterate, redesign, and reimplement – iteration with objective
@@ -114,7 +114,7 @@ const IndexPage = () => (
       </div>
     </div>
 
-    <div>
+    <div className='mb-16'>
       <h1 className='md:text-5xl tracking-tight my-24 leading-none font-bold'>
         Lenses, Perspectives, Terms
       </h1>
@@ -122,7 +122,10 @@ const IndexPage = () => (
         <h6 className='md:text-xl tracking-wide font-bold uppercase mb-2'>
           lenses
         </h6>
-        <ul className='md:text-xl leading-tight text-inactive'>
+        <ul
+          className='md:text-xl leading-tight text-gray-600
+'
+        >
           <li>Economic</li>
           <li>Technological / futuristic</li>
           <li>Ethical</li>
@@ -132,7 +135,7 @@ const IndexPage = () => (
         <h6 className='md:text-xl tracking-wide font-bold uppercase mb-2'>
           perspectives
         </h6>
-        <ul className='md:text-xl leading-tight text-inactive'>
+        <ul className='md:text-xl leading-tight text-gray-600'>
           <li>Business / agencies</li>
           <li>Consumers</li>
           <li>Designers, developers, analysts</li>
@@ -142,14 +145,14 @@ const IndexPage = () => (
         <h6 className='md:text-xl tracking-wide font-bold uppercase mb-2'>
           terms
         </h6>
-        <ul className='md:text-xl leading-tight text-inactive'>
+        <ul className='md:text-xl leading-tight text-gray-600'>
           <li>UI / UX Design</li>
           <li>A/B Testing</li>
         </ul>
       </div>
     </div>
     <div>
-      <h1 className='md:text-5xl tracking-tight mb-4 leading-none font-bold'>
+      <h1 className='md:text-4xl tracking-tight mb-4 leading-none font-bold'>
         References
       </h1>
 
@@ -161,11 +164,17 @@ const IndexPage = () => (
         fill='none'
         xmlns='http://www.w3.org/2000/svg'
       >
-        <line y1='0.5' x2='35' y2='0.5' stroke='black' />
+        <line y1='0.5' x2='35' y2='0.5' opacity='.6' stroke='black' />
       </svg>
       <ul className='md:text-lg text-inactive'>
-        <li>¹ reference one</li>
-        <li>² reference two</li>
+        <li>
+          ¹ Perspectives on iteration in design and development; David C. Wynn,
+          Claudia M. Eckert
+        </li>
+        <li>
+          ² Agile Development Iterations and UI Design; Nobble, Wellington,
+          Biddle
+        </li>
       </ul>
     </div>
   </Layout>
