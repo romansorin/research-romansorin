@@ -3,6 +3,8 @@ import React from 'react'
 import Layout from '../components/layout'
 import Image from '../components/image'
 import SEO from '../components/seo'
+import SectionHeading from '../components/SectionHeading'
+import SectionSubheading from '../components/SectionSubheading'
 
 const IndexPage = () => (
   <Layout>
@@ -29,12 +31,10 @@ const IndexPage = () => (
       </div>
 
       <div className='md:my-48 my-24 md:w-1/2'>
-        <h3 className='text-accent tracking-wider md:text-lg mb-2 font-bold'>
-          PURPOSE
-        </h3>
-        <h1 className='md:text-5xl text-3xl tracking-tight mb-4 leading-none font-bold'>
+        <SectionSubheading>PURPOSE</SectionSubheading>
+        <SectionHeading>
           Quantitative, objective, and statistically supported research.
-        </h1>
+        </SectionHeading>
         <p className='md:text-xl leading-snug'>
           The aim of this study is to provide the field of UI/UX design and
           front-end engineering with quantative metrics supported by statistical
@@ -42,12 +42,8 @@ const IndexPage = () => (
         </p>
       </div>
       <div className='md:my-48 my-24 md:w-1/2 md:ml-auto'>
-        <h3 className='text-accent tracking-wider md:text-lg mb-2 font-bold'>
-          VALUE
-        </h3>
-        <h1 className='md:text-5xl text-3xl tracking-tight mb-4 leading-none font-bold'>
-          Driven by design and feel
-        </h1>
+        <SectionSubheading>VALUE</SectionSubheading>
+        <SectionHeading>Driven by design and feel</SectionHeading>
         <p className='md:text-xl leading-snug'>
           Daily life and product interaction heavily relies on the effective use
           of UI and UX principles to provide high-quality services and
@@ -57,12 +53,8 @@ const IndexPage = () => (
         </p>
       </div>
       <div className='md:my-48 my-24 w-2/3 '>
-        <h3 className='text-accent tracking-wider md:text-lg mb-2 font-bold'>
-          PROCESS
-        </h3>
-        <h1 className='md:text-5xl text-3xl tracking-tight mb-4 leading-none font-bold'>
-          Methodology - mixed method
-        </h1>
+        <SectionSubheading>PROCESS</SectionSubheading>
+        <SectionHeading>Methodology - mixed method</SectionHeading>
         <ol className='md:text-2xl md:pl-12 pl-6 list-decimal'>
           <li className='py-5'>Develop and implement A/B iterations</li>
           <li className='py-5'>
