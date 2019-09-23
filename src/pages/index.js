@@ -5,6 +5,7 @@ import Image from '../components/image'
 import SEO from '../components/seo'
 import SectionHeading from '../components/SectionHeading'
 import SectionSubheading from '../components/SectionSubheading'
+import SectionDetails from '../components/SectionDetails'
 
 const IndexPage = () => (
   <Layout>
@@ -35,22 +36,22 @@ const IndexPage = () => (
         <SectionHeading>
           Quantitative, objective, and statistically supported research.
         </SectionHeading>
-        <p className='md:text-xl leading-snug'>
+        <SectionDetails>
           The aim of this study is to provide the field of UI/UX design and
           front-end engineering with quantative metrics supported by statistical
           methods and objective data.
-        </p>
+        </SectionDetails>
       </div>
       <div className='md:my-48 my-24 md:w-1/2 md:ml-auto'>
         <SectionSubheading>VALUE</SectionSubheading>
         <SectionHeading>Driven by design and feel</SectionHeading>
-        <p className='md:text-xl leading-snug'>
+        <SectionDetails>
           Daily life and product interaction heavily relies on the effective use
           of UI and UX principles to provide high-quality services and
           experiences – the establishment of influence on metrics¹ due to
           specific elements and iteration can serve as a fundamental guide in
           improving design and interaction.
-        </p>
+        </SectionDetails>
       </div>
       <div className='md:my-48 my-24 w-2/3 '>
         <SectionSubheading>PROCESS</SectionSubheading>
