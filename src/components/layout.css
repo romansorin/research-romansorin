@@ -38,3 +38,10 @@ html {
   @apply font-sans;
   @apply antialiased;
 }
+
+#hero-gradient-text {
+  background-image: linear-gradient(to right, #ec77ab -30%, #7873f5 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
