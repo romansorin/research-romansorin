@@ -8,11 +8,11 @@ const IndexPage = () => (
   <Layout>
     <SEO title='Home' />
     <div className='my-24 font-body text-main'>
-      <h1 className='font-extrabold text-3xl w-7/12 mb-6 leading-none md:text-6xl'>
-        Tentative title of the project{' '}
-        <span id='hero-gradient-text'>for the study.</span>
+      <h1 className='font-extrabold text-3xl w-4/5 md:w-7/12 mb-6 leading-none md:text-6xl'>
+        Tentative title of the project
+        <span id='hero-gradient-text'> for the study.</span>
       </h1>
-      <div className='items-center flex flex-row'>
+      <div className='items-center flex flex-wrap flex-row'>
         <svg
           width='65'
           height='2'
@@ -23,16 +23,16 @@ const IndexPage = () => (
           <line y1='1' x2='65' y2='1' stroke='#1B1B1C' />
         </svg>
 
-        <h2 className='ml-8 md:text-xl'>
+        <h2 className='md:ml-8 mt-4 md:mt-0 text-sm md:text-xl'>
           UI/UX Design . Business Metrics . Software Engineering
         </h2>
       </div>
 
-      <div className='my-48 w-1/2'>
+      <div className='md:my-48 my-24 md:w-1/2'>
         <h3 className='text-accent tracking-wider md:text-lg mb-2 font-bold'>
           PURPOSE
         </h3>
-        <h1 className='md:text-5xl tracking-tight mb-4 leading-none font-bold'>
+        <h1 className='md:text-5xl text-3xl tracking-tight mb-4 leading-none font-bold'>
           Quantitative, objective, and statistically supported research.
         </h1>
         <p className='md:text-xl leading-snug'>
@@ -41,11 +41,11 @@ const IndexPage = () => (
           methods and objective data.
         </p>
       </div>
-      <div className='my-48 w-1/2 ml-auto'>
+      <div className='md:my-48 my-24 md:w-1/2 md:ml-auto'>
         <h3 className='text-accent tracking-wider md:text-lg mb-2 font-bold'>
           VALUE
         </h3>
-        <h1 className='md:text-5xl tracking-tight mb-4 leading-none font-bold'>
+        <h1 className='md:text-5xl text-3xl tracking-tight mb-4 leading-none font-bold'>
           Driven by design and feel
         </h1>
         <p className='md:text-xl leading-snug'>
@@ -56,14 +56,14 @@ const IndexPage = () => (
           improving design and interaction.
         </p>
       </div>
-      <div className='my-48 w-2/3 '>
+      <div className='md:my-48 my-24 w-2/3 '>
         <h3 className='text-accent tracking-wider md:text-lg mb-2 font-bold'>
           PROCESS
         </h3>
-        <h1 className='md:text-5xl tracking-tight mb-4 leading-none font-bold'>
-          Methodology
+        <h1 className='md:text-5xl text-3xl tracking-tight mb-4 leading-none font-bold'>
+          Methodology - mixed method
         </h1>
-        <ol className='md:text-2xl pl-12 list-decimal'>
+        <ol className='md:text-2xl md:pl-12 pl-6 list-decimal'>
           <li className='py-5'>Develop and implement A/B iterations</li>
           <li className='py-5'>
             Analyze associated user behavior and patterns²
@@ -91,7 +91,7 @@ const IndexPage = () => (
             stroke-opacity='0.13'
           />
         </svg>
-        <h1 className='md:text-5xl text-center tracking-tight my-24 leading-none font-semibold'>
+        <h1 className='md:text-5xl text-4xl text-center tracking-tight my-4 md:my-24 leading-none font-semibold'>
           Effective UI and UX practices have a significant impact on quality,
           success, and psychological response.
         </h1>
@@ -115,7 +115,7 @@ const IndexPage = () => (
     </div>
 
     <div className='mb-16'>
-      <h1 className='md:text-5xl tracking-tight my-24 leading-none font-bold'>
+      <h1 className='md:text-5xl text-3xl tracking-tight my-6 md:my-24 leading-none font-bold'>
         Lenses, Perspectives, Terms
       </h1>
       <div className='mb-5'>
@@ -152,7 +152,7 @@ const IndexPage = () => (
       </div>
     </div>
     <div>
-      <h1 className='md:text-4xl tracking-tight mb-4 leading-none font-bold'>
+      <h1 className='md:text-4xl text-3xl tracking-tight mb-4 leading-none font-bold'>
         References
       </h1>
 
