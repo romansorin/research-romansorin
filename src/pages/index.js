@@ -55,7 +55,7 @@ const IndexPage = () => (
       </div>
       <div className='md:my-48 my-24 w-2/3 '>
         <SectionSubheading>PROCESS</SectionSubheading>
-        <SectionHeading>Methodology - mixed method</SectionHeading>
+        <SectionHeading>Method - mixed</SectionHeading>
         <ol className='md:text-2xl md:pl-12 pl-6 list-decimal'>
           <li className='py-5'>Develop and implement A/B iterations</li>
           <li className='py-5'>
