@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react'
-import ScrollReveal from 'scrollreveal'
 import Layout from '../components/layout'
 import Image from '../components/image'
 import SEO from '../components/seo'
 import SectionHeading from '../components/SectionHeading'
 import SectionSubheading from '../components/SectionSubheading'
 import SectionDetails from '../components/SectionDetails'
+
+const ScrollReveal =
+  typeof window !== `undefined` ? require('scrollreveal') : null
 
 const IndexPage = () => {
   useEffect(() => {
@@ -15,7 +17,6 @@ const IndexPage = () => {
   })
   return (
     <Layout>
-    
       <SEO title='Home' />
       <div className='my-24 font-body text-main'>
         <h1 className='spotlight hero font-extrabold text-4xl w-full md:w-11/12 mb-6 leading-snug md:text-6xl'>
