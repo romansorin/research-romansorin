@@ -11,7 +11,7 @@ const IndexPage = () => {
     const ScrollReveal =
       typeof window !== 'undefined' ? require('scrollreveal') : null
 
-    if (ScrollReveal) {
+    if (ScrollReveal !== null) {
       ScrollReveal.reveal('.content', {
         duration: 1500
       })
