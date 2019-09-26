@@ -11,9 +11,11 @@ const IndexPage = () => {
     const ScrollReveal =
       typeof window !== 'undefined' ? require('scrollreveal') : null
 
-    ScrollReveal.reveal('.content', {
-      duration: 1500
-    })
+    if (ScrollReveal) {
+      ScrollReveal.reveal('.content', {
+        duration: 1500
+      })
+    }
   })
   return (
     <Layout>
