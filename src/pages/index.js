@@ -6,12 +6,12 @@ import SectionHeading from '../components/SectionHeading'
 import SectionSubheading from '../components/SectionSubheading'
 import SectionDetails from '../components/SectionDetails'
 
-const ScrollReveal =
-  typeof window !== `undefined` ? require('scrollreveal') : null
-
 const IndexPage = () => {
   useEffect(() => {
-    ScrollReveal().reveal('.content', {
+    const ScrollReveal =
+      typeof window !== 'undefined' ? require('scrollreveal') : null
+
+    ScrollReveal.reveal('.content', {
       duration: 1500
     })
   })
