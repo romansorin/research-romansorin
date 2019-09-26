@@ -28,6 +28,13 @@
   src: url(../assets/fonts/EuropaGroteskNr2SB-Regular.otf) format("opentype");
 }
 
+@font-face {
+  font-family: "Europa Grotesk";
+  font-style: normal;
+  font-weight: 300;
+  src: url(../assets//fonts//EuropaGroteskNr2SB-Light.otf) format("opentype");
+}
+
 @tailwind components;
 
 @tailwind utilities;

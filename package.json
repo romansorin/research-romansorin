@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "animejs": "^3.1.0",
     "gatsby": "^2.15.18",
     "gatsby-image": "^2.2.19",
     "gatsby-plugin-manifest": "^2.2.17",
@@ -17,7 +18,8 @@
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "scrollreveal": "^4.0.5"
   },
   "devDependencies": {
     "prettier": "^1.18.2",
