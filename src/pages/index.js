@@ -8,14 +8,9 @@ import SectionDetails from '../components/SectionDetails'
 
 const IndexPage = () => {
   useEffect(() => {
-    const ScrollReveal =
-      typeof window !== 'undefined' ? require('scrollreveal') : null
-
-    if (ScrollReveal !== null) {
-      ScrollReveal.reveal('.content', {
-        duration: 1500
-      })
-    }
+    window.ScrollReveal.reveal('.content', {
+      duration: 1500
+    })
   })
   return (
     <Layout>
