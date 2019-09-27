@@ -6,51 +6,70 @@ import SectionHeading from '../components/SectionHeading'
 import SectionSubheading from '../components/SectionSubheading'
 import SectionDetails from '../components/SectionDetails'
 
+import StatsIllustration from '../components/StatsIllustration'
+
 const IndexPage = () => {
   useEffect(() => {
-    window.ScrollReveal().reveal('.content', {
+    const ScrollReveal = window.ScrollReveal()
+    ScrollReveal.reveal('.content', {
       duration: 1500
+    })
+    ScrollReveal.reveal('.hero', {
+      origin: 'bottom',
+      distance: '60px'
+    })
+    ScrollReveal.reveal('.sequenced', {
+      interval: 600
+    })
+    ScrollReveal.reveal('.methods', {
+      opacity: 0.4
     })
   })
   return (
     <Layout>
       <SEO title='Home' />
       <div className='my-24 font-body text-main'>
-        <h1 className='spotlight hero font-extrabold text-4xl w-full md:w-11/12 mb-6 leading-snug md:text-6xl'>
-          <span className='line'>
-            How iterations in UI / UX implementation impact
-          </span>
-          <span className='line' id='hero-gradient-text'>
-            {' '}
-            metrics and behavior.
-          </span>
-        </h1>
-        <div className='items-center flex flex-wrap flex-row'>
-          <svg
-            width='65'
-            height='2'
-            viewBox='0 0 65 2'
-            fill='none'
-            xmlns='http://www.w3.org/2000/svg'
-          >
-            <line y1='1' x2='65' y2='1' stroke='#1B1B1C' />
-          </svg>
+        <div className='hero'>
+          <h1 className='font-extrabold text-4xl w-full md:w-11/12 mb-6 leading-snug md:text-6xl'>
+            <span className='line'>
+              How iterations in UI / UX implementation impact
+            </span>
+            <span className='line' id='hero-gradient-text'>
+              {' '}
+              metrics and behavior.
+            </span>
+          </h1>
+          <div className='items-center flex flex-wrap flex-row'>
+            <svg
+              width='65'
+              height='2'
+              viewBox='0 0 65 2'
+              fill='none'
+              xmlns='http://www.w3.org/2000/svg'
+            >
+              <line y1='1' x2='65' y2='1' stroke='#1B1B1C' />
+            </svg>
 
-          <h2 className='md:ml-8 mt-4 md:mt-0 text-sm md:text-xl'>
-            UI/UX Design . Business Metrics . Software Engineering
-          </h2>
+            <h2 className='md:ml-8 mt-4 md:mt-0 text-sm md:text-xl'>
+              UI/UX Design . Business Metrics . Software Engineering
+            </h2>
+          </div>
         </div>
-
-        <div className='content md:my-48 my-24 md:w-1/2'>
-          <SectionSubheading>PURPOSE</SectionSubheading>
-          <SectionHeading>
-            Quantitative, objective, and statistically supported research.
-          </SectionHeading>
-          <SectionDetails>
-            The aim of this study is to provide the field of UI/UX design and
-            front-end engineering with quantative metrics supported by
-            statistical methods and objective data.
-          </SectionDetails>
+        <div className='flex flex-row flex-wrap'>
+          <div className='content md:my-48 my-24 md:w-1/2'>
+            <SectionSubheading>PURPOSE</SectionSubheading>
+            <SectionHeading>
+              Quantitative, objective, and statistically supported research.
+            </SectionHeading>
+            <SectionDetails>
+              The aim of this study is to provide the field of UI/UX design and
+              front-end engineering with quantative metrics supported by
+              statistical methods and objective data.
+            </SectionDetails>
+          </div>
+          <div className='content md:my-48 my-24 md:w-1/2'>
+            <StatsIllustration className='h-64 mx-auto w-64' />
+          </div>
         </div>
         <div className='content md:my-48 my-24 md:w-1/2 md:ml-auto'>
           <SectionSubheading>VALUE</SectionSubheading>
@@ -66,12 +85,14 @@ const IndexPage = () => {
         <div className='content md:my-48 my-24 w-2/3 '>
           <SectionSubheading>PROCESS</SectionSubheading>
           <SectionHeading>Method - mixed</SectionHeading>
-          <ol className='md:text-2xl md:pl-12 pl-6 list-decimal'>
-            <li className='py-5'>Develop and implement A/B iterations</li>
-            <li className='py-5'>
+          <ol className='sequenced md:text-2xl md:pl-12 pl-6 list-decimal'>
+            <li className='methods sequenced py-5'>
+              Develop and implement A/B iterations
+            </li>
+            <li className='methods sequenced py-5'>
               Analyze associated user behavior and patterns²
             </li>
-            <li className='py-5'>
+            <li className='methods sequenced py-5'>
               Iterate, redesign, and reimplement – iteration with objective
               success in mind
             </li>
@@ -91,7 +112,7 @@ const IndexPage = () => {
               x2='757'
               y2='0.5'
               stroke='black'
-              stroke-opacity='0.13'
+              strokeOpacity='0.13'
             />
           </svg>
           <h1 className='md:text-5xl text-4xl text-center tracking-tight my-4 md:my-24 leading-none font-semibold'>
@@ -111,7 +132,7 @@ const IndexPage = () => {
               x2='757'
               y2='0.5'
               stroke='black'
-              stroke-opacity='0.13'
+              strokeOpacity='0.13'
             />
           </svg>
         </div>
@@ -122,7 +143,7 @@ const IndexPage = () => {
           Lenses, Perspectives, Terms
         </h1>
         <div className='cards flex flex-row justify-between flex-wrap'>
-          <div className='card w-1/3 px-4'>
+          <div className='card w-full mb-12 lg:w-1/3 px-4'>
             <div
               style={{ transition: '0.2s' }}
               className='w-full rounded-lg h-full hover:shadow-lg px-12 pb-32 py-12 shadow-md mb-5'
@@ -140,7 +161,7 @@ const IndexPage = () => {
               </ul>
             </div>
           </div>
-          <div className='card w-1/3 px-4'>
+          <div className='card w-full mb-12 lg:w-1/3 px-4'>
             <div
               style={{ transition: '0.2s' }}
               className='w-full rounded-lg h-full hover:shadow-lg px-12 pb-32 py-12 shadow-md mb-5'
@@ -158,7 +179,7 @@ const IndexPage = () => {
               </ul>
             </div>
           </div>
-          <div className='card w-1/3 px-4'>
+          <div className='card w-full mb-12 lg:w-1/3 px-4'>
             <div
               style={{ transition: '0.2s' }}
               className='w-full rounded-lg h-full hover:shadow-lg px-12 pb-32 py-12 shadow-md mb-5'
