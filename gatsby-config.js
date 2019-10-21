@@ -1,3 +1,5 @@
+const config = require('gatsby-plugin-config').default
+
 module.exports = {
   siteMetadata: {
     title: `rs Research`,
