@@ -39,6 +39,13 @@ module.exports = {
         // your firebase database root url
         databaseURL: 'https://.../../..'
       }
+    },
+    {
+      resolve: 'gatsby-plugin-routes',
+      options: {
+        // this is the path to your routes configuration file
+        path: `${__dirname}/src/routes.js`
+      }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
