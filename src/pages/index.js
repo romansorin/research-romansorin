@@ -6,7 +6,7 @@ import SectionHeading from '../components/SectionHeading'
 import SectionSubheading from '../components/SectionSubheading'
 import SectionDetails from '../components/SectionDetails'
 
-import StatsIllustration from '../components/StatsIllustration'
+// import StatsIllustration from '../components/StatsIllustration'
 
 const IndexPage = () => {
   useEffect(() => {
@@ -68,7 +68,7 @@ const IndexPage = () => {
             </SectionDetails>
           </div>
           <div className='content md:my-48 my-24 md:w-1/2'>
-            <StatsIllustration className='h-64 mx-auto w-64' />
+            {/* <StatsIllustration className='h-64 mx-auto w-64' /> */}
           </div>
         </div>
         <div className='content md:my-48 my-24 md:w-1/2 md:ml-auto'>
