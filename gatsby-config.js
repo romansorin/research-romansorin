@@ -1,5 +1,3 @@
-const config = require('gatsby-plugin-config').default
-
 module.exports = {
   siteMetadata: {
     title: 'rs Research',
@@ -30,16 +28,16 @@ module.exports = {
       }
     },
     'gatsby-plugin-postcss',
-    {
-      resolve: 'gatsby-source-firebase',
-      options: {
-        // point to the firebase private key downloaded
-        credential: require('./firebase-key.json'),
+    // {
+    //   resolve: 'gatsby-source-firebase',
+    //   options: {
+    //     // point to the firebase private key downloaded
+    //     credential: require('./firebase-key.json'),
 
-        // your firebase database root url
-        databaseURL: 'https://.../../..'
-      }
-    },
+    //     // your firebase database root url
+    //     databaseURL: 'https://.../../..'
+    //   }
+    // },
     {
       resolve: 'gatsby-plugin-routes',
       options: {
