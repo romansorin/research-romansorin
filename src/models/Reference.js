@@ -3,16 +3,14 @@ import { database } from '../../firebase'
 const PATH = 'references'
 const DB = database.collection(PATH)
 
-export const Reference = data => {
-  const reference = {
-    title: data.title,
-    author: data.author,
-    citation: data.citation,
-    summary: data.summary,
-    storage_url: data.storageUrl
-  }
+/**
+ * Title, author, storageUrl, citation, summary
+ *
+ * @param {object} data
+ */
 
-  DB.add(reference)
+export const Reference = data => {
+  DB.add(data)
     .then(function (docRef) {
       console.log('Document written with ID: ', docRef.id)
     })
