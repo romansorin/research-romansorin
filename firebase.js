@@ -5,22 +5,18 @@ import 'firebase/analytics'
 import 'firebase/firestore'
 import 'firebase/storage'
 
-export const initializeFirebase = () => {
-  const config = {
-    apiKey: process.env.FIREBASE_API_KEY,
-    authDomain: process.env.FIREBASE_AUTH_DOMAIN,
-    appId: process.env.APP_ID,
-    databaseURL: process.env.FIREBASE_DATABASE_URL,
-    storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
-    projectId: process.env.FIREBASE_PROJECT_ID,
-    measurementId: process.env.MEASUREMENT_ID,
-    messagingSenderId: process.env.MESSAGING_SENDER_ID
-  }
-
-  if (!firebase.apps.length) {
-    firebase.initializeApp(config)
-  }
+const config = {
+  apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+  appId: process.env.APP_ID,
+  databaseURL: process.env.FIREBASE_DATABASE_URL,
+  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+  projectId: process.env.FIREBASE_PROJECT_ID,
+  measurementId: process.env.MEASUREMENT_ID,
+  messagingSenderId: process.env.MESSAGING_SENDER_ID
 }
+
+firebase.initializeApp(config)
 
 export const database = firebase.firestore()
 export const storage = firebase.storage()
