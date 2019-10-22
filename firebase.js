@@ -1,6 +1,5 @@
 // Firebase App (the core Firebase SDK) is always required and must be listed first
-import firebase from 'firebase/app'
-
+import * as firebase from 'firebase'
 import 'firebase/firestore'
 
 const firebaseConfig = {
@@ -16,5 +15,5 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig)
 
-export const database = firebase.database()
+export const database = firebase.firestore()
 export const storage = firebase.storage()
