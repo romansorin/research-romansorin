@@ -3,6 +3,16 @@ import React, { useEffect } from 'react'
 import { database } from '../../firebase'
 
 const BibliographyPage = () => {
+  useEffect(() => {
+    database
+      .collection('users')
+      .get()
+      .then(querySnapshot => {
+        querySnapshot.forEach(doc => {
+          console.log(`${doc.id} => ${doc.data()}`)
+        })
+      })
+  }, [])
   return (
     <div>
       <button
