@@ -9,6 +9,20 @@ const DB = database.collection(PATH)
  * @param {object} data
  */
 
+/**
+  * {
+    "references": {
+      "reference": {
+        "title": "",
+        "author": "",
+        "storageUrl": "",
+        "citation": "",
+        "summary": ""
+      }
+    }
+  }
+  */
+
 export const Reference = data => {
   DB.add(data)
     .then(function (docRef) {
