@@ -2,10 +2,6 @@ import React, { useEffect } from 'react'
 import Layout from '../components/layout'
 import Image from '../components/image'
 import SEO from '../components/seo'
-import SectionHeading from '../components/SectionHeading'
-import SectionSubheading from '../components/SectionSubheading'
-import SectionDetails from '../components/SectionDetails'
-
 const IndexPage = () => {
   return (
     <Layout>
@@ -39,34 +35,32 @@ const IndexPage = () => {
         </div>
         <div className='flex flex-row flex-wrap'>
           <div className='content md:my-48 my-24 md:w-1/2'>
-            <SectionSubheading>PURPOSE</SectionSubheading>
-            <SectionHeading>
-              Quantitative, objective, and statistically supported research.
-            </SectionHeading>
-            <SectionDetails>
+            <>PURPOSE</>
+            <>Quantitative, objective, and statistically supported research.</>
+            <>
               The aim of this study is to provide the field of UI/UX design and
               front-end engineering with quantative metrics supported by
               statistical methods and objective data.
-            </SectionDetails>
+            </>
           </div>
           <div className='content md:my-48 my-24 md:w-1/2'>
             {/* <StatsIllustration className='h-64 mx-auto w-64' /> */}
           </div>
         </div>
         <div className='content md:my-48 my-24 md:w-1/2 md:ml-auto'>
-          <SectionSubheading>VALUE</SectionSubheading>
-          <SectionHeading>Driven by design and feel</SectionHeading>
-          <SectionDetails>
+          <>VALUE</>
+          <>Driven by design and feel</>
+          <>
             Daily life and product interaction heavily relies on the effective
             use of UI and UX principles to provide high-quality services and
             experiences – the establishment of influence on metrics¹ due to
             specific elements and iteration can serve as a fundamental guide in
             improving design and interaction.
-          </SectionDetails>
+          </>
         </div>
         <div className='content md:my-48 my-24 w-2/3 '>
-          <SectionSubheading>PROCESS</SectionSubheading>
-          <SectionHeading>Method - mixed</SectionHeading>
+          <>PROCESS</>
+          <>Method - mixed</>
           <ol className='sequenced md:text-2xl md:pl-12 pl-6 list-decimal'>
             <li className='methods sequenced py-5'>
               Develop and implement A/B iterations
