@@ -14,8 +14,7 @@ const BibliographyPage = () => {
             summary: 'SDASDAS',
             storageUrl: 'NMUDASDAS',
             citation: 'no'
-          })
-        }
+          })}
       >
         Add user
       </button>
