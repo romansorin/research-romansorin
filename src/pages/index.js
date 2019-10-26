@@ -6,25 +6,7 @@ import SectionHeading from '../components/SectionHeading'
 import SectionSubheading from '../components/SectionSubheading'
 import SectionDetails from '../components/SectionDetails'
 
-// import StatsIllustration from '../components/StatsIllustration'
-
 const IndexPage = () => {
-  useEffect(() => {
-    const ScrollReveal = window.ScrollReveal()
-    ScrollReveal.reveal('.content', {
-      duration: 1500
-    })
-    ScrollReveal.reveal('.hero', {
-      origin: 'bottom',
-      distance: '60px'
-    })
-    ScrollReveal.reveal('.sequenced', {
-      interval: 600
-    })
-    ScrollReveal.reveal('.methods', {
-      opacity: 0.4
-    })
-  })
   return (
     <Layout>
       <SEO title='Home' />
