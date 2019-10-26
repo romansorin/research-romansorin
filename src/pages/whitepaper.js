@@ -8,12 +8,11 @@ const documents = database
   .then(querySnapshot => {
     querySnapshot.forEach(doc => {
       console.log(`${doc.id} => ${doc.data()}`)
-      return `<li>element</li>`
     })
   })
 
 const WhitepaperPage = () => {
-  return <div>{documents}</div>
+  return <div />
 }
 
 export default WhitepaperPage

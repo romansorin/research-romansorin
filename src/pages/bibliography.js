@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 
-import { database } from '../../firebase'
 import { Reference } from '../models/Reference'
 
 const BibliographyPage = () => {
@@ -14,7 +13,8 @@ const BibliographyPage = () => {
             summary: 'SDASDAS',
             storageUrl: 'NMUDASDAS',
             citation: 'no'
-          })}
+          })
+        }
       >
         Add user
       </button>
