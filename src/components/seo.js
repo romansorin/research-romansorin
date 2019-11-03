@@ -68,9 +68,7 @@ function SEO ({ description, lang, meta, title }) {
           content: metaDescription
         }
       ].concat(meta)}
-    >
-      <script src='https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js' />
-    </Helmet>
+    />
   )
 }
 
