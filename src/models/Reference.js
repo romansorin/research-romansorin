@@ -23,6 +23,12 @@ const DB = database.collection(PATH)
   }
   */
 
+export const getAllReferences = () => {
+  return DB.get().then(querySnapshot => {
+    return querySnapshot
+  })
+}
+
 export const Reference = data => {
   DB.add(data)
     .then(function (docRef) {
