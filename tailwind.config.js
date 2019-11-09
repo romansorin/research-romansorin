@@ -23,10 +23,10 @@ module.exports = {
         },
         invalid: '#fe3f2a',
         valid: '#3ecf8e'
+      },
+      fontFamily: {
+        main: 'Camphor'
       }
-    },
-    fontFamily: {
-      main: 'Camphor'
     }
   },
   variants: {},
