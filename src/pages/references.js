@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from 'react'
 
-import { Reference } from '../models/Reference'
+import { getAllReferences, Reference } from '../models/Reference'
 
 const ReferencesPage = () => {
+  useEffect(() => {
+    const refs = getAllReferences().then(res =>
+      res.forEach(doc => console.log(doc.data()))
+    )
+  }, [])
   return <div />
 }
 
