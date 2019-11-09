@@ -26,7 +26,7 @@ module.exports = {
       }
     },
     fontFamily: {
-      sans: ['Europa Grotesk']
+      main: 'Camphor'
     }
   },
   variants: {},

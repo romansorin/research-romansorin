@@ -1,11 +1,7 @@
 import React from 'react'
 
 const PaperPage = () => {
-  return (
-    <div>
-      <h1 className='bg-theme-0' />
-    </div>
-  )
+  return <div />
 }
 
 export default PaperPage
