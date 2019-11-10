@@ -26,11 +26,13 @@
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
+    "@babel/plugin-proposal-optional-chaining": "^7.6.0",
     "@storybook/addon-actions": "^5.2.6",
     "@storybook/addon-links": "^5.2.6",
     "@storybook/addons": "^5.2.6",
     "@storybook/react": "^5.2.6",
     "babel-loader": "^8.0.6",
+    "babel-preset-gatsby": "^0.2.20",
     "prettier": "^1.18.2",
     "standard": "^14.3.1",
     "tailwindcss": "^1.1.3"
