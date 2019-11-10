@@ -26,6 +26,9 @@ module.exports = {
       },
       fontFamily: {
         main: 'Camphor'
+      },
+      borderRadius: {
+        6: '6px'
       }
     }
   },
