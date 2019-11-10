@@ -1,6 +1,7 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import Button from '../Button/Button'
+
+import { Button, PrimaryButton, SecondaryButton } from '../Button'
 
 export default {
   title: 'Button'
@@ -14,10 +15,24 @@ export const base = () => (
   </div>
 )
 
-export const emoji = () => (
-  <Button onClick={action('clicked')}>
-    <span role='img' aria-label='so cool'>
-      😀 😎 👍 💯
-    </span>
-  </Button>
+export const primary = () => (
+  <div className='mx-5 my-5'>
+    <PrimaryButton
+      className='bg-black text-white-0'
+      onClick={action('clicked')}
+    >
+      Button
+    </PrimaryButton>
+  </div>
+)
+
+export const secondary = () => (
+  <div className='mx-5 my-5'>
+    <SecondaryButton
+      className='bg-black text-white-0'
+      onClick={action('clicked')}
+    >
+      Button
+    </SecondaryButton>
+  </div>
 )
