@@ -23,13 +23,16 @@ const DB = database.collection(PATH)
   }
   */
 
-export const getAllReferences = () => {
-  return DB.get().then(querySnapshot => {
+export const getAllReferences = async () => {
+  try {
+    const querySnapshot = await DB.get()
     return querySnapshot
-  })
+  } catch (error) {
+    return console.log(error)
+  }
 }
 
-export const Reference = data => {
+export const addReference = data => {
   DB.add(data)
     .then(function (docRef) {
       console.log('Document written with ID: ', docRef.id)
