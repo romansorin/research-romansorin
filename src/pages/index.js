@@ -1,34 +1,22 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Layout from '../components/layout'
-import Image from '../components/image'
 import SEO from '../components/seo'
-import SectionHeading from '../components/SectionHeading'
-import SectionSubheading from '../components/SectionSubheading'
-import SectionDetails from '../components/SectionDetails'
 
-import StatsIllustration from '../components/StatsIllustration'
-
-const IndexPage = () => {
-  useEffect(() => {
-    const ScrollReveal = window.ScrollReveal()
-    ScrollReveal.reveal('.content', {
-      duration: 1500
-    })
-    ScrollReveal.reveal('.hero', {
-      origin: 'bottom',
-      distance: '60px'
-    })
-    ScrollReveal.reveal('.sequenced', {
-      interval: 600
-    })
-    ScrollReveal.reveal('.methods', {
-      opacity: 0.4
-    })
-  })
-  return (
-    <Layout>
-      <SEO title='Home' />
-      <div className='my-24 font-body text-main'>
+const IndexPage = () => (
+  <Layout>
+    <SEO title='Home' />
+    <div className='flex px-3 my-64'>
+      <h1 className='text-center mx-auto md:text-3xl text-2xl'>
+        In progress. For inquiries, email{' '}
+        <a
+          className='text-indigo-500 hover:text-gray-900'
+          href='mailto:roman@romansorin.com'
+        >
+          roman@romansorin.com
+        </a>
+      </h1>
+    </div>
+    {/* <div className='my-24 font-body text-main'>
         <div className='hero'>
           <h1 className='font-extrabold text-4xl w-full md:w-11/12 mb-6 leading-snug md:text-6xl'>
             <span className='line'>
@@ -223,9 +211,7 @@ const IndexPage = () => {
             Biddle
           </li>
         </ul>
-      </div>
-    </Layout>
-  )
-}
-
+      </div> */}
+  </Layout>
+)
 export default IndexPage
