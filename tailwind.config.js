@@ -26,6 +26,13 @@ module.exports = {
       },
       fontFamily: {
         main: 'Camphor'
+      },
+      borderRadius: {
+        md: '.225rem'
+      },
+      boxShadow: {
+        0: '0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08)',
+        1: '0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);'
       }
     }
   },
