@@ -4,6 +4,8 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { Link } from 'gatsby'
 
+const mailTo = 'roman@romansorin.com'
+
 const NotFoundPage = () => (
   <Layout>
     <SEO title='404: Page not found!' />
@@ -24,7 +26,7 @@ const NotFoundPage = () => (
         , or{' '}
         <a
           className='hover:text-theme-1 text-theme-2'
-          href='mailto:roman@romansorin.com'
+          href={`mailto:${mailTo}`}
         >
           drop a line
         </a>{' '}
