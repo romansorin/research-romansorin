@@ -1,7 +1,9 @@
 import React from 'react'
 
+import Heading from './Heading'
+
 const Reference = () => {
-  return <div />
+  return <Heading />
 }
 
 export default Reference
