@@ -25,7 +25,7 @@ const NotFoundPage = () => (
         </Link>
         , or{' '}
         <a
-          className='hover:text-theme-1 text-theme-2'
+          className='hover:text-theme-1 underline text-theme-2'
           href={`mailto:${mailTo}`}
         >
           drop a line
