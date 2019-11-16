@@ -28,8 +28,7 @@ const Aside = ({ title, downloadUrl, className, date }) => {
     xhr.open('GET', url)
     xhr.responseType = 'blob'
     xhr.onload = function (e) {
-      const doc = xhr.response
-      const blobUrl = window.URL.createObjectURL(doc)
+      const blobUrl = window.URL.createObjectURL(xhr.response)
       const a = document.getElementById('download_pdf')
       a.href = blobUrl
     }
@@ -41,17 +40,15 @@ const Aside = ({ title, downloadUrl, className, date }) => {
       <p className='mb-2 text-text-2 uppercase text-sm font-bold'>
         {formatTimestampDate(date)}
       </p>
-
-      <PrimaryButton variant={0}>
-        <a
-          id='download_pdf'
-          className='hidden md:block'
-          onClick={() => download(downloadUrl)}
-          download={`${title}.pdf`}
-        >
-          DOWNLOAD
-        </a>
-      </PrimaryButton>
+      <a
+        target='_self'
+        id='download_pdf'
+        className='hidden md:block'
+        onClick={() => download(downloadUrl)}
+        download={`${title}.pdf`}
+      >
+        <PrimaryButton variant={0}>DOWNLOAD</PrimaryButton>
+      </a>
     </aside>
   )
 }
