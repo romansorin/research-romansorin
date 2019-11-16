@@ -6,7 +6,6 @@
   "author": "Roman Sorin <roman@romansorin.com>",
   "dependencies": {
     "dotenv": "^8.2.0",
-
     "firebase": "^7.4.0",
     "gatsby": "^2.17.15",
     "gatsby-image": "^2.2.33",
@@ -58,7 +57,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "standard --fix",
+    "format": "eslint src/** --fix",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \"",
