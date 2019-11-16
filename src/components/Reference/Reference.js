@@ -9,7 +9,7 @@ const Reference = () => {
     <section>
       <Heading title='Research paper title' authors='Authors of paper' />
       <div className='flex flex-row'>
-        <Aside date='NOV 1, 2019' />
+        <Aside className='pr-16' date='NOV 1, 2019' />
         <Main>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nunc
           nunc posuere faucibus pulvinar amet neque donec in. Commodo, sed sed
