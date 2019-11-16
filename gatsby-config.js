@@ -22,11 +22,11 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
+        name: 'rs Research',
+        short_name: 'research',
         start_url: '/',
-        background_color: '#663399',
-        theme_color: '#663399',
+        background_color: '#3f2afe',
+        theme_color: '#3f2afe',
         display: 'minimal-ui',
         icon: 'src/images/gatsby-icon.png'
       }
@@ -36,6 +36,12 @@ module.exports = {
       resolve: 'gatsby-plugin-routes',
       options: {
         path: `${__dirname}/src/routes.js`
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-create-client-paths',
+      options: {
+        prefixes: ['/references/*', '/references/citations/*']
       }
     }
   ]

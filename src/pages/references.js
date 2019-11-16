@@ -1,14 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
+import { Router } from '@reach/router'
 
-import { getAllReferences, Reference } from '../models/Reference'
+import Reference from './references/reference'
+import ReferencesPage from './references/references'
 
-const ReferencesPage = () => {
-  useEffect(() => {
-    const refs = getAllReferences().then(res =>
-      res.forEach(doc => console.log(doc.data()))
-    )
-  }, [])
-  return <div />
+const References = () => {
+  return (
+    <div>
+      <Router>
+        <ReferencesPage path='/references' />
+        <Reference path='/references/:reference' />
+      </Router>
+    </div>
+  )
 }
 
-export default ReferencesPage
+export default References

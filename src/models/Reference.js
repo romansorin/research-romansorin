@@ -14,10 +14,12 @@ const DB = database.collection(PATH)
     "references": {
       "reference": {
         "title": "",
-        "author": "",
-        "storageUrl": "",
+        "authors": [],
+        "storage_url": "",
         "citation": "",
-        "summary": ""
+        "summary": "",
+        "date_posted": "",
+        "slug": ""
       }
     }
   }
@@ -26,7 +28,22 @@ const DB = database.collection(PATH)
 export const getAllReferences = async () => {
   try {
     const querySnapshot = await DB.get()
+    console.log(querySnapshot)
     return querySnapshot
+  } catch (error) {
+    return console.log(error)
+  }
+}
+
+export const getReference = async slug => {
+  try {
+    return await DB.where('slug', '==', slug)
+      .limit(1)
+      .get()
+      .then(querySnapshot => {
+        return querySnapshot[0].data()
+      })
+      .catch(error => console.log(error))
   } catch (error) {
     return console.log(error)
   }

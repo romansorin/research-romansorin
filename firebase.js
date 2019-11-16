@@ -16,7 +16,13 @@ const config = {
   messagingSenderId: process.env.MESSAGING_SENDER_ID
 }
 
-firebase.initializeApp(config)
+let database = {}
+let storage = {}
 
-export const database = firebase.firestore()
-export const storage = firebase.storage()
+if (firebase) {
+  firebase.initializeApp(config)
+  database = firebase.firestore()
+  storage = firebase.storage()
+}
+
+export { database, storage }

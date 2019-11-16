@@ -37,5 +37,15 @@ module.exports = {
     }
   },
   variants: {},
-  plugins: []
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        '.border-box': {
+          boxSizing: 'border-box'
+        }
+      }
+
+      addUtilities(newUtilities)
+    }
+  ]
 }
