@@ -23,13 +23,18 @@ const formatTimestampDate = timestamp => {
   return `${months[date.getMonth()]}, ${date.getDate()} ${date.getFullYear()}`
 }
 
-const Aside = ({ storage_url, className, date }) => {
+const Aside = ({ downloadUrl, className, date }) => {
   return (
     <aside className={className}>
       <p className='mb-2 text-text-2 uppercase text-sm font-bold'>
         {formatTimestampDate(date)}
       </p>
-      <a className='hidden md:block' download href={storage_url}>
+      <a
+        target='_blank'
+        className='hidden md:block'
+        href={downloadUrl}
+        download='pdf.pdf'
+      >
         <PrimaryButton variant={0}>DOWNLOAD</PrimaryButton>
       </a>
     </aside>

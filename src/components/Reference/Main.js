@@ -1,4 +1,5 @@
 import React from 'react'
+
 import Citation from './Citation'
 
 const Main = props => {
@@ -9,7 +10,10 @@ const Main = props => {
       </p>
       <p className='text-text-2 leading-relaxed text-base md:text-lg mb-8 md:mb-5'>
         Read the paper{' '}
-        <a className='text-theme-2 underline' href={props.storage_url}>
+        <a
+          className='text-theme-2 cursor-pointer underline'
+          href={props.storageUrl}
+        >
           here.
         </a>
       </p>
