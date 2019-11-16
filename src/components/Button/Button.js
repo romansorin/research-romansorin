@@ -4,8 +4,8 @@ const Button = props => (
   <button
     {...props}
     className={`${
-      props.className
-    } shadow-0 hover:shadow-1 text-center border-box font-semibold rounded-md uppercase px-5 py-2`}
+      props.className ? props.className + ' ' : ''
+    }shadow-0 hover:shadow-1 text-center border-box font-semibold rounded-md uppercase px-5 py-2`}
   >
     {props.children}
   </button>

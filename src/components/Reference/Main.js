@@ -9,11 +9,11 @@ const Main = props => {
       </p>
       <p className='text-text-2 leading-relaxed text-base md:text-lg mb-8 md:mb-5'>
         Read the paper{' '}
-        <a className='text-theme-2 underline' href='/'>
+        <a className='text-theme-2 underline' href={props.referenceUrl}>
           here.
         </a>
       </p>
-      <Citation>Citation of given article in IEEE format...</Citation>
+      <Citation>{props.citation}</Citation>
     </main>
   )
 }

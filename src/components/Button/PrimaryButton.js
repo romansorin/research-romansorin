@@ -10,8 +10,8 @@ const PrimaryButton = props => {
       return (
         <Button
           className={`${
-            props.className
-          } ${commonStyles} bg-theme-2 hover:bg-theme-5 focus:bg-theme-5`}
+            props.className ? props.className + ' ' : ''
+          }${commonStyles} bg-theme-2 hover:bg-theme-5 focus:bg-theme-5`}
         >
           {props.children}
         </Button>
@@ -20,8 +20,8 @@ const PrimaryButton = props => {
       return (
         <Button
           className={`${
-            props.className
-          } ${commonStyles} bg-theme-5 hover:bg-theme-4 focus:bg-theme-4`}
+            props.className ? props.className + ' ' : ''
+          }${commonStyles} bg-theme-5 hover:bg-theme-4 focus:bg-theme-4`}
         >
           {props.children}
         </Button>
@@ -30,8 +30,8 @@ const PrimaryButton = props => {
       return (
         <Button
           className={`${
-            props.className
-          } ${commonStyles} bg-theme-0 hover:bg-theme-1 focus:bg-theme-1`}
+            props.className ? props.className + ' ' : ''
+          }${commonStyles} bg-theme-0 hover:bg-theme-1 focus:bg-theme-1`}
         >
           {props.children}
         </Button>
@@ -40,8 +40,8 @@ const PrimaryButton = props => {
       return (
         <Button
           className={`${
-            props.className
-          } ${commonStyles} bg-text-2 hover:bg-text-1 focus:bg-text-1`}
+            props.className ? props.className + ' ' : ''
+          }${commonStyles} bg-text-2 hover:bg-text-1 focus:bg-text-1`}
         >
           {props.children}
         </Button>

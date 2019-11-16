@@ -8,8 +8,8 @@ const SecondaryButton = props => {
       return (
         <Button
           className={`${
-            props.className
-          } text-theme-2 hover:text-text-5 focus:text-text-5`}
+            props.className ? props.className + ' ' : ''
+          }text-theme-2 hover:text-text-5 focus:text-text-5`}
         >
           {props.children}
         </Button>
@@ -18,8 +18,8 @@ const SecondaryButton = props => {
       return (
         <Button
           className={`${
-            props.className
-          } text-theme-0 hover:text-theme-1 focus:text-theme-1`}
+            props.className ? props.className + ' ' : ''
+          }text-theme-0 hover:text-theme-1 focus:text-theme-1`}
         >
           {props.children}
         </Button>
@@ -28,8 +28,8 @@ const SecondaryButton = props => {
       return (
         <Button
           className={`${
-            props.className
-          } text-text-1 hover:text-text-2 focus:text-text-2`}
+            props.className ? props.className + ' ' : ''
+          }text-text-1 hover:text-text-2 focus:text-text-2`}
         >
           {props.children}
         </Button>
