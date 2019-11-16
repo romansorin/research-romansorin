@@ -1,4 +1,5 @@
 import React from 'react'
+import Citation from './Citation'
 
 const Main = props => {
   return (
@@ -10,6 +11,7 @@ const Main = props => {
           here.
         </a>
       </p>
+      <Citation>Citation of given article in IEEE format...</Citation>
     </main>
   )
 }
