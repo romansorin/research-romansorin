@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 
 import PrimaryButton from '../Button/PrimaryButton'
 
@@ -56,10 +56,6 @@ const Aside = ({ title, downloadUrl, className, date }) => {
       </a>
     </aside>
   )
-}
-
-Aside.defaultProps = {
-  date: 'jan 1, 2019'
 }
 
 export default Aside
