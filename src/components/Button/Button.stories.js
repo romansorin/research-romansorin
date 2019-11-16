@@ -7,7 +7,6 @@ export default {
 }
 
 const commonStyles = 'mr-8'
-const hoverShadowStyle = 'shadow-1'
 
 const Row = props => (
   <div>
