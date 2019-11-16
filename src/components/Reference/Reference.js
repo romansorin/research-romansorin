@@ -7,24 +7,21 @@ import Main from './Main'
 
 const Reference = props => {
   const [referenceUrl, setReferenceUrl] = useState('')
-  useEffect(
-    () => {
-      async function getDownloadUrl () {
-        if (props.storage_url) {
-          await storage
-            .refFromURL(props.storage_url)
-            .getDownloadURL()
-            .then(url => {
-              setReferenceUrl(url)
-            })
-            .catch(error => console.log(error))
-        }
+  useEffect(() => {
+    async function getDownloadUrl () {
+      if (props.storage_url) {
+        await storage
+          .refFromURL(props.storage_url)
+          .getDownloadURL()
+          .then(url => {
+            setReferenceUrl(url)
+          })
+          .catch(error => console.log(error))
       }
+    }
 
-      getDownloadUrl()
-    },
-    [props.storage_url]
-  )
+    getDownloadUrl()
+  }, [props.storage_url])
   return (
     <section>
       <Heading
