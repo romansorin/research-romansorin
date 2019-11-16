@@ -7,9 +7,13 @@ import Main from './Main'
 const Reference = () => {
   return (
     <section>
-      <Heading title='Research paper title' authors='Authors of paper' />
-      <div className='flex flex-row'>
-        <Aside className='pr-16' date='NOV 1, 2019' />
+      <Heading
+        className='md:mb-24'
+        title='Research paper title'
+        authors='Authors of paper'
+      />
+      <div className='flex flex-col md:flex-row'>
+        <Aside className='md:pr-16 md:mb-0 mb-10' date='NOV 1, 2019' />
         <Main>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nunc
           nunc posuere faucibus pulvinar amet neque donec in. Commodo, sed sed

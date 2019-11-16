@@ -4,10 +4,10 @@ import Citation from './Citation'
 const Main = props => {
   return (
     <main>
-      <p className='text-text-2 leading-relaxed text-lg mb-16'>
+      <p className='text-text-2 leading-relaxed text-base md:text-lg mb-16'>
         {props.children}
       </p>
-      <p className='text-text-2 leading-relaxed text-lg mb-5'>
+      <p className='text-text-2 leading-relaxed text-base md:text-lg mb-8 md:mb-5'>
         Read the paper{' '}
         <a className='text-theme-2 underline' href='/'>
           here.
