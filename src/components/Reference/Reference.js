@@ -34,6 +34,7 @@ const Reference = props => {
       />
       <div className='flex flex-col md:flex-row'>
         <Aside
+          title={props.title}
           downloadUrl={referenceUrl}
           className='md:pr-16 md:mb-0 mb-10'
           date={props.date_posted}
