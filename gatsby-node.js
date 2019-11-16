@@ -1,7 +1,34 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+  if (stage === 'build-html') {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /@firebase/,
+            use: loaders.null()
+          }
+        ]
+      }
+    })
+  }
+}
 
-// You can delete this file if you're not using it
+exports.createPages = ({ actions }) => {
+  const { createRedirect } = actions
+
+  const redirects = [
+    '/citations/:reference',
+    '/sources/:reference',
+    '/bibliography/:reference'
+  ]
+
+  const redirectTo = '/references/:reference'
+
+  redirects.forEach(redirect => {
+    createRedirect({
+      fromPath: redirect,
+      isPermanent: true,
+      toPath: redirectTo
+    })
+  })
+}

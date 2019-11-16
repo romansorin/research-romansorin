@@ -1,5 +1,6 @@
 import React from 'react'
 import { Router } from '@reach/router'
+
 import Reference from './references/reference'
 import ReferencesPage from './references/references'
 

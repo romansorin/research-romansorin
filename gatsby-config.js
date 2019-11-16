@@ -40,7 +40,9 @@ module.exports = {
     },
     {
       resolve: 'gatsby-plugin-create-client-paths',
-      options: { prefixes: ['/references/*'] }
+      options: {
+        prefixes: ['/references/*', '/references/citations/*']
+      }
     }
   ]
 }

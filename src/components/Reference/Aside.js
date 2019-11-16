@@ -44,7 +44,7 @@ const Aside = ({ title, downloadUrl, className, date }) => {
 
   return (
     <aside className={className}>
-      <p className='mb-2 text-text-2 uppercase text-sm font-bold'>
+      <p className='mb-2 text-text-2 uppercase text-xs md:text-sm font-bold'>
         {formatTimestampDate(date)}
       </p>
       <a
