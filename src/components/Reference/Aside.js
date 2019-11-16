@@ -23,6 +23,13 @@ const formatTimestampDate = timestamp => {
 }
 
 const Aside = ({ title, downloadUrl, className, date }) => {
+  useEffect(
+    () => {
+      download(downloadUrl)
+    },
+    [download, downloadUrl]
+  )
+
   function download (url) {
     const xhr = new XMLHttpRequest()
     xhr.open('GET', url)
@@ -41,10 +48,8 @@ const Aside = ({ title, downloadUrl, className, date }) => {
         {formatTimestampDate(date)}
       </p>
       <a
-        target='_self'
         id='download_pdf'
         className='hidden md:block'
-        onClick={() => download(downloadUrl)}
         download={`${title}.pdf`}
       >
         <PrimaryButton variant={0}>DOWNLOAD</PrimaryButton>
