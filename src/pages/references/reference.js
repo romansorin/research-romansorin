@@ -6,10 +6,11 @@ import Reference from '../../components/Reference/Reference'
 
 const ReferencePage = props => {
   useEffect(() => {
-    console.log(props.slug)
+    console.log(props.reference)
   }, [])
   return (
     <Layout>
+      Requested: {props.reference}
       <Reference />
     </Layout>
   )
