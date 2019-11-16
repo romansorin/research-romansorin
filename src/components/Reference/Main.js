@@ -9,7 +9,7 @@ const Main = props => {
       </p>
       <p className='text-text-2 leading-relaxed text-base md:text-lg mb-8 md:mb-5'>
         Read the paper{' '}
-        <a className='text-theme-2 underline' href={props.referenceUrl}>
+        <a className='text-theme-2 underline' href={props.storage_url}>
           here.
         </a>
       </p>
