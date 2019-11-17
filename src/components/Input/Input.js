@@ -7,15 +7,27 @@ const Input = props => {
   const [placeholderStyle, setPlaceholderStyle] = useState(
     'placeholder-placeholder'
   )
+  const [successMessage, setSuccessMessage] = useState('Successful!')
+  const [errorMessage, setErrorMessage] = useState('Something is wrong.')
+
   useEffect(
     () => {
-      if (props.success) setStatusStyles('text-valid border border-valid')
-      else if (props.error) {
-        setStatusStyles('text-invalid border border-invalid')
-      } else if (props.disabled) {
-        setStatusStyles('text-disabled bg-white-0')
-        setPlaceholderStyle('placeholder-disabled')
+      function checkStatus () {
+        if (props.success) setStatusStyles('text-valid border border-valid')
+        else if (props.error) {
+          setStatusStyles('text-invalid border border-invalid')
+        }
+
+        if (props.successMessage) setSuccessMessage(props.successMessage)
+        else if (props.errorMessage) setErrorMessage(props.errorMessage)
+
+        if (props.disabled) {
+          setStatusStyles('text-disabled bg-white-0')
+          setPlaceholderStyle('placeholder-disabled')
+        }
       }
+
+      checkStatus()
     },
     [props]
   )
@@ -29,14 +41,14 @@ const Input = props => {
       />
       {props.error ? (
         <small className={`${commonStatusStyles} text-invalid`}>
-          Something is wrong.
+          {errorMessage}
         </small>
       ) : (
         ''
       )}
       {props.success ? (
         <small className={`${commonStatusStyles} text-valid`}>
-          Successful!
+          {successMessage}
         </small>
       ) : (
         ''
