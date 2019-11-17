@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'src/stories/Input/react'
 
 export default { title: 'Input/Progress Bar' }
 

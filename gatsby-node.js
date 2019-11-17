@@ -9,7 +9,8 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
         Models: path.resolve(__dirname, 'src/models'),
         Icons: path.resolve(__dirname, 'src/icons'),
         Images: path.resolve(__dirname, 'src/images'),
-        Pages: path.resolve(__dirname, 'src/pages')
+        Pages: path.resolve(__dirname, 'src/pages'),
+        Stories: path.resolve(__dirname, 'src/stories')
       }
     }
   })

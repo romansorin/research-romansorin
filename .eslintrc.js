@@ -28,7 +28,8 @@ module.exports = {
         ['Models', './src/models'],
         ['Icons', './src/icons'],
         ['Images', './src/images'],
-        ['Pages', './src/pages']
+        ['Pages', './src/pages'],
+        ['Stories', './src/stories']
       ]
     }
   }
