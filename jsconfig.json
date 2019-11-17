@@ -6,7 +6,9 @@
     "paths": {
       "Components/*": ["src/components/*"],
       "Firebase/*": ["firebase/*"],
-      "Models/*": ["src/models/*"]
+      "Models/*": ["src/models/*"],
+      "Icons/*": ["src/icons/*"],
+      "Images/*": ["src/images/*"]
     }
   },
   "exclude": ["node_modules", "dist", "public", ".cache"]

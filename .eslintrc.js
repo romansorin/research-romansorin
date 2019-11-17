@@ -25,7 +25,9 @@ module.exports = {
       alias: [
         ['Components', './src/components'],
         ['Firebase', './firebase'],
-        ['Models', './src/models']
+        ['Models', './src/models'],
+        ['Icons', './src/icons'],
+        ['Images', './src/images']
       ]
     }
   }
