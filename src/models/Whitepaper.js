@@ -9,26 +9,6 @@ const DB = Database.collection(PATH)
  * @param {object} data
  */
 
-/**
-  * {
-  "sections": {
-    "section": {
-    	"sectionId": 0,
-  		"title": "",
-  	}
-  },
-  "content": {
-  	"sectionOne": {
-  		"sectionId": 0,
-  		"title": "",
-  		"subtitle": "",
-  		"content": "",
-  		"references": ""
-  	}
-  }
-}
-  */
-
 export const Whitepaper = data => {
   DB.add(data)
     .then(function (docRef) {

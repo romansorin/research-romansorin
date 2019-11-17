@@ -9,19 +9,6 @@ const DB = Database.collection(PATH)
  * @param {object} data
  */
 
-/**
-  * {
-  "posts": {
-    "post": {
-      "title": "",
-      "subtitle": "",
-      "date": "",
-      "content": ""
-    }
-  }
-}
-  */
-
 export const Post = data => {
   DB.add(data)
     .then(function (docRef) {

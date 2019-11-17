@@ -9,22 +9,6 @@ const DB = Database.collection(PATH)
  * @param {object} data
  */
 
-/**
-  * {
-    "references": {
-      "reference": {
-        "title": "",
-        "authors": [],
-        "storage_url": "",
-        "citation": "",
-        "summary": "",
-        "date_posted": "",
-        "slug": ""
-      }
-    }
-  }
-  */
-
 export const getAllReferences = async () => {
   try {
     const querySnapshot = await DB.get()
