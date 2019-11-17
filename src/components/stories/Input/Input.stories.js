@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Wrapper, Row } from '../layout'
-import { Input, RtaInput } from '../../Input'
+import { Input, RtaInput, LiaInput } from '../../Input'
 
 export default {
   title: 'Input/Field'
@@ -32,6 +32,7 @@ export const rightTextAddon = () => (
     <Row info='Anchor'>
       <RtaInput
         type='text'
+        href='https://romansorin.com'
         text='text'
         renderTextAs='a'
         placeholder='Placeholder'
@@ -40,6 +41,7 @@ export const rightTextAddon = () => (
     <Row info='Button'>
       <RtaInput
         type='text'
+        buttonType='button'
         text='text'
         renderTextAs='button'
         placeholder='Placeholder'
@@ -47,7 +49,13 @@ export const rightTextAddon = () => (
     </Row>
   </Wrapper>
 )
-export const leftIconAddon = () => <div />
+export const leftIconAddon = () => (
+  <Wrapper>
+    <Row info='Search Icon'>
+      <LiaInput placeholder='Paper title or author' />
+    </Row>
+  </Wrapper>
+)
 export const rightIconAddon = () => <div />
 export const leftRightIconAddon = () => <div />
 export const leftIconRightTextAddon = () => <div />

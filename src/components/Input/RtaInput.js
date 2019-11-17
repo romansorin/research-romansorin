@@ -17,7 +17,7 @@ const RtaInput = props => {
             onMouseEnter={() => setInputClasses('shadow-1')}
             onMouseLeave={() => setInputClasses('shadow-0')}
             className={`${commonStyles}`}
-            href=''
+            href={props.href}
           >
             {props.text}
           </a>
@@ -29,7 +29,7 @@ const RtaInput = props => {
             onMouseEnter={() => setInputClasses('shadow-1')}
             onMouseLeave={() => setInputClasses('shadow-0')}
             className={`${commonStyles}`}
-            type='button'
+            type={props.buttonType ? props.buttonType : 'button'}
           >
             {props.text}
           </button>
