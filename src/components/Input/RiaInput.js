@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
+import { ArrowRight } from 'react-feather'
 
 import Input from './Input'
-import { ArrowRight } from 'react-feather'
 
 const commonStyles =
   'text-theme-5-.8 hover:text-theme-5 absolute right-0 top-0 mt-3 pt-px -mb-px leading-none uppercase mr-4 font-medium'
-
 const strokeWidth = 3
 const size = 18
 

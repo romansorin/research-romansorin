@@ -1,7 +1,14 @@
 import React from 'react'
 
 import { Wrapper, Row } from '../layout'
-import { Input, RtaInput, LiaInput, RiaInput } from '../../Input'
+import {
+  Input,
+  RtaInput,
+  LiaInput,
+  RiaInput,
+  LriaInput,
+  LirtInput
+} from '../../Input'
 
 export default {
   title: 'Input/Field'
@@ -75,8 +82,47 @@ export const rightIconAddon = () => (
     </Row>
   </Wrapper>
 )
-export const leftRightIconAddon = () => <div />
-export const leftIconRightTextAddon = () => <div />
+export const leftRightIconAddon = () => (
+  <Wrapper>
+    <Row info='Arrow Icon - Span'>
+      <LriaInput placeholder='Placeholder' />
+    </Row>
+    <Row info='Arrow Icon - Anchor'>
+      <LriaInput
+        renderIconAs='a'
+        href='https://romansorin.com'
+        placeholder='Placeholder'
+      />
+    </Row>
+    <Row info='Arrow Icon - Button'>
+      <LriaInput renderIconAs='button' placeholder='Placeholder' />
+    </Row>
+  </Wrapper>
+)
+export const leftIconRightTextAddon = () => (
+  <Wrapper>
+    <Row info='Search & Text'>
+      <LirtInput type='text' text='text' placeholder='Placeholder' />
+    </Row>
+    <Row info='Search & Text - Anchor'>
+      <LirtInput
+        renderTextAs='a'
+        type='text'
+        text='text'
+        href='https://romansorin.com'
+        placeholder='Placeholder'
+      />
+    </Row>
+    <Row info='Search & Text - Button'>
+      <LirtInput
+        type='text'
+        text='text'
+        renderTextAs='button'
+        placeholder='Placeholder'
+      />
+    </Row>
+  </Wrapper>
+)
 
 leftRightIconAddon.story = {
   name: 'Left/Right Icon Addon'
