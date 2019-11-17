@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 
 const Table = props => {
   return (
-    <table className={`${props.className ? props.className + ' ' : ''}text-lg`}>
+    <table className={`${props.className ? props.className + ' ' : ''}`}>
       {props.rows.map((row, i) => (
         <tr
           className={`${
