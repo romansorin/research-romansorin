@@ -27,7 +27,8 @@ module.exports = {
         ['Firebase', './firebase'],
         ['Models', './src/models'],
         ['Icons', './src/icons'],
-        ['Images', './src/images']
+        ['Images', './src/images'],
+        ['Pages', './src/pages']
       ]
     }
   }

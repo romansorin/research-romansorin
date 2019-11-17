@@ -8,7 +8,8 @@
       "Firebase/*": ["firebase/*"],
       "Models/*": ["src/models/*"],
       "Icons/*": ["src/icons/*"],
-      "Images/*": ["src/images/*"]
+      "Images/*": ["src/images/*"],
+      "Pages/*": ["src/pages/*"]
     }
   },
   "exclude": ["node_modules", "dist", "public", ".cache"]

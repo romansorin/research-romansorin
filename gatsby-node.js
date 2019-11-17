@@ -8,7 +8,8 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
         Firebase: path.resolve(__dirname, 'firebase'),
         Models: path.resolve(__dirname, 'src/models'),
         Icons: path.resolve(__dirname, 'src/icons'),
-        Images: path.resolve(__dirname, 'src/images')
+        Images: path.resolve(__dirname, 'src/images'),
+        Pages: path.resolve(__dirname, 'src/pages')
       }
     }
   })
