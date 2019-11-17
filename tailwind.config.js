@@ -40,7 +40,17 @@ module.exports = {
       }
     }
   },
-  variants: {},
+  variants: {
+    backgroundColor: [
+      'responsive',
+      'first',
+      'last',
+      'even',
+      'odd',
+      'hover',
+      'focus'
+    ]
+  },
   plugins: [
     function ({ addUtilities }) {
       const newUtilities = {
