@@ -1,28 +1,22 @@
 import React from 'react'
 
-import { Button, PrimaryButton, SecondaryButton } from '.'
+import { Button, PrimaryButton, SecondaryButton } from '../Button'
+import { Wrapper, Row } from './layout'
 
 export default {
   title: 'Button'
 }
 
-const Row = props => (
-  <div>
-    <h1 className='text-xl font-semibold mb-4'>{props.info}</h1>
-    <div className='flex flex-row justify-start mb-8'>{props.children}</div>
-  </div>
-)
-
 export const base = () => (
-  <div className='mx-5 my-5'>
+  <Wrapper>
     <Row info='Default'>
       <Button>Button</Button>
     </Row>
-  </div>
+  </Wrapper>
 )
 
 export const primary = () => (
-  <div className='mx-5 my-5'>
+  <Wrapper>
     <Row info='Variant 0'>
       <PrimaryButton variant={0}>Button</PrimaryButton>
     </Row>
@@ -35,11 +29,11 @@ export const primary = () => (
     <Row info='Variant 3'>
       <PrimaryButton variant={3}>Button</PrimaryButton>
     </Row>
-  </div>
+  </Wrapper>
 )
 
 export const secondary = () => (
-  <div className='mx-5 my-5'>
+  <Wrapper>
     <Row info='Variant 0'>
       <SecondaryButton variant={0}>Button</SecondaryButton>
     </Row>
@@ -49,5 +43,5 @@ export const secondary = () => (
     <Row info='Variant 2'>
       <SecondaryButton variant={2}>Button</SecondaryButton>
     </Row>
-  </div>
+  </Wrapper>
 )

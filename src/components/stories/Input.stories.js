@@ -1,20 +1,14 @@
 import React from 'react'
 
-import { Input } from '.'
+import { Input } from '../Input'
+import { Wrapper, Row } from './layout'
 
 export default {
   title: 'Input'
 }
 
-const Row = props => (
-  <div>
-    <h1 className='text-xl font-semibold mb-4'>{props.info}</h1>
-    <div className='flex flex-row justify-start mb-8'>{props.children}</div>
-  </div>
-)
-
 export const base = () => (
-  <div className='mx-5 my-5'>
+  <Wrapper>
     <Row info='Default'>
       <Input type='text' placeholder='Placeholder' />
     </Row>
@@ -27,5 +21,7 @@ export const base = () => (
     <Row info='Disabled'>
       <Input type='text' disabled='true' placeholder='Disabled' />
     </Row>
-  </div>
+  </Wrapper>
 )
+
+export const rightTextAddon = () => <div />
