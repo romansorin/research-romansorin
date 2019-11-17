@@ -1,8 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import Layout from 'Components/layout'
-import SEO from 'Components/seo'
+import { Layout, SEO } from 'Components'
 
 const mailTo = 'roman@romansorin.com'
 
