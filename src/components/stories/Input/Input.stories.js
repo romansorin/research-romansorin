@@ -1,10 +1,10 @@
 import React from 'react'
 
-import { Input } from '../Input'
-import { Wrapper, Row } from './layout'
+import { Wrapper, Row } from '../layout'
+import { Input } from '../../Input'
 
 export default {
-  title: 'Input'
+  title: 'Input/Field'
 }
 
 export const base = () => (
@@ -25,3 +25,14 @@ export const base = () => (
 )
 
 export const rightTextAddon = () => <div />
+export const leftIconAddon = () => <div />
+export const rightIconAddon = () => <div />
+export const leftRightIconAddon = () => <div />
+export const leftIconRightTextAddon = () => <div />
+
+leftRightIconAddon.story = {
+  name: 'Left/Right Icon Addon'
+}
+leftIconRightTextAddon.story = {
+  name: 'Left Icon/Right Text Addon'
+}
