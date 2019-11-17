@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "allowSyntheticDefaultImports": false,
+    "baseUrl": "./",
+    "paths": {
+      "Components/*": ["src/components/*"],
+      "Firebase/*": ["firebase/*"],
+      "Models/*": ["src/models/*"]
+    }
+  },
+  "exclude": ["node_modules", "dist"]
+}

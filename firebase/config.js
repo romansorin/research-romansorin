@@ -1,9 +1,9 @@
 // Firebase App (the core Firebase SDK) is always required and must be listed first
-import firebase from 'firebase/app'
+import firebase from 'firebase/firebase/app'
 
-import 'firebase/firestore'
-import 'firebase/analytics'
-import 'firebase/storage'
+import 'firebase/firebase/firestore'
+import 'firebase/firebase/analytics'
+import 'firebase/firebase/storage'
 
 const config = {
   apiKey: process.env.FIREBASE_API_KEY,

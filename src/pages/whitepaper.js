@@ -1,7 +1,5 @@
 import React from 'react'
 
-import { database } from '../../firebase'
-
 // const documents = database
 //   .collection('references')
 //   .get()

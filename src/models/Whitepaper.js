@@ -1,4 +1,4 @@
-import { database } from '../../firebase'
+import { database } from 'Models/Firebase/config'
 
 const PATH = 'whitepaper'
 const DB = database.collection(PATH)

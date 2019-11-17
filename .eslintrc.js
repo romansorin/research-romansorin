@@ -19,5 +19,13 @@ module.exports = {
   rules: {
     'react/prop-types': 'off',
     'react/no-did-update-set-state': 'off'
+  },
+  settings: {
+    'import/resolver': {
+      alias: [
+        ['Components', './src/components'],
+        ['Firebase', './src/firebase']
+      ]
+    }
   }
 }

@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react'
-import { getAllReferences } from '../../models/Reference'
-import Layout from '../../components/layout'
-import SEO from '../../components/seo'
-import { LiaInput } from '../../components/Input'
-import { Table } from '../../components/Table'
-import { PrimaryButton } from '../../components/Button'
+
+import { getAllReferences } from 'firebase/Reference'
+import Layout from 'Components/layout'
+import SEO from 'Components/seo'
+import { LiaInput } from 'Components/Input'
+import { Table } from 'Components/Table'
+import { PrimaryButton } from 'Components/Button'
 
 const tableData = {
   rows: [

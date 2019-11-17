@@ -1,4 +1,4 @@
-import { database } from '../../firebase'
+import { database } from './firebase'
 
 const PATH = 'references'
 const DB = database.collection(PATH)
