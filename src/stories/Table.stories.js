@@ -1,4 +1,4 @@
-import React from ''
+import React from 'react'
 
 import { Wrapper, Row } from 'Stories/layout'
 import { Table } from 'Components/Table'

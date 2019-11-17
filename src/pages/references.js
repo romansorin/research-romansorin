@@ -1,14 +1,14 @@
 import React from 'react'
 import { Router } from '@reach/router'
 
-import { Reference, ReferencesPage } from './references'
+import { ReferencesPage, ReferencePage } from './references/index'
 
 const References = () => {
   return (
     <div>
       <Router>
         <ReferencesPage path='/references' />
-        <Reference path='/references/:reference' />
+        <ReferencePage path='/references/:reference' />
       </Router>
     </div>
   )

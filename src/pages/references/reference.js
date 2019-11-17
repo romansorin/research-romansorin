@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { navigate } from 'gatsby'
 
 import { Layout } from 'Components'
-import { Reference } from 'Models'
-import { database } from 'Firebase'
+import { Database } from 'Firebase'
+import Reference from 'Components/Reference'
 
 const PATH = 'references'
-const DB = database.collection(PATH)
+const DB = Database.collection(PATH)
 
 const ReferencePage = props => {
   const [data, setData] = useState()

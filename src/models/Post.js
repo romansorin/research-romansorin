@@ -1,4 +1,4 @@
-import Database from 'Firebase'
+import { Database } from 'Firebase'
 
 const PATH = 'posts'
 const DB = Database.collection(PATH)

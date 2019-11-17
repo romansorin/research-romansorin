@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
-import { getAllReferences } from 'Models'
 import { Layout, SEO } from 'Components'
 import { LiaInput } from 'Components/Input'
 import { Table } from 'Components/Table'
@@ -78,6 +77,7 @@ const tableData = {
     }
   ]
 }
+
 const ReferencesPage = () => {
   // useEffect(() => {
   //   const refs = getAllReferences().then(res =>

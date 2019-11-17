@@ -1,4 +1,4 @@
-import React from 'src/stories/Input/react'
+import React from 'react'
 
 export default { title: 'Input/Toggle' }
 
