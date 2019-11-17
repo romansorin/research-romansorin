@@ -1,7 +1,7 @@
-import { database } from 'Models/Firebase/config'
+import Database from 'Firebase'
 
 const PATH = 'whitepaper'
-const DB = database.collection(PATH)
+const DB = Database.collection(PATH)
 
 /**
  * Title, author, storageUrl, citation, summary

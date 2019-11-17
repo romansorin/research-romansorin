@@ -24,7 +24,8 @@ module.exports = {
     'import/resolver': {
       alias: [
         ['Components', './src/components'],
-        ['Firebase', './src/firebase']
+        ['Firebase', './firebase'],
+        ['Models', './src/models']
       ]
     }
   }
