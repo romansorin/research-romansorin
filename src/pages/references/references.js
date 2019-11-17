@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { getAllReferences } from '../../models/Reference'
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
