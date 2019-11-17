@@ -1,7 +1,7 @@
-import React from 'src/stories/react'
+import React from ''
 
-import { Wrapper, Row } from 'src/stories/Stories/layout'
-import { Table } from 'src/stories/Components/Table'
+import { Wrapper, Row } from 'Stories/layout'
+import { Table } from 'Components/Table'
 
 export default {
   title: 'Table'

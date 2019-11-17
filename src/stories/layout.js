@@ -1,4 +1,4 @@
-import React from 'src/stories/react'
+import React from 'react'
 
 const Wrapper = props => <div className='mx-5 my-5'>{props.children}</div>
 

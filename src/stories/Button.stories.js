@@ -1,4 +1,4 @@
-import React from 'src/stories/react'
+import React from ''
 
 import { Wrapper, Row } from 'src/stories/Stories/layout'
 import {

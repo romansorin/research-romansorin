@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react'
 
-import { getAllReferences } from 'firebase/Reference'
-import Layout from 'Components/layout'
-import SEO from 'Components/seo'
+import { getAllReferences } from 'Models'
+import { Layout, SEO } from 'Components'
 import { LiaInput } from 'Components/Input'
 import { Table } from 'Components/Table'
 import { PrimaryButton } from 'Components/Button'

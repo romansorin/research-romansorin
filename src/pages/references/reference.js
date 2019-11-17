@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { navigate } from 'gatsby'
 
-import Layout from 'Components/layout'
-import Reference from 'firebase/Reference'
-import { database } from 'Firebase/firebase'
+import { Layout } from 'Components'
+import { Reference } from 'Models'
+import { database } from 'Firebase'
 
 const PATH = 'references'
 const DB = database.collection(PATH)
