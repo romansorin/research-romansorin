@@ -6,8 +6,6 @@ export default {
   title: 'Input'
 }
 
-const commonStyles = 'mr-8'
-
 const Row = props => (
   <div>
     <h1 className='text-xl font-semibold mb-4'>{props.info}</h1>
@@ -17,6 +15,17 @@ const Row = props => (
 
 export const base = () => (
   <div className='mx-5 my-5'>
-    <Input />
+    <Row info='Default'>
+      <Input type='text' placeholder='Placeholder' />
+    </Row>
+    <Row info='Error'>
+      <Input type='text' error='true' placeholder='Error' value='Error' />
+    </Row>
+    <Row info='Success'>
+      <Input type='text' success='true' placeholder='Success' value='Success' />
+    </Row>
+    <Row info='Disabled'>
+      <Input type='text' disabled='true' placeholder='Disabled' />
+    </Row>
   </div>
 )

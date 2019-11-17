@@ -22,7 +22,9 @@ module.exports = {
           2: '#ebe9ff'
         },
         invalid: '#fe3f2a',
-        valid: '#3ecf8e'
+        valid: '#3ecf8e',
+        placeholder: 'rgba(84, 81, 108, 0.6)',
+        disabled: 'rgba(84, 81, 108, 0.45);'
       },
       fontFamily: {
         main: 'Camphor'

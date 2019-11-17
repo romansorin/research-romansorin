@@ -6,8 +6,6 @@ export default {
   title: 'Button'
 }
 
-const commonStyles = 'mr-8'
-
 const Row = props => (
   <div>
     <h1 className='text-xl font-semibold mb-4'>{props.info}</h1>
@@ -17,31 +15,25 @@ const Row = props => (
 
 export const base = () => (
   <div className='mx-5 my-5'>
-    <Button>Button</Button>
+    <Row info='Default'>
+      <Button>Button</Button>
+    </Row>
   </div>
 )
 
 export const primary = () => (
   <div className='mx-5 my-5'>
     <Row info='Variant 0'>
-      <PrimaryButton className={`${commonStyles}`} variant={0}>
-        Button
-      </PrimaryButton>
+      <PrimaryButton variant={0}>Button</PrimaryButton>
     </Row>
     <Row info='Variant 1'>
-      <PrimaryButton className={`${commonStyles}`} variant={1}>
-        Button
-      </PrimaryButton>
+      <PrimaryButton variant={1}>Button</PrimaryButton>
     </Row>
     <Row info='Variant 2'>
-      <PrimaryButton className={`${commonStyles}`} variant={2}>
-        Button
-      </PrimaryButton>
+      <PrimaryButton variant={2}>Button</PrimaryButton>
     </Row>
     <Row info='Variant 3'>
-      <PrimaryButton className={`${commonStyles}`} variant={3}>
-        Button
-      </PrimaryButton>
+      <PrimaryButton variant={3}>Button</PrimaryButton>
     </Row>
   </div>
 )
