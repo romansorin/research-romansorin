@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { storage } from '../../../firebase/firebase'
+import { Storage } from 'Firebase'
 
 import Heading from './Heading'
 import Aside from './Aside'
@@ -11,8 +11,7 @@ const Reference = props => {
     () => {
       async function getDownloadUrl () {
         if (props.storage_url) {
-          await storage
-            .refFromURL(props.storage_url)
+          await Storage.refFromURL(props.storage_url)
             .getDownloadURL()
             .then(url => {
               setReferenceUrl(url)

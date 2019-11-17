@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 
-import PrimaryButton from '../Button/PrimaryButton'
+import { PrimaryButton } from 'Components/Button'
 
 const formatTimestampDate = timestamp => {
   const months = [
