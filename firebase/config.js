@@ -18,11 +18,13 @@ const config = {
 
 let database = {}
 let storage = {}
+let analytics = {}
 
 if (firebase) {
   firebase.initializeApp(config)
   database = firebase.firestore()
   storage = firebase.storage()
+  analytics = firebase.analytics()
 }
 
-export { database, storage }
+export { database, storage, analytics }
