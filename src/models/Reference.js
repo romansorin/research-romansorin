@@ -9,6 +9,30 @@ const DB = Database.collection(PATH)
  * @param {object} data
  */
 
+export class Reference {
+  constructor (doc) {
+    this.authors = doc.authors
+    this.title = doc.title
+    this.summary = doc.summary
+    this.date_posted = doc.date_posted
+    this.citation = doc.citation
+    this.storage_url = doc.storage_url
+    this.slug = doc.slug
+  }
+
+  get referenceObject () {
+    return {
+      title: this.title,
+      authors: this.authors,
+      summary: this.summary,
+      date_posted: this.date_posted,
+      citation: this.citation,
+      storage_url: this.storage_url,
+      slug: this.slug
+    }
+  }
+}
+
 export const getAllReferences = async () => {
   try {
     const querySnapshot = await DB.get()
