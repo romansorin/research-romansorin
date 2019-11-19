@@ -11,30 +11,29 @@ const algolia = algoliasearch(
 
 const index = algolia.initIndex(process.env.ALGOLIA_INDEX_NAME)
 
-DB.once('value', references => {
-  // Build an array of all records to push to Algolia
-  const records = []
-  references.forEach(reference => {
-    // get the key and data from the snapshot
-    const childKey = reference.key
-    const childData = reference.val()
-    // We set the Algolia objectID as the Firebase .key
-    childData.objectID = childKey
-    // Add object for indexing
-    records.push(childData)
-  })
+function addRecords () {
+  DB.get().then(references => {
+    const records = []
+    references.forEach(reference => {
+      const childKey = reference.id
+      const childData = reference.data()
+      // We set the Algolia objectID as the Firebase .key
+      childData.objectID = childKey
+      // Add object for indexing
+      records.push(childData)
+    })
 
-  // Add or update new objects
-  index
-    .saveObjects(records)
-    .then(() => {
-      console.log('Contacts imported into Algolia')
-    })
-    .catch(error => {
-      console.error('Error when importing contact into Algolia', error)
-      process.exit(1)
-    })
-})
+    // Add or update new objects
+    index
+      .saveObjects(records)
+      .then(() => {
+        console.log('References imported into Algolia')
+      })
+      .catch(error => {
+        console.error('Error when importing reference into Algolia', error)
+      })
+  })
+}
 
 function addOrUpdateIndexRecord (reference) {
   // Get Firebase object
