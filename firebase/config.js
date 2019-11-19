@@ -5,15 +5,6 @@ import 'firebase/firestore'
 import 'firebase/analytics'
 import 'firebase/storage'
 
-const algoliasearch = require('algoliasearch')
-
-const algolia = algoliasearch(
-  process.env.ALGOLIA_APP_ID,
-  process.env.ALGOLIA_API_KEY
-)
-
-const index = algolia.initIndex(process.env.ALGOLIA_INDEX_NAME)
-
 const config = {
   apiKey: process.env.FIREBASE_API_KEY,
   authDomain: process.env.FIREBASE_AUTH_DOMAIN,
