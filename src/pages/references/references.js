@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { InstantSearch, SearchBox, Hits } from 'react-instantsearch-dom'
+import {
+  InstantSearch,
+  connectSearchBox,
+  SearchBox,
+  Hits
+} from 'react-instantsearch-dom'
 
 import { Layout, SEO } from 'Components'
 import { LiaInput } from 'Components/Input'
@@ -21,6 +26,16 @@ const renderAs = {
   TEXT: 'text',
   LINK: 'Link'
 }
+
+const Search = ({ currentRefinement, refine }) => (
+  <LiaInput
+    type='search'
+    value={currentRefinement}
+    onChange={event => refine(event.currentTarget.value)}
+  />
+)
+
+const CustomSearch = connectSearchBox(Search)
 
 const ReferencesPage = () => {
   const [references, setReferences] = useState()
@@ -75,9 +90,8 @@ const ReferencesPage = () => {
         References
       </h1>
       <InstantSearch searchClient={algolia} indexName='references'>
-        <SearchBox />
+        <CustomSearch />
         <Hits />
-        {/* <LiaInput placeholder='Paper title or author' /> */}
       </InstantSearch>
       {/* TODO: Search through Algolia to find a row functionality */}
       {references && references.rows.length > 0 ? (
