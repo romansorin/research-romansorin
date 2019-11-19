@@ -4,11 +4,11 @@ const PATH = 'references'
 const DB = Database.collection(PATH)
 
 /**
- * Title, author, storageUrl, citation, summary
+ * Reference object
  *
- * @param {object} data
+ * @export
+ * @class Reference
  */
-
 export class Reference {
   constructor (doc) {
     this.authors = doc.authors
