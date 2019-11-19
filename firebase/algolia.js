@@ -1,9 +1,8 @@
-import Database from 'Firebase/'
+import algoliasearch from 'algoliasearch'
+import { Database } from 'Firebase/'
 
 const PATH = 'references'
-const DB = Database.ref(PATH)
-
-const algoliasearch = require('algoliasearch')
+const DB = Database.collection(PATH)
 
 const algolia = algoliasearch(
   process.env.ALGOLIA_APP_ID,
@@ -12,9 +11,30 @@ const algolia = algoliasearch(
 
 const index = algolia.initIndex(process.env.ALGOLIA_INDEX_NAME)
 
-DB.on('child_added', addOrUpdateIndexRecord)
-DB.on('child_changed', addOrUpdateIndexRecord)
-DB.on('child_removed', deleteIndexRecord)
+DB.once('value', references => {
+  // Build an array of all records to push to Algolia
+  const records = []
+  references.forEach(reference => {
+    // get the key and data from the snapshot
+    const childKey = reference.key
+    const childData = reference.val()
+    // We set the Algolia objectID as the Firebase .key
+    childData.objectID = childKey
+    // Add object for indexing
+    records.push(childData)
+  })
+
+  // Add or update new objects
+  index
+    .saveObjects(records)
+    .then(() => {
+      console.log('Contacts imported into Algolia')
+    })
+    .catch(error => {
+      console.error('Error when importing contact into Algolia', error)
+      process.exit(1)
+    })
+})
 
 function addOrUpdateIndexRecord (reference) {
   // Get Firebase object
@@ -47,3 +67,5 @@ function deleteIndexRecord ({ key }) {
       process.exit(1)
     })
 }
+
+export { algolia }

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { InstantSearch, SearchBox, Hits } from 'react-instantsearch-dom'
 
 import { Layout, SEO } from 'Components'
 import { LiaInput } from 'Components/Input'
@@ -6,6 +7,7 @@ import { Table } from 'Components/Table'
 import { PrimaryButton } from 'Components/Button'
 
 import { Database } from 'Firebase'
+import { algolia } from 'Firebase/algolia'
 
 const PATH = 'references'
 const DB = Database.collection(PATH)
@@ -72,7 +74,11 @@ const ReferencesPage = () => {
       <h1 className='mb-3 text-text-2 text-3xl md:text-4xl leading-snug font-medium'>
         References
       </h1>
-      <LiaInput placeholder='Paper title or author' />
+      <InstantSearch searchClient={algolia} indexName='references'>
+        <SearchBox />
+        <Hits />
+        {/* <LiaInput placeholder='Paper title or author' /> */}
+      </InstantSearch>
       {/* TODO: Search through Algolia to find a row functionality */}
       {references && references.rows.length > 0 ? (
         <Table
