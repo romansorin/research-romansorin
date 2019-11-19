@@ -11,7 +11,7 @@ const PATH = 'references'
 const DB = Database.collection(PATH)
 
 const columnStyles = {
-  left: 'pl-1 mr-auto',
+  left: 'pl-1 w-1/3',
   middle: 'ml-4 md:ml-0 mr-auto',
   right: 'ml-auto mr-3 uppercase font-bold text-theme-2'
 }
@@ -43,7 +43,7 @@ const ReferencesPage = () => {
           },
           {
             renderAs: renderAs.LINK,
-            to: doc.slug,
+            to: `references/${doc.slug}`,
             className: columnStyles.right,
             text: 'View'
           }
@@ -52,14 +52,15 @@ const ReferencesPage = () => {
     })
     return setReferences({ rows: rows })
   }
+
   useEffect(
     () => {
-      const tempData = []
+      const data = []
       DB.limit(5)
         .get()
         .then(querySnapshot => {
-          querySnapshot.forEach(doc => tempData.push(doc.data()))
-          setRows(tempData)
+          querySnapshot.forEach(doc => data.push(doc.data()))
+          setRows(data)
         })
     },
     [renderAs, columnStyles]
@@ -72,7 +73,7 @@ const ReferencesPage = () => {
         References
       </h1>
       <LiaInput placeholder='Paper title or author' />
-
+      {/* TODO: Search through Algolia to find a row functionality */}
       {references && references.rows.length > 0 ? (
         <Table
           className='mx-auto w-11/12 md:w-full mt-10 mb-20'
@@ -81,10 +82,13 @@ const ReferencesPage = () => {
       ) : (
         ''
       )}
-
+      {/* TODO: Author ellipsis/truncation when goes over x amount of chars in that column */}
+      {/* TODO: Implement display for when no results are found or no rows exist. */}
+      {/*
       <PrimaryButton className='px-10 mx-auto flex' variant={0}>
         Load more
-      </PrimaryButton>
+      </PrimaryButton> */}
+      {/* TODO: Load more functionality */}
     </Layout>
   )
 }
