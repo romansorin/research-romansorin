@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import {
   InstantSearch,
   connectSearchBox,
-  SearchBox,
+  connectInfiniteHits,
   Hits
 } from 'react-instantsearch-dom'
 
