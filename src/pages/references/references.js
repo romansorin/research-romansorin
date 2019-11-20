@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react'
 import {
   InstantSearch,
   connectSearchBox,
-  connectInfiniteHits,
+  connectHits,
   Hits
 } from 'react-instantsearch-dom'
+import { Link } from 'gatsby'
 
 import { Layout, SEO } from 'Components'
 import { LiaInput } from 'Components/Input'
@@ -27,15 +28,39 @@ const renderAs = {
   LINK: 'Link'
 }
 
-const Search = ({ currentRefinement, refine }) => (
+const ResultsTable = ({ hits }) => (
+  <table className={'mx-auto w-11/12 md:w-full mt-10 mb-20'}>
+    <tbody>
+      {hits.map((hit, i) => (
+        <tr
+          className={'odd:bg-white-1 even:bg-white-0 py-4 w-full flex'}
+          key={i}
+        >
+          <td className={`${columnStyles.left} text-text-2`}>{hit.title}</td>
+          <td className={`${columnStyles.middle} text-text-2`}>
+            {hit.authors.map((author, i) => {
+              if (i < hit.authors.length - 1) return `${author}, `
+              else return author
+            })}
+          </td>
+          <td className={`${columnStyles.right}`}>
+            <Link to={`references/${hit.slug}`}>View</Link>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+)
+
+const Search = connectSearchBox(({ currentRefinement, refine }) => (
   <LiaInput
     type='search'
     value={currentRefinement}
     onChange={event => refine(event.currentTarget.value)}
   />
-)
+))
 
-const CustomSearch = connectSearchBox(Search)
+const Results = connectHits(ResultsTable)
 
 const ReferencesPage = () => {
   const [references, setReferences] = useState()
@@ -90,18 +115,15 @@ const ReferencesPage = () => {
         References
       </h1>
       <InstantSearch searchClient={algolia} indexName='references'>
-        <CustomSearch />
-        <Hits />
+        <Search />
+        <Results />
+        {/* <Results {...references} /> */}
       </InstantSearch>
-      {/* TODO: Search through Algolia to find a row functionality */}
-      {references && references.rows.length > 0 ? (
-        <Table
-          className='mx-auto w-11/12 md:w-full mt-10 mb-20'
-          {...references}
-        />
+      {/* {references && references.rows.length > 0 ? (
+
       ) : (
         ''
-      )}
+      )} */}
       {/* TODO: Author ellipsis/truncation when goes over x amount of chars in that column */}
       {/* TODO: Implement display for when no results are found or no rows exist. */}
       {/*
