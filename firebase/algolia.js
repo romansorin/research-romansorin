@@ -1,8 +1,5 @@
 import algoliasearch from 'algoliasearch'
-import { Database } from 'Firebase/'
-
-const PATH = 'references'
-const DB = Database.collection(PATH)
+const functions = require('firebase-functions')
 
 const algolia = algoliasearch(
   process.env.ALGOLIA_APP_ID,
@@ -11,62 +8,24 @@ const algolia = algoliasearch(
 
 const index = algolia.initIndex(process.env.ALGOLIA_INDEX_NAME)
 
-function addRecords () {
-  DB.get().then(references => {
-    const records = []
-    references.forEach(reference => {
-      const childKey = reference.id
-      const childData = reference.data()
-      // We set the Algolia objectID as the Firebase .key
-      childData.objectID = childKey
-      // Add object for indexing
-      records.push(childData)
-    })
+// Update the search index every time a reference is added
+exports.onReferenceCreated = functions.firebase
+  .document('references/{referenceId}')
+  .onCreate((snap, context) => {
+    // Get the note document
+    const reference = snap.data()
 
-    // Add or update new objects
-    index
-      .saveObjects(records)
+    // Add an 'objectID' field which Algolia requires
+    reference.objectID = context.params.referenceId
+    // Write to the algolia index
+    return index
+      .saveObject(reference)
       .then(() => {
-        console.log('References imported into Algolia')
+        console.log('Reference imported into Algolia')
       })
       .catch(error => {
-        console.error('Error when importing reference into Algolia', error)
+        console.log('Error when importing Reference into Algolia: ', error)
       })
   })
-}
-
-// addRecords()
-
-function addOrUpdateIndexRecord (reference) {
-  // Get Firebase object
-  const record = reference.val()
-  // Specify Algolia's objectID using the Firebase object key
-  record.objectID = reference.key
-  // Add or update object
-  index
-    .saveObject(record)
-    .then(() => {
-      console.log('Firebase object indexed in Algolia', record.objectID)
-    })
-    .catch(error => {
-      console.error('Error when indexing contact into Algolia', error)
-      process.exit(1)
-    })
-}
-
-function deleteIndexRecord ({ key }) {
-  // Get Algolia's objectID from the Firebase object key
-  const objectID = key
-  // Remove the object from Algolia
-  index
-    .deleteObject(objectID)
-    .then(() => {
-      console.log('Firebase object deleted from Algolia', objectID)
-    })
-    .catch(error => {
-      console.error('Error when deleting contact from Algolia', error)
-      process.exit(1)
-    })
-}
 
 export { algolia }
