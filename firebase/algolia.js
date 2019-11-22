@@ -35,6 +35,8 @@ function addRecords () {
   })
 }
 
+// addRecords()
+
 function addOrUpdateIndexRecord (reference) {
   // Get Firebase object
   const record = reference.val()

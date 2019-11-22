@@ -2,6 +2,7 @@
 import firebase from 'firebase/app'
 
 import 'firebase/firestore'
+import 'firebase/functions'
 import 'firebase/analytics'
 import 'firebase/storage'
 
@@ -19,12 +20,14 @@ const config = {
 let database = {}
 let storage = {}
 let analytics = {}
+let functions = {}
 
 if (firebase) {
   firebase.initializeApp(config)
   database = firebase.firestore()
   storage = firebase.storage()
   analytics = firebase.analytics()
+  functions = firebase.functions()
 }
 
-export { database, storage, analytics }
+export { database, storage, analytics, functions }
