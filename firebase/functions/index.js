@@ -10,14 +10,11 @@ const client = algoliasearch(ALGOLIA_ID, ALGOLIA_ADMIN_KEY)
 exports.onReferenceCreated = functions.firestore
   .document('references/{referenceId}')
   .onCreate((snap, context) => {
-    // Get the note document
     const reference = snap.data()
+    const index = client.initIndex(ALGOLIA_INDEX_NAME)
 
-    // Add an 'objectID' field which Algolia requires
     reference.objectID = context.params.referenceId
 
-    // Write to the algolia index
-    const index = client.initIndex(ALGOLIA_INDEX_NAME)
     return index
       .saveObject(reference)
       .then(() => {
@@ -28,7 +25,7 @@ exports.onReferenceCreated = functions.firestore
       })
   })
 
-exports.onReferenceUpdated = functions.firstore
+exports.onReferenceUpdated = functions.firestore
   .document('references/{referenceId}')
   .onUpdate((snap, context) => {
     const index = client.initIndex(ALGOLIA_INDEX_NAME)
