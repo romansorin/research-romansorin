@@ -10,7 +10,7 @@ import { Layout, SEO } from 'Components'
 import { LiaInput } from 'Components/Input'
 import { PrimaryButton } from 'Components/Button'
 
-import { algolia } from 'Firebase/functions/algolia'
+import { algolia } from 'Firebase'
 
 const columnStyles = {
   left: 'pl-1 w-1/3',

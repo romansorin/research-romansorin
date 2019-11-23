@@ -1,3 +1,5 @@
+import algoliasearch from 'algoliasearch'
+
 export {
   database as Database,
   storage as Storage,
@@ -10,4 +12,4 @@ const algolia = algoliasearch(
   process.env.ALGOLIA_API_KEY
 )
 
-const index = algolia.initIndex(process.env.ALGOLIA_INDEX_NAME)
+export { algolia }
