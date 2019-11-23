@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { storage } from '../../../firebase'
+import { Storage } from 'Firebase'
 
 import Heading from './Heading'
 import Aside from './Aside'
@@ -7,21 +7,23 @@ import Main from './Main'
 
 const Reference = props => {
   const [referenceUrl, setReferenceUrl] = useState('')
-  useEffect(() => {
-    async function getDownloadUrl () {
-      if (props.storage_url) {
-        await storage
-          .refFromURL(props.storage_url)
-          .getDownloadURL()
-          .then(url => {
-            setReferenceUrl(url)
-          })
-          .catch(error => console.log(error))
+  useEffect(
+    () => {
+      async function getDownloadUrl () {
+        if (props.storage_url) {
+          await Storage.refFromURL(props.storage_url)
+            .getDownloadURL()
+            .then(url => {
+              setReferenceUrl(url)
+            })
+            .catch(error => console.log(error))
+        }
       }
-    }
 
-    getDownloadUrl()
-  }, [props.storage_url])
+      getDownloadUrl()
+    },
+    [props.storage_url]
+  )
   return (
     <section>
       <Heading
@@ -33,7 +35,7 @@ const Reference = props => {
         <Aside
           title={props.title}
           downloadUrl={referenceUrl}
-          className='md:pr-16 md:mb-0 mb-10'
+          className=' md:pr-16 md:mb-0 mb-10'
           date={props.date_posted}
         />
         <Main storageUrl={referenceUrl} citation={props.citation}>

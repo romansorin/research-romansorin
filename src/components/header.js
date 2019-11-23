@@ -1,7 +1,8 @@
+import React from 'react'
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
-import React from 'react'
-import Button from './Button/Button'
+
+import { Button } from 'Components/Button'
 
 const Header = ({ siteTitle }) => (
   <div>

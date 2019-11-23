@@ -9,6 +9,7 @@ const PrimaryButton = props => {
     case 0:
       return (
         <Button
+          {...props}
           className={`${
             props.className ? props.className + ' ' : ''
           }${commonStyles} bg-theme-2 hover:bg-theme-5 focus:bg-theme-5`}
@@ -19,6 +20,7 @@ const PrimaryButton = props => {
     case 1:
       return (
         <Button
+          {...props}
           className={`${
             props.className ? props.className + ' ' : ''
           }${commonStyles} bg-theme-5 hover:bg-theme-4 focus:bg-theme-4`}
@@ -29,6 +31,7 @@ const PrimaryButton = props => {
     case 2:
       return (
         <Button
+          {...props}
           className={`${
             props.className ? props.className + ' ' : ''
           }${commonStyles} bg-theme-0 hover:bg-theme-1 focus:bg-theme-1`}
@@ -39,6 +42,7 @@ const PrimaryButton = props => {
     case 3:
       return (
         <Button
+          {...props}
           className={`${
             props.className ? props.className + ' ' : ''
           }${commonStyles} bg-text-2 hover:bg-text-1 focus:bg-text-1`}
@@ -47,7 +51,7 @@ const PrimaryButton = props => {
         </Button>
       )
     default:
-      return <Button>{props.children}</Button>
+      return <Button {...props}>{props.children}</Button>
   }
 }
 

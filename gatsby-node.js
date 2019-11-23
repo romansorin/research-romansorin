@@ -1,4 +1,19 @@
+const path = require('path')
+
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        Components: path.resolve(__dirname, 'src/components'),
+        Firebase: path.resolve(__dirname, 'firebase'),
+        Models: path.resolve(__dirname, 'src/models'),
+        Icons: path.resolve(__dirname, 'src/icons'),
+        Images: path.resolve(__dirname, 'src/images'),
+        Pages: path.resolve(__dirname, 'src/pages'),
+        Stories: path.resolve(__dirname, 'src/stories')
+      }
+    }
+  })
   if (stage === 'build-html') {
     actions.setWebpackConfig({
       module: {

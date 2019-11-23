@@ -1,100 +1,91 @@
-import React, { useEffect } from 'react'
-import { getAllReferences } from '../../models/Reference'
-import Layout from '../../components/layout'
-import SEO from '../../components/seo'
-import { LiaInput } from '../../components/Input'
-import { Table } from '../../components/Table'
-import { PrimaryButton } from '../../components/Button'
+import React from 'react'
+import {
+  InstantSearch,
+  connectSearchBox,
+  connectInfiniteHits
+} from 'react-instantsearch-dom'
+import { Link } from 'gatsby'
 
-const tableData = {
-  rows: [
-    {
-      className: 'w-full flex',
-      columns: [
-        { renderAs: 'text', className: 'pl-1 mr-auto', text: 'Paper' },
-        {
-          className: 'ml-4 md:ml-0 mr-auto',
-          renderAs: 'text',
-          text: 'Author'
-        },
-        {
-          className: 'ml-auto mr-3 uppercase font-bold text-theme-2',
-          renderAs: 'Link',
-          to: 'https://romansorin.com',
-          text: 'View'
-        }
-      ]
-    },
-    {
-      className: 'w-full flex',
-      columns: [
-        { renderAs: 'text', className: 'pl-1 mr-auto', text: 'Paper' },
-        {
-          className: 'ml-4 md:ml-0 mr-auto',
-          renderAs: 'text',
-          text: 'Author'
-        },
-        {
-          className: 'ml-auto mr-3 uppercase font-bold text-theme-2',
-          renderAs: 'Link',
-          to: 'https://romansorin.com',
-          text: 'View'
-        }
-      ]
-    },
-    {
-      className: 'w-full flex',
-      columns: [
-        { renderAs: 'text', className: 'pl-1 mr-auto', text: 'Paper' },
-        {
-          className: 'ml-4 md:ml-0 mr-auto',
-          renderAs: 'text',
-          text: 'Author'
-        },
-        {
-          className: 'ml-auto mr-3 uppercase font-bold text-theme-2',
-          renderAs: 'Link',
-          to: 'https://romansorin.com',
-          text: 'View'
-        }
-      ]
-    },
-    {
-      className: 'w-full flex',
-      columns: [
-        { renderAs: 'text', className: 'pl-1 mr-auto', text: 'Paper' },
-        {
-          className: 'ml-4 md:ml-0 mr-auto',
-          renderAs: 'text',
-          text: 'Author'
-        },
-        {
-          className: 'ml-auto mr-3 uppercase font-bold text-theme-2',
-          renderAs: 'Link',
-          to: 'https://romansorin.com',
-          text: 'View'
-        }
-      ]
-    }
-  ]
+import { Layout, SEO } from 'Components'
+import { LiaInput } from 'Components/Input'
+import { PrimaryButton } from 'Components/Button'
+
+import { algolia } from 'Firebase'
+
+const columnStyles = {
+  left: 'pl-1 w-1/3',
+  middle: 'ml-4 md:ml-0 mr-auto',
+  right: 'ml-auto mr-3 uppercase font-bold text-theme-2'
 }
+
+const ResultsTable = ({ hits }) => (
+  <table className='mx-auto w-11/12 md:w-full mt-10 mb-20'>
+    <tbody>
+      {hits.map((hit, i) => (
+        <tr className='odd:bg-white-1 even:bg-white-0 py-4 w-full flex' key={i}>
+          <td className={`${columnStyles.left} text-text-2`}>{hit.title}</td>
+          <td className={`${columnStyles.middle} text-text-2`}>
+            {hit.authors.map((author, i) => {
+              if (i < hit.authors.length - 1) return `${author}, `
+              else return author
+            })}
+          </td>
+          <td className={`${columnStyles.right}`}>
+            <Link to={`references/${hit.slug}`}>View</Link>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+)
+
+const Search = connectSearchBox(({ currentRefinement, refine }) => (
+  <LiaInput
+    placeholder='Paper title or author'
+    type='search'
+    value={currentRefinement}
+    onChange={event => refine(event.currentTarget.value)}
+  />
+))
+
+const InfiniteHits = ({ hits, hasMore, refineNext }) => (
+  <div>
+    <ResultsTable hits={hits} />
+
+    <h2
+      className={`${
+        hits.length > 0 ? 'hidden ' : ' '
+      }text-text-2 font-medium text-3xl text-center my-16`}
+    >
+      No results found.
+    </h2>
+
+    <PrimaryButton
+      disabled={!hasMore}
+      onClick={refineNext}
+      className={`${!hasMore ? 'opacity-50 cursor-default ' : ' '}${
+        hits.length === 0 ? 'hidden ' : ' '
+      }px-10 mx-auto flex`}
+      variant={0}
+    >
+      Load more
+    </PrimaryButton>
+  </div>
+)
+
+const Results = connectInfiniteHits(InfiniteHits)
+
 const ReferencesPage = () => {
-  // useEffect(() => {
-  //   const refs = getAllReferences().then(res =>
-  //     res.forEach(doc => console.log(doc.data()))
-  //   )
-  // }, [])
   return (
     <Layout>
       <SEO title='All references' />
       <h1 className='mb-3 text-text-2 text-3xl md:text-4xl leading-snug font-medium'>
         References
       </h1>
-      <LiaInput placeholder='Paper title or author' />
-      <Table className='mx-auto w-11/12 md:w-full mt-10 mb-20' {...tableData} />
-      <PrimaryButton className='px-10 mx-auto flex' variant={0}>
-        Load more
-      </PrimaryButton>
+      <InstantSearch searchClient={algolia} indexName='references'>
+        <Search />
+        <Results />
+      </InstantSearch>
     </Layout>
   )
 }

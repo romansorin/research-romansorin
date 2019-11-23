@@ -1,29 +1,37 @@
-import { database } from '../../firebase'
+import { Database } from 'Firebase'
 
 const PATH = 'references'
-const DB = database.collection(PATH)
+const DB = Database.collection(PATH)
 
 /**
- * Title, author, storageUrl, citation, summary
+ * Reference object
  *
- * @param {object} data
+ * @export
+ * @class Reference
  */
+export class Reference {
+  constructor (doc) {
+    this.authors = doc.authors
+    this.title = doc.title
+    this.summary = doc.summary
+    this.date_posted = doc.date_posted
+    this.citation = doc.citation
+    this.storage_url = doc.storage_url
+    this.slug = doc.slug
+  }
 
-/**
-  * {
-    "references": {
-      "reference": {
-        "title": "",
-        "authors": [],
-        "storage_url": "",
-        "citation": "",
-        "summary": "",
-        "date_posted": "",
-        "slug": ""
-      }
+  get referenceObject () {
+    return {
+      title: this.title,
+      authors: this.authors,
+      summary: this.summary,
+      date_posted: this.date_posted,
+      citation: this.citation,
+      storage_url: this.storage_url,
+      slug: this.slug
     }
   }
-  */
+}
 
 export const getAllReferences = async () => {
   try {

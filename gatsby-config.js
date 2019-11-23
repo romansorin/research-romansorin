@@ -43,6 +43,7 @@ module.exports = {
       options: {
         prefixes: ['/references/*', '/references/citations/*']
       }
-    }
+    },
+    'gatsby-plugin-remove-trailing-slashes'
   ]
 }

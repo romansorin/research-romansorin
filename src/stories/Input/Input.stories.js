@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Wrapper, Row } from '../layout'
+import { Wrapper, Row } from 'Stories/layout'
 import {
   Input,
   RtaInput,
@@ -8,7 +8,7 @@ import {
   RiaInput,
   LriaInput,
   LirtInput
-} from '../../Input'
+} from 'Components/Input'
 
 export default {
   title: 'Input/Field'

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { CheckboxChecked, CheckboxUnchecked } from '../../icons'
+import { CheckboxChecked, CheckboxUnchecked } from 'Icons/Checkbox'
 
 const commonStyles = 'absolute top-0 left-0'
 

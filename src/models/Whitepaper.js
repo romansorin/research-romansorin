@@ -1,33 +1,13 @@
-import { database } from '../../firebase'
+import { Database } from 'Firebase'
 
 const PATH = 'whitepaper'
-const DB = database.collection(PATH)
+const DB = Database.collection(PATH)
 
 /**
  * Title, author, storageUrl, citation, summary
  *
  * @param {object} data
  */
-
-/**
-  * {
-  "sections": {
-    "section": {
-    	"sectionId": 0,
-  		"title": "",
-  	}
-  },
-  "content": {
-  	"sectionOne": {
-  		"sectionId": 0,
-  		"title": "",
-  		"subtitle": "",
-  		"content": "",
-  		"references": ""
-  	}
-  }
-}
-  */
 
 export const Whitepaper = data => {
   DB.add(data)

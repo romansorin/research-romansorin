@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
-import { Wrapper, Row } from '../layout'
-import Checkbox from '../../Checkbox/Checkbox'
+import { Wrapper, Row } from 'Stories/layout'
+import { Checkbox } from 'Components/Checkbox'
 
 export default { title: 'Input/Checkbox' }
 

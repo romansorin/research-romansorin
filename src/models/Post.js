@@ -1,26 +1,13 @@
-import { database } from '../../firebase'
+import { Database } from 'Firebase'
 
 const PATH = 'posts'
-const DB = database.collection(PATH)
+const DB = Database.collection(PATH)
 
 /**
  * Title, subtitle, date, content
  *
  * @param {object} data
  */
-
-/**
-  * {
-  "posts": {
-    "post": {
-      "title": "",
-      "subtitle": "",
-      "date": "",
-      "content": ""
-    }
-  }
-}
-  */
 
 export const Post = data => {
   DB.add(data)

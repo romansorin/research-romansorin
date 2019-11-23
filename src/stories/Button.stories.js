@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { Button, PrimaryButton, SecondaryButton } from '../Button'
-import { Wrapper, Row } from './layout'
+import { Wrapper, Row } from 'Stories/layout'
+import { Button, PrimaryButton, SecondaryButton } from 'Components/Button'
 
 export default {
   title: 'Button'

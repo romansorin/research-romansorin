@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { Wrapper, Row } from './layout'
-import { Table } from '../Table'
+import { Wrapper, Row } from 'Stories/layout'
+import { Table } from 'Components/Table'
 
 export default {
   title: 'Table'
