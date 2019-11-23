@@ -27,3 +27,37 @@ exports.onReferenceCreated = functions.firestore
         console.log('Error when importing Reference into Algolia: ', error)
       })
   })
+
+exports.onReferenceUpdated = functions.firstore
+  .document('references/{referenceId}')
+  .onUpdate((snap, context) => {
+    const index = client.initIndex(ALGOLIA_INDEX_NAME)
+    const reference = snap.after.data()
+
+    reference.objectID = context.params.referenceId
+
+    return index
+      .saveObject(reference)
+      .then(() => {
+        console.log('Reference updated in Algolia')
+      })
+      .catch(error => {
+        console.log('Error when updating Reference in Algolia: ', error)
+      })
+  })
+
+exports.onReferenceDeleted = functions.firestore
+  .document('references/{referenceId}')
+  .onDelete((snap, context) => {
+    const index = client.initIndex(ALGOLIA_INDEX_NAME)
+    const objectID = context.params.referenceId
+
+    return index
+      .deleteObject(objectID)
+      .then(() => {
+        console.log('Firebase object deleted from Algolia', objectID)
+      })
+      .catch(error => {
+        console.error('Error when deleting contact from Algolia', error)
+      })
+  })
