@@ -1,94 +1,91 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
+import {
+  InstantSearch,
+  connectSearchBox,
+  connectInfiniteHits
+} from 'react-instantsearch-dom'
+import { Link } from 'gatsby'
 
 import { Layout, SEO } from 'Components'
 import { LiaInput } from 'Components/Input'
-import { Table } from 'Components/Table'
 import { PrimaryButton } from 'Components/Button'
 
-import { Database } from 'Firebase'
-
-const PATH = 'references'
-const DB = Database.collection(PATH)
+import { algolia } from 'Firebase'
 
 const columnStyles = {
   left: 'pl-1 w-1/3',
   middle: 'ml-4 md:ml-0 mr-auto',
   right: 'ml-auto mr-3 uppercase font-bold text-theme-2'
 }
-const renderAs = {
-  TEXT: 'text',
-  LINK: 'Link'
-}
+
+const ResultsTable = ({ hits }) => (
+  <table className='mx-auto w-11/12 md:w-full mt-10 mb-20'>
+    <tbody>
+      {hits.map((hit, i) => (
+        <tr className='odd:bg-white-1 even:bg-white-0 py-4 w-full flex' key={i}>
+          <td className={`${columnStyles.left} text-text-2`}>{hit.title}</td>
+          <td className={`${columnStyles.middle} text-text-2`}>
+            {hit.authors.map((author, i) => {
+              if (i < hit.authors.length - 1) return `${author}, `
+              else return author
+            })}
+          </td>
+          <td className={`${columnStyles.right}`}>
+            <Link to={`references/${hit.slug}`}>View</Link>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+)
+
+const Search = connectSearchBox(({ currentRefinement, refine }) => (
+  <LiaInput
+    placeholder='Paper title or author'
+    type='search'
+    value={currentRefinement}
+    onChange={event => refine(event.currentTarget.value)}
+  />
+))
+
+const InfiniteHits = ({ hits, hasMore, refineNext }) => (
+  <div>
+    <ResultsTable hits={hits} />
+
+    <h2
+      className={`${
+        hits.length > 0 ? 'hidden ' : ' '
+      }text-text-2 font-medium text-3xl text-center my-16`}
+    >
+      No results found.
+    </h2>
+
+    <PrimaryButton
+      disabled={!hasMore}
+      onClick={refineNext}
+      className={`${!hasMore ? 'opacity-50 cursor-default ' : ' '}${
+        hits.length === 0 ? 'hidden ' : ' '
+      }px-10 mx-auto flex`}
+      variant={0}
+    >
+      Load more
+    </PrimaryButton>
+  </div>
+)
+
+const Results = connectInfiniteHits(InfiniteHits)
 
 const ReferencesPage = () => {
-  const [references, setReferences] = useState()
-
-  const setRows = data => {
-    const rows = []
-    data.map(doc => {
-      rows.push({
-        columns: [
-          {
-            renderAs: renderAs.TEXT,
-            className: columnStyles.left,
-            text: doc.title
-          },
-          {
-            renderAs: renderAs.TEXT,
-            className: columnStyles.middle,
-            text: doc.authors.map((author, i) => {
-              if (i < doc.authors.length - 1) return `${author}, `
-              else return author
-            })
-          },
-          {
-            renderAs: renderAs.LINK,
-            to: `references/${doc.slug}`,
-            className: columnStyles.right,
-            text: 'View'
-          }
-        ]
-      })
-    })
-    return setReferences({ rows: rows })
-  }
-
-  useEffect(
-    () => {
-      const data = []
-      DB.limit(5)
-        .get()
-        .then(querySnapshot => {
-          querySnapshot.forEach(doc => data.push(doc.data()))
-          setRows(data)
-        })
-    },
-    [renderAs, columnStyles]
-  )
-
   return (
     <Layout>
       <SEO title='All references' />
       <h1 className='mb-3 text-text-2 text-3xl md:text-4xl leading-snug font-medium'>
         References
       </h1>
-      <LiaInput placeholder='Paper title or author' />
-      {/* TODO: Search through Algolia to find a row functionality */}
-      {references && references.rows.length > 0 ? (
-        <Table
-          className='mx-auto w-11/12 md:w-full mt-10 mb-20'
-          {...references}
-        />
-      ) : (
-        ''
-      )}
-      {/* TODO: Author ellipsis/truncation when goes over x amount of chars in that column */}
-      {/* TODO: Implement display for when no results are found or no rows exist. */}
-      {/*
-      <PrimaryButton className='px-10 mx-auto flex' variant={0}>
-        Load more
-      </PrimaryButton> */}
-      {/* TODO: Load more functionality */}
+      <InstantSearch searchClient={algolia} indexName='references'>
+        <Search />
+        <Results />
+      </InstantSearch>
     </Layout>
   )
 }

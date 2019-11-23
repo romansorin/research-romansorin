@@ -58,7 +58,9 @@ const Aside = ({ title, downloadUrl, className, date }) => {
           <PrimaryButton variant={0}>DOWNLOAD</PrimaryButton>
         </a>
       ) : (
-        ''
+        <PrimaryButton className='opacity-0 pointer-events-none' variant={0}>
+          DOWNLOAD
+        </PrimaryButton>
       )}
     </aside>
   )

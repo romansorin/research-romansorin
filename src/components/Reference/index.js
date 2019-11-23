@@ -35,7 +35,7 @@ const Reference = props => {
         <Aside
           title={props.title}
           downloadUrl={referenceUrl}
-          className='w-full md:pr-16 md:mb-0 mb-10'
+          className=' md:pr-16 md:mb-0 mb-10'
           date={props.date_posted}
         />
         <Main storageUrl={referenceUrl} citation={props.citation}>

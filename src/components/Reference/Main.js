@@ -6,7 +6,7 @@ const Main = props => {
   return (
     <main>
       <p className='text-text-2 leading-relaxed text-base md:text-lg mb-16'>
-        {props.children}
+        {props.children ? props.children : 'No summary available.'}
       </p>
       <p className='text-text-2 leading-relaxed text-base md:text-lg mb-8 md:mb-5'>
         Read the paper{' '}
@@ -17,7 +17,9 @@ const Main = props => {
           here.
         </a>
       </p>
-      <Citation>{props.citation}</Citation>
+      <Citation>
+        {props.citation ? props.citation : 'No citation available.'}
+      </Citation>
     </main>
   )
 }
