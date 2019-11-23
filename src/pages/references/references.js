@@ -10,7 +10,7 @@ import { Layout, SEO } from 'Components'
 import { LiaInput } from 'Components/Input'
 import { PrimaryButton } from 'Components/Button'
 
-import { algolia } from 'Firebase/algolia'
+import { algolia } from 'Firebase/functions/algolia'
 
 const columnStyles = {
   left: 'pl-1 w-1/3',
@@ -63,9 +63,9 @@ const InfiniteHits = ({ hits, hasMore, refineNext }) => (
     <PrimaryButton
       disabled={!hasMore}
       onClick={refineNext}
-      className={`${
-        !hasMore ? 'opacity-50 cursor-default ' : ' '
-      }${hits.length === 0 ? 'hidden ' : ' '}px-10 mx-auto flex`}
+      className={`${!hasMore ? 'opacity-50 cursor-default ' : ' '}${
+        hits.length === 0 ? 'hidden ' : ' '
+      }px-10 mx-auto flex`}
       variant={0}
     >
       Load more
@@ -86,7 +86,6 @@ const ReferencesPage = () => {
         <Search />
         <Results />
       </InstantSearch>
-
     </Layout>
   )
 }
