@@ -23,10 +23,11 @@ const CreateReferencePage = () => {
   }
 
   const handleRemoveAuthor = id => {
-    const newAuthors = authors.filter((_, index) => {
-      return id !== index
-    })
-    setAuthors([...newAuthors])
+    setAuthors([
+      ...authors.filter((_, index) => {
+        return id !== index
+      })
+    ])
   }
 
   const addReference = () => {
