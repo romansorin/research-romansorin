@@ -7,6 +7,7 @@ const SecondaryButton = props => {
     case 0:
       return (
         <Button
+          {...props}
           className={`${
             props.className ? props.className + ' ' : ''
           }text-theme-2 hover:text-text-5 focus:text-text-5`}
@@ -17,6 +18,7 @@ const SecondaryButton = props => {
     case 1:
       return (
         <Button
+          {...props}
           className={`${
             props.className ? props.className + ' ' : ''
           }text-theme-0 hover:text-theme-1 focus:text-theme-1`}
@@ -27,6 +29,7 @@ const SecondaryButton = props => {
     case 2:
       return (
         <Button
+          {...props}
           className={`${
             props.className ? props.className + ' ' : ''
           }text-text-1 hover:text-text-2 focus:text-text-2`}
@@ -35,7 +38,7 @@ const SecondaryButton = props => {
         </Button>
       )
     default:
-      return <Button>{props.children}</Button>
+      return <Button {...props}>{props.children}</Button>
   }
 }
 
