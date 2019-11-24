@@ -17,9 +17,6 @@ const CreateReferencePage = () => {
       date_posted: '',
       storage_url: ''
     },
-    {
-      authors: []
-    },
     callback
   )
 
@@ -47,25 +44,38 @@ const CreateReferencePage = () => {
             <Input
               type='text'
               name='slug'
-              placeholder='Placeholder'
+              placeholder='reference-slug'
               id='slug'
-              value={inputs.slug}
+              value={inputs.slug.replace(/\s+/g, '-').toLowerCase()}
               className='mt-3'
               onChange={handleInputChange}
             />
           </Column>
         </Row>
-        <Row className='justify-end flex-wrap my-6'>
+        {/* <Row className='justify-end flex-wrap my-6'>
           <Column className='w-full'>
-            <Label className='mb-3' htmlFor='authors'>
-              Authors
-            </Label>
-            <RiaInput type='text' name='authors' placeholder='Placeholder' />
+            <Label htmlFor='authors'>Authors</Label>
+            {authors.map(author => (
+              <RiaInput
+                key={author.id}
+                value={author.value}
+                className='mt-3 mb-3'
+                type='text'
+                name={`author${author.id}`}
+                onChange={handleAuthorInputChange}
+                placeholder='Placeholder'
+              />
+            ))}
           </Column>
-          <SecondaryButton type='button' className='mt-8' variant={0}>
+          <SecondaryButton
+            onClick={addAuthor}
+            type='button'
+            className='mt-8'
+            variant={0}
+          >
             Add author
           </SecondaryButton>
-        </Row>
+        </Row> */}
         <Column className='my-6'>
           <Label htmlFor='summary'>Summary</Label>
           <TextArea
@@ -105,7 +115,7 @@ const CreateReferencePage = () => {
         </Row>
         <PrimaryButton
           variant={0}
-          className='mt-20 px-16 text-lg tracking-wide'
+          className='mt-12 px-16 tracking-wide'
           type='submit'
         >
           create
