@@ -11,6 +11,24 @@ const PATH = 'references'
 const DB = Database.collection(PATH)
 
 const CreateReferencePage = () => {
+  const [authors, setAuthors] = useState([''])
+
+  const handleAuthorInputChange = (event, index) => {
+    event.persist()
+
+    const newAuthors = [...authors]
+    newAuthors[index] = event.target.value
+
+    setAuthors(newAuthors, console.log(authors))
+  }
+
+  const handleRemoveAuthor = id => {
+    const newAuthors = authors.filter((_, index) => {
+      return id !== index
+    })
+    setAuthors([...newAuthors])
+  }
+
   const addReference = () => {
     DB.add(inputs)
       .then(function (docRef) {
@@ -24,6 +42,7 @@ const CreateReferencePage = () => {
   const { inputs, handleInputChange, handleSubmit } = useForm(
     {
       title: '',
+      authors: [],
       summary: '',
       slug: '',
       citation: '',
@@ -65,30 +84,33 @@ const CreateReferencePage = () => {
             />
           </Column>
         </Row>
-        {/* <Row className='justify-end flex-wrap my-6'>
+        <Row className='justify-end flex-wrap my-6'>
           <Column className='w-full'>
             <Label htmlFor='authors'>Authors</Label>
-            {authors.map(author => (
-              <RiaInput
-                key={author.id}
-                value={author.value}
-                className='mt-3 mb-3'
-                type='text'
-                name={`author${author.id}`}
-                onChange={handleAuthorInputChange}
-                placeholder='Placeholder'
-              />
+            {authors.map((author, i) => (
+              <div key={i}>
+                <RiaInput
+                  type='text'
+                  className='mt-3 mb-3'
+                  placeholder='Author name'
+                  onChange={e => handleAuthorInputChange(e, i)}
+                  value={author}
+                />
+                <button type='button' onClick={() => handleRemoveAuthor(i)}>
+                  Remove
+                </button>
+              </div>
             ))}
           </Column>
           <SecondaryButton
-            onClick={addAuthor}
+            onClick={() => setAuthors([...authors, ''])}
             type='button'
             className='mt-8'
             variant={0}
           >
             Add author
           </SecondaryButton>
-        </Row> */}
+        </Row>
         <Column className='my-6'>
           <Label htmlFor='summary'>Summary</Label>
           <TextArea
