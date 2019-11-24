@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const useForm = (initialState, initialAuthorState, callback) => {
+const useForm = (initialState, callback) => {
   const [inputs, setInputs] = useState(initialState)
 
   const handleSubmit = event => {
@@ -23,7 +23,6 @@ const useForm = (initialState, initialAuthorState, callback) => {
   return {
     handleSubmit,
     handleInputChange,
-
     inputs
   }
 }

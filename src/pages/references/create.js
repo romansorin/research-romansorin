@@ -1,12 +1,25 @@
 import React, { useState } from 'react'
+import Select from 'react-select'
 
 import { Input, Label, TextArea, RiaInput } from 'Components/Input'
 import { PrimaryButton, SecondaryButton } from 'Components/Button'
 import { Layout, Row, Column } from 'Components/index'
 import useForm from './useForm'
+import { Database } from 'Firebase'
+
+const PATH = 'references'
+const DB = Database.collection(PATH)
 
 const CreateReferencePage = () => {
-  const callback = () => console.log(inputs)
+  const addReference = () => {
+    DB.add(inputs)
+      .then(function (docRef) {
+        console.log('Document written with ID: ', docRef.id)
+      })
+      .catch(function (error) {
+        console.error('Error adding document: ', error)
+      })
+  }
 
   const { inputs, handleInputChange, handleSubmit } = useForm(
     {
@@ -17,7 +30,7 @@ const CreateReferencePage = () => {
       date_posted: '',
       storage_url: ''
     },
-    callback
+    addReference
   )
 
   return (
@@ -80,7 +93,7 @@ const CreateReferencePage = () => {
           <Label htmlFor='summary'>Summary</Label>
           <TextArea
             name='summary'
-            placeholder='Summary'
+            placeholder='Reference summary or abstract...'
             id='summary'
             value={inputs.summary}
             className='mt-3'
@@ -95,7 +108,7 @@ const CreateReferencePage = () => {
               id='citation'
               type='text'
               className='mt-3'
-              placeholder='Placeholder'
+              placeholder='IEEE-format'
               value={inputs.citation}
               onChange={handleInputChange}
             />
@@ -106,11 +119,26 @@ const CreateReferencePage = () => {
               name='storage_url'
               type='text'
               className='mt-3'
-              placeholder='Placeholder'
+              placeholder='gs URL'
               id='storage_url'
               value={inputs.storage_url}
               onChange={handleInputChange}
             />
+          </Column>
+        </Row>
+        <Row className='my-6'>
+          <Column className='w-1/2 pr-12'>
+            <Label htmlFor='date_posted'>Date Posted</Label>
+            <Input
+              name='date_posted'
+              type='text'
+              className='mt-3'
+              placeholder='UTC date'
+              id='date_posted'
+              value={inputs.date_posted}
+              onChange={handleInputChange}
+            />
+            {/* TODO: Dropdown date inputs */}
           </Column>
         </Row>
         <PrimaryButton
