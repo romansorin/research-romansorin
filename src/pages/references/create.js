@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { X } from 'react-feather'
 import firebase from 'firebase/app'
 import 'firebase/firestore'
 
@@ -96,15 +97,15 @@ const CreateReferencePage = () => {
               <div key={i}>
                 <RiaInput
                   type='text'
+                  icon='X'
+                  iconStrokeWidth='3'
+                  iconSize='18'
+                  handleIconClick={() => handleRemoveAuthor(i)}
                   className='my-3'
                   placeholder='Author name'
                   onChange={e => handleAuthorInputChange(e, i)}
                   value={author}
                 />
-                {/* TODO: Remove as per spec */}
-                <button type='button' onClick={() => handleRemoveAuthor(i)}>
-                  Remove
-                </button>
               </div>
             ))}
           </Column>
