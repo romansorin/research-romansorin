@@ -19,7 +19,7 @@ const columnStyles = {
 }
 
 const ResultsTable = ({ hits }) => (
-  <table className='mx-auto w-11/12 md:w-full mt-10 mb-20'>
+  <table className='mx-auto w-full mt-10 mb-20'>
     <tbody>
       {hits.map((hit, i) => (
         <tr className='odd:bg-white-1 even:bg-white-0 py-4 w-full flex' key={i}>

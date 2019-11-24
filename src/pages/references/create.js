@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 import Select from 'react-select'
+import firebase from 'firebase/app'
+
+import 'firebase/firestore'
 
 import { Input, Label, TextArea, RiaInput } from 'Components/Input'
 import { PrimaryButton, SecondaryButton } from 'Components/Button'
@@ -23,14 +26,19 @@ const CreateReferencePage = () => {
   }
 
   const handleRemoveAuthor = id => {
-    setAuthors([
-      ...authors.filter((_, index) => {
-        return id !== index
-      })
-    ])
+    if (authors.length > 1) {
+      setAuthors([
+        ...authors.filter((_, index) => {
+          return id !== index
+        })
+      ])
+    }
+    // TODO: Error message when trying to remove last author
   }
 
   const addReference = () => {
+    inputs.authors = authors
+
     DB.add(inputs)
       .then(function (docRef) {
         console.log('Document written with ID: ', docRef.id)
@@ -47,7 +55,7 @@ const CreateReferencePage = () => {
       summary: '',
       slug: '',
       citation: '',
-      date_posted: '',
+      date_posted: firebase.firestore.Timestamp.now(),
       storage_url: ''
     },
     addReference
@@ -59,8 +67,8 @@ const CreateReferencePage = () => {
         Create reference
       </h1>
       <form onSubmit={handleSubmit}>
-        <Row className='my-6'>
-          <Column className='w-1/2 pr-12'>
+        <Row className='my-6 flex-wrap'>
+          <Column className='my-6 md:my-0 w-full md:w-1/2 md:pr-12'>
             <Label htmlFor='title'>Title</Label>
             <Input
               type='text'
@@ -72,7 +80,7 @@ const CreateReferencePage = () => {
               onChange={handleInputChange}
             />
           </Column>
-          <Column className='w-1/2 pl-12'>
+          <Column className='my-6 md:my-0 w-full md:w-1/2 md:pl-12'>
             <Label htmlFor='slug'>Slug</Label>
             <Input
               type='text'
@@ -86,17 +94,18 @@ const CreateReferencePage = () => {
           </Column>
         </Row>
         <Row className='justify-end flex-wrap my-6'>
-          <Column className='w-full'>
+          <Column className='my-6 md:my-0 w-full'>
             <Label htmlFor='authors'>Authors</Label>
             {authors.map((author, i) => (
               <div key={i}>
                 <RiaInput
                   type='text'
-                  className='mt-3 mb-3'
+                  className='my-3'
                   placeholder='Author name'
                   onChange={e => handleAuthorInputChange(e, i)}
                   value={author}
                 />
+                {/* TODO: Remove as per spec */}
                 <button type='button' onClick={() => handleRemoveAuthor(i)}>
                   Remove
                 </button>
@@ -123,8 +132,8 @@ const CreateReferencePage = () => {
             onChange={handleInputChange}
           />
         </Column>
-        <Row className='my-6'>
-          <Column className='w-1/2 pr-12'>
+        <Row className='my-6 flex-wrap'>
+          <Column className='my-6 md:my-0 w-full md:w-1/2 md:pr-12'>
             <Label htmlFor='citation'>Citation</Label>
             <Input
               name='citation'
@@ -136,7 +145,7 @@ const CreateReferencePage = () => {
               onChange={handleInputChange}
             />
           </Column>
-          <Column className='w-1/2 pl-12'>
+          <Column className='my-6 md:my-0 w-full md:w-1/2 md:pl-12'>
             <Label htmlFor='storage_url'>Document URL</Label>
             <Input
               name='storage_url'
@@ -149,7 +158,7 @@ const CreateReferencePage = () => {
             />
           </Column>
         </Row>
-        <Row className='my-6'>
+        {/* <Row className='my-6'>
           <Column className='w-1/2 pr-12'>
             <Label htmlFor='date_posted'>Date Posted</Label>
             <Input
@@ -161,9 +170,9 @@ const CreateReferencePage = () => {
               value={inputs.date_posted}
               onChange={handleInputChange}
             />
-            {/* TODO: Dropdown date inputs */}
+          TODO: Dropdown date inputs
           </Column>
-        </Row>
+        </Row> */}
         <PrimaryButton
           variant={0}
           className='mt-12 px-16 tracking-wide'
