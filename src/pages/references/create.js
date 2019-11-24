@@ -1,14 +1,12 @@
 import React, { useState } from 'react'
-import Select from 'react-select'
 import firebase from 'firebase/app'
-
 import 'firebase/firestore'
 
 import { Input, Label, TextArea, RiaInput } from 'Components/Input'
 import { PrimaryButton, SecondaryButton } from 'Components/Button'
 import { Layout, Row, Column } from 'Components/index'
-import useForm from './useForm'
 import { Database } from 'Firebase'
+import useForm from './useForm'
 
 const PATH = 'references'
 const DB = Database.collection(PATH)
@@ -40,9 +38,7 @@ const CreateReferencePage = () => {
     inputs.authors = authors
 
     DB.add(inputs)
-      .then(function (docRef) {
-        console.log('Document written with ID: ', docRef.id)
-      })
+      .then(() => console.log('Document written'))
       .catch(function (error) {
         console.error('Error adding document: ', error)
       })
@@ -156,6 +152,7 @@ const CreateReferencePage = () => {
               value={inputs.storage_url}
               onChange={handleInputChange}
             />
+            {/* TODO: Select from storage instead of using URL */}
           </Column>
         </Row>
         {/* <Row className='my-6'>
