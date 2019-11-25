@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { X } from 'react-feather'
 import firebase from 'firebase/app'
 import 'firebase/firestore'
 
@@ -21,7 +20,7 @@ const CreateReferencePage = () => {
     const newAuthors = [...authors]
     newAuthors[index] = event.target.value
 
-    setAuthors(newAuthors, console.log(authors))
+    setAuthors(newAuthors)
   }
 
   const handleRemoveAuthor = id => {
