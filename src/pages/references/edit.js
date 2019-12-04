@@ -10,6 +10,7 @@ const DB = Database.collection(PATH)
 
 const EditReferencePage = props => {
   const [authors, setAuthors] = useState([])
+  const [invalidHover, setInvalidHover] = useState(false)
   const [inputs, setInputs] = useState({
     title: '',
     authors: [],
@@ -96,9 +97,17 @@ const EditReferencePage = props => {
     DB.doc(documentId)
       .set({ ...inputs })
       .then(() => console.log('Document updated'))
-      .catch(function (error) {
-        console.error('Error updating document: ', error)
+      .catch(error => console.error('Error updating document: ', error))
+  }
+
+  const deleteReference = () => {
+    DB.doc(documentId)
+      .delete()
+      .then(() => {
+        console.log('Document deleted')
+        navigate('/references')
       })
+      .catch(error => console.log('Error deleting document', error))
   }
 
   return (
@@ -223,7 +232,18 @@ const EditReferencePage = props => {
             className='mt-12 px-16 tracking-wide'
             type='submit'
           >
-            create
+            save
+          </PrimaryButton>
+          <PrimaryButton
+            // variant={0}
+            onMouseEnter={() => setInvalidHover(true)}
+            onMouseLeave={() => setInvalidHover(false)}
+            style={invalidHover ? { backgroundColor: '#F41901' } : {}}
+            className='mt-12 px-12 mx-6 bg-invalid invalid-hover text-white-0 tracking-wide'
+            type='button'
+            onClick={deleteReference}
+          >
+            delete
           </PrimaryButton>
         </form>
       )}
