@@ -33,7 +33,7 @@ const ResultsTable = ({ hits }) => (
               : ''}
           </td>
           <td className={`${columnStyles.right}`}>
-            <Link to={`references/${hit.slug}`}>View</Link>
+            <Link to={`/references/${hit.slug}`}>View</Link>
           </td>
         </tr>
       ))}

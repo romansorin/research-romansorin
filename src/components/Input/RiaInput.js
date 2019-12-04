@@ -17,6 +17,7 @@ const RiaInput = props => {
     handleIconClick,
     iconStrokeWidth,
     iconSize,
+    iconWrapperStyles,
     icon,
     ...inputProps
   } = props
@@ -75,7 +76,9 @@ const RiaInput = props => {
           <span
             onMouseEnter={() => setInputClasses('shadow-1')}
             onMouseLeave={() => setInputClasses('shadow-0')}
-            className={`${commonStyles} cursor-pointer`}
+            className={`${
+              iconWrapperStyles ? iconWrapperStyles + ' ' : ''
+            }${commonStyles} cursor-pointer`}
           >
             <Icon />
           </span>

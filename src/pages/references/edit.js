@@ -19,6 +19,8 @@ const EditReferencePage = props => {
     date_posted: '',
     storage_url: ''
   })
+  const [documentId, setDocumentId] = useState()
+
   const [isLoading, setIsLoading] = useState(false)
 
   useEffect(
@@ -31,16 +33,19 @@ const EditReferencePage = props => {
         .then(querySnapshot => {
           if (querySnapshot.size === 0) navigate('/404')
           else {
-            querySnapshot.forEach(doc => data.push(doc.data()))
+            querySnapshot.forEach(doc => {
+              data.push(doc.data())
+              setDocumentId(doc.id)
+            })
             setInputs({
               title: data[0].title,
-              authors: data[0].authors,
               summary: data[0].summary,
               slug: data[0].slug,
               citation: data[0].citation,
               date_posted: data[0].date_posted,
               storage_url: data[0].storage_url
             })
+            setAuthors(data[0].authors)
             setIsLoading(false)
           }
         })
@@ -80,17 +85,20 @@ const EditReferencePage = props => {
   const handleInputChange = event => {
     event.persist()
 
-    setInputs(
-      inputs => ({
-        ...inputs,
-        [event.target.name]: event.target.value
-      }),
-      console.log(inputs)
-    )
+    setInputs(inputs => ({
+      ...inputs,
+      [event.target.name]: event.target.value
+    }))
   }
 
   const editReference = () => {
     inputs.authors = authors
+    DB.doc(documentId)
+      .set({ ...inputs })
+      .then(() => console.log('Document updated'))
+      .catch(function (error) {
+        console.error('Error updating document: ', error)
+      })
   }
 
   return (
@@ -138,6 +146,7 @@ const EditReferencePage = props => {
                     icon='X'
                     iconStrokeWidth='3'
                     iconSize='18'
+                    iconWrapperStyles='mt-6'
                     handleIconClick={() => handleRemoveAuthor(i)}
                     className='my-3'
                     placeholder='Author name'

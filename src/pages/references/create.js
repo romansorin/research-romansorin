@@ -97,6 +97,7 @@ const CreateReferencePage = () => {
                 <RiaInput
                   type='text'
                   icon='X'
+                  iconWrapperStyles='mt-6'
                   iconStrokeWidth='3'
                   iconSize='18'
                   handleIconClick={() => handleRemoveAuthor(i)}
