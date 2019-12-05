@@ -1,16 +1,32 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+import Modal from 'react-modal'
+import { PrimaryButton, SecondaryButton } from 'Components/Button'
+import { Column, Layout, Row } from 'Components/index'
+import { Input, Label, RiaInput, TextArea } from 'Components/Input'
+import { Database } from 'Firebase'
 import { navigate } from 'gatsby'
 
-import { Input, Label, TextArea, RiaInput } from 'Components/Input'
-import { PrimaryButton, SecondaryButton } from 'Components/Button'
-import { Layout, Row, Column } from 'Components/index'
-import { Database } from 'Firebase'
+Modal.setAppElement('#___gatsby')
+
 const PATH = 'references'
 const DB = Database.collection(PATH)
 
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)'
+  }
+}
+
 const EditReferencePage = props => {
   const [authors, setAuthors] = useState([])
+  const [modalIsOpen, setModalIsOpen] = useState(false)
   const [invalidHover, setInvalidHover] = useState(false)
+  const [authorErrorMessage, setAuthorErrorMessage] = useState('')
   const [inputs, setInputs] = useState({
     title: '',
     authors: [],
@@ -59,6 +75,8 @@ const EditReferencePage = props => {
   )
 
   const handleAuthorInputChange = (event, index) => {
+    if (authorErrorMessage.length) setAuthorErrorMessage('')
+
     event.persist()
 
     const newAuthors = [...authors]
@@ -74,7 +92,8 @@ const EditReferencePage = props => {
           return id !== index
         })
       ])
-    }
+    } else setAuthorErrorMessage('You must have at least one author.')
+
     // TODO: Error message when trying to remove last author
   }
 
@@ -119,6 +138,16 @@ const EditReferencePage = props => {
         <div>Loading ...</div>
       ) : (
         <form onSubmit={handleSubmit}>
+          <Modal
+            style={customStyles}
+            contentLabel='Example modal'
+            isOpen={modalIsOpen}
+          >
+            <h1>Are you sure you want to delete this reference?</h1>
+            <button>yes</button>
+            <button>no</button>
+            <button onClick={() => setModalIsOpen(false)}>Close</button>
+          </Modal>
           <Row className='my-6 flex-wrap'>
             <Column className='my-6 md:my-0 w-full md:w-1/2 md:pr-12'>
               <Label htmlFor='title'>Title</Label>
@@ -164,6 +193,11 @@ const EditReferencePage = props => {
                   />
                 </div>
               ))}
+              {authorErrorMessage ? (
+                <small className='font-light'>{authorErrorMessage}</small>
+              ) : (
+                ''
+              )}
             </Column>
             <SecondaryButton
               onClick={() => setAuthors([...authors, ''])}
@@ -235,13 +269,12 @@ const EditReferencePage = props => {
             save
           </PrimaryButton>
           <PrimaryButton
-            // variant={0}
             onMouseEnter={() => setInvalidHover(true)}
             onMouseLeave={() => setInvalidHover(false)}
             style={invalidHover ? { backgroundColor: '#F41901' } : {}}
             className='mt-12 px-12 mx-6 bg-invalid invalid-hover text-white-0 tracking-wide'
             type='button'
-            onClick={deleteReference}
+            onClick={() => setModalIsOpen(true)}
           >
             delete
           </PrimaryButton>
