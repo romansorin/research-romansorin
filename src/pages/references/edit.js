@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import Modal from 'react-modal'
+import Select from 'react-select'
 import { PrimaryButton, SecondaryButton } from 'Components/Button'
 import { Column, Layout, Row } from 'Components/index'
-import { Input, Label, RiaInput, TextArea } from 'Components/Input'
+import { InputAsDiv, Input, Label, RiaInput, TextArea } from 'Components/Input'
 import { Database } from 'Firebase'
 import { navigate } from 'gatsby'
 
@@ -21,6 +22,8 @@ const customStyles = {
     transform: 'translate(-50%, -50%)'
   }
 }
+
+const options = [{ label: 'test', value: 'test' }]
 
 const EditReferencePage = props => {
   const [authors, setAuthors] = useState([])
@@ -93,8 +96,6 @@ const EditReferencePage = props => {
         })
       ])
     } else setAuthorErrorMessage('You must have at least one author.')
-
-    // TODO: Error message when trying to remove last author
   }
 
   const handleSubmit = event => {
@@ -109,6 +110,11 @@ const EditReferencePage = props => {
       ...inputs,
       [event.target.name]: event.target.value
     }))
+  }
+
+  const handleAddAuthor = () => {
+    if (authorErrorMessage.length) setAuthorErrorMessage('')
+    setAuthors([...authors, ''])
   }
 
   const editReference = () => {
@@ -143,9 +149,11 @@ const EditReferencePage = props => {
             contentLabel='Example modal'
             isOpen={modalIsOpen}
           >
-            <h1>Are you sure you want to delete this reference?</h1>
-            <button>yes</button>
-            <button>no</button>
+            <h1 className='font-bold text-text-2 text-4xl'>
+              Are you sure you want to delete this reference?
+            </h1>
+            <SecondaryButton variant={2}>delete</SecondaryButton>
+            <PrimaryButton variant={0}>cancel</PrimaryButton>
             <button onClick={() => setModalIsOpen(false)}>Close</button>
           </Modal>
           <Row className='my-6 flex-wrap'>
@@ -184,9 +192,13 @@ const EditReferencePage = props => {
                     icon='X'
                     iconStrokeWidth='3'
                     iconSize='18'
-                    iconWrapperStyles='mt-6'
+                    iconWrapperStyles='text-text-1 mt-6'
                     handleIconClick={() => handleRemoveAuthor(i)}
-                    className='my-3'
+                    className={`${
+                      authorErrorMessage
+                        ? 'border border-invalid text-invalid '
+                        : ''
+                    }my-3 border border-transparent`}
                     placeholder='Author name'
                     onChange={e => handleAuthorInputChange(e, i)}
                     value={author}
@@ -194,13 +206,15 @@ const EditReferencePage = props => {
                 </div>
               ))}
               {authorErrorMessage ? (
-                <small className='font-light'>{authorErrorMessage}</small>
+                <small className='font-light text-invalid'>
+                  {authorErrorMessage}
+                </small>
               ) : (
                 ''
               )}
             </Column>
             <SecondaryButton
-              onClick={() => setAuthors([...authors, ''])}
+              onClick={handleAddAuthor}
               type='button'
               className='mt-8'
               variant={0}
@@ -214,6 +228,7 @@ const EditReferencePage = props => {
               name='summary'
               placeholder='Reference summary or abstract...'
               id='summary'
+              rows={7}
               value={inputs.summary}
               className='mt-3'
               onChange={handleInputChange}
@@ -234,6 +249,7 @@ const EditReferencePage = props => {
             </Column>
             <Column className='my-6 md:my-0 w-full md:w-1/2 md:pl-12'>
               <Label htmlFor='storage_url'>Document URL</Label>
+              {/* <Select /> */}
               <Input
                 name='storage_url'
                 type='text'
@@ -246,21 +262,24 @@ const EditReferencePage = props => {
               {/* TODO: Select from storage instead of using URL */}
             </Column>
           </Row>
-          {/* <Row className='my-6'>
-          <Column className='w-1/2 pr-12'>
-            <Label htmlFor='date_posted'>Date Posted</Label>
-            <Input
-              name='date_posted'
-              type='text'
-              className='mt-3'
-              placeholder='UTC date'
-              id='date_posted'
-              value={inputs.date_posted}
-              onChange={handleInputChange}
-            />
-          TODO: Dropdown date inputs
-          </Column>
-        </Row> */}
+          <Row className='my-6'>
+            <Column className='w-1/2 pr-12'>
+              <Label htmlFor='date_posted'>Date Posted</Label>
+              <Input
+                name='date_posted'
+                type='text'
+                className='mt-3'
+                placeholder='UTC date'
+                id='date_posted'
+                // value={inputs.date_posted}
+                onChange={handleInputChange}
+              />
+
+              <Select options={options} placeholder='Month' />
+              {/* <Select placeholder='Day' />
+                <Select placeholder='Year' /> */}
+            </Column>
+          </Row>
           <PrimaryButton
             variant={0}
             className='mt-12 px-16 tracking-wide'

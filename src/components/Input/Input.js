@@ -18,6 +18,10 @@ const Input = props => {
           setStatusStyles('text-invalid border border-invalid')
         }
 
+        if (props.placeholderStyle) {
+          setPlaceholderStyle(props.placeholderStyle)
+        }
+
         if (props.successMessage) setSuccessMessage(props.successMessage)
         else if (props.errorMessage) setErrorMessage(props.errorMessage)
 
