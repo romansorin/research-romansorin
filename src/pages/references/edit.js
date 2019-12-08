@@ -3,7 +3,7 @@ import Modal from 'react-modal'
 import Select from 'react-select'
 import { PrimaryButton, SecondaryButton } from 'Components/Button'
 import { Column, Layout, Row } from 'Components/index'
-import { InputAsDiv, Input, Label, RiaInput, TextArea } from 'Components/Input'
+import { Input, Label, RiaInput, TextArea } from 'Components/Input'
 import { Database } from 'Firebase'
 import { navigate } from 'gatsby'
 
