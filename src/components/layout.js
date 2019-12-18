@@ -18,8 +18,8 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
-      <div className='container px-6 mx-auto'>
+      <Header siteTitle={data.site.siteMetadata.title} />
+      <div className='container px-6 my-16 mx-auto'>
         <main>{children}</main>
         {/* <footer>
           © {new Date().getFullYear()}, Built with

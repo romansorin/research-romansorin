@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { ArrowRight } from 'react-feather'
+import { ArrowRight, X } from 'react-feather'
 
 import Input from './Input'
 
@@ -8,12 +8,45 @@ const commonStyles =
 const strokeWidth = 3
 const size = 18
 
+/* <ArrowRight strokeWidth={props.strokeWidth} size={props.size} /> */
+
 const RiaInput = props => {
   const [inputClasses, setInputClasses] = useState('')
 
+  const {
+    handleIconClick,
+    iconStrokeWidth,
+    iconSize,
+    iconWrapperStyles,
+    icon,
+    ...inputProps
+  } = props
+  const Icon = () => {
+    switch (icon) {
+      case 'X':
+        return (
+          <X
+            onClick={handleIconClick}
+            strokeWidth={iconStrokeWidth}
+            size={iconSize}
+          />
+        )
+      case 'ArrowRight':
+        return (
+          <ArrowRight
+            onClick={handleIconClick}
+            strokeWidth={iconStrokeWidth}
+            size={iconSize}
+          />
+        )
+      default:
+        return null
+    }
+  }
+
   return (
     <div className='relative'>
-      <Input className={`${inputClasses}`} {...props} />
+      <Input className={`${inputClasses}`} {...inputProps} />
       <div>
         {props.renderIconAs === 'a' ? (
           <a
@@ -22,7 +55,7 @@ const RiaInput = props => {
             className={`${commonStyles}`}
             href={props.href}
           >
-            <ArrowRight strokeWidth={strokeWidth} size={size} />
+            <Icon />
           </a>
         ) : (
           ''
@@ -34,7 +67,7 @@ const RiaInput = props => {
             className={`${commonStyles}`}
             type={props.buttonType ? props.buttonType : 'button'}
           >
-            <ArrowRight strokeWidth={strokeWidth} size={size} />
+            <Icon />
           </button>
         ) : (
           ''
@@ -43,9 +76,11 @@ const RiaInput = props => {
           <span
             onMouseEnter={() => setInputClasses('shadow-1')}
             onMouseLeave={() => setInputClasses('shadow-0')}
-            className={`${commonStyles} cursor-pointer`}
+            className={`${
+              iconWrapperStyles ? iconWrapperStyles + ' ' : ''
+            }${commonStyles} cursor-pointer`}
           >
-            <ArrowRight strokeWidth={strokeWidth} size={size} />
+            <Icon />
           </span>
         ) : (
           ''

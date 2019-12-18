@@ -18,10 +18,6 @@ const Input = props => {
           setStatusStyles('text-invalid border border-invalid')
         }
 
-        if (props.placeholderStyle) {
-          setPlaceholderStyle(props.placeholderStyle)
-        }
-
         if (props.successMessage) setSuccessMessage(props.successMessage)
         else if (props.errorMessage) setErrorMessage(props.errorMessage)
 
@@ -37,12 +33,14 @@ const Input = props => {
   )
   return (
     <div className='flex flex-col'>
-      <input
+      <textarea
         {...props}
         className={`${
           props.className ? props.className + ' ' : ''
-        }shadow-0 hover:shadow-1 font-base ${statusStyles} rounded-md leading-none ${placeholderStyle} px-6 py-3`}
-      />
+        }shadow-0 hover:shadow-1 font-base ${statusStyles} rounded-md leading-none ${placeholderStyle} px-6 py-6`}
+      >
+        {props.children}
+      </textarea>
       {props.error ? (
         <small className={`${commonStatusStyles} text-invalid`}>
           {errorMessage}

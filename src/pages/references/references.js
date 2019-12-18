@@ -19,19 +19,21 @@ const columnStyles = {
 }
 
 const ResultsTable = ({ hits }) => (
-  <table className='mx-auto w-11/12 md:w-full mt-10 mb-20'>
+  <table className='mx-auto w-full mt-10 mb-20'>
     <tbody>
       {hits.map((hit, i) => (
         <tr className='odd:bg-white-1 even:bg-white-0 py-4 w-full flex' key={i}>
           <td className={`${columnStyles.left} text-text-2`}>{hit.title}</td>
           <td className={`${columnStyles.middle} text-text-2`}>
-            {hit.authors.map((author, i) => {
-              if (i < hit.authors.length - 1) return `${author}, `
-              else return author
-            })}
+            {hit.authors
+              ? hit.authors.map((author, i) => {
+                if (i < hit.authors.length - 1) return `${author}, `
+                else return author
+              })
+              : ''}
           </td>
           <td className={`${columnStyles.right}`}>
-            <Link to={`references/${hit.slug}`}>View</Link>
+            <Link to={`/references/${hit.slug}`}>View</Link>
           </td>
         </tr>
       ))}
