@@ -54,7 +54,9 @@ typings/
 # dotenv environment variables file
 .env
 .env.development
-
+.env.production
+.env.testing
+.env.staging
 # gatsby files
 .cache/
 public
@@ -69,3 +71,5 @@ yarn-error.log
 # Yarn Integrity file
 .yarn-integrity
 
+.vscode
+firebase/research-romansorin-firebase-adminsdk-96r6c-a66cceb998.json

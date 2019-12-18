@@ -1,7 +1,49 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+const path = require('path')
 
-// You can delete this file if you're not using it
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        Components: path.resolve(__dirname, 'src/components'),
+        Firebase: path.resolve(__dirname, 'firebase'),
+        Models: path.resolve(__dirname, 'src/models'),
+        Icons: path.resolve(__dirname, 'src/icons'),
+        Images: path.resolve(__dirname, 'src/images'),
+        Pages: path.resolve(__dirname, 'src/pages'),
+        Stories: path.resolve(__dirname, 'src/stories')
+      }
+    }
+  })
+  if (stage === 'build-html') {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /@firebase/,
+            use: loaders.null()
+          }
+        ]
+      }
+    })
+  }
+}
+
+exports.createPages = ({ actions }) => {
+  const { createRedirect } = actions
+
+  const redirects = [
+    '/citations/:reference',
+    '/sources/:reference',
+    '/bibliography/:reference'
+  ]
+
+  const redirectTo = '/references/:reference'
+
+  redirects.forEach(redirect => {
+    createRedirect({
+      fromPath: redirect,
+      isPermanent: true,
+      toPath: redirectTo
+    })
+  })
+}
