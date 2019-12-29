@@ -4,7 +4,8 @@ export {
   database as Database,
   storage as Storage,
   analytics as Analytics,
-  functions as Functions
+  functions as Functions,
+  auth as Auth
 } from './config'
 
 const algolia = algoliasearch(
