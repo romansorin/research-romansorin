@@ -2,7 +2,7 @@ import React from 'react'
 import {
   InstantSearch,
   connectSearchBox,
-  connectInfiniteHits
+  connectInfiniteHits,
 } from 'react-instantsearch-dom'
 import { Link } from 'gatsby'
 
@@ -15,7 +15,7 @@ import { algolia } from 'Firebase'
 const columnStyles = {
   left: 'pl-1 w-1/3',
   middle: 'ml-4 md:ml-0 mr-auto',
-  right: 'ml-auto mr-3 uppercase font-bold text-theme-2'
+  right: 'ml-auto mr-3 uppercase font-bold text-theme-2',
 }
 
 const ResultsTable = ({ hits }) => (
@@ -27,9 +27,9 @@ const ResultsTable = ({ hits }) => (
           <td className={`${columnStyles.middle} text-text-2`}>
             {hit.authors
               ? hit.authors.map((author, i) => {
-                if (i < hit.authors.length - 1) return `${author}, `
-                else return author
-              })
+                  if (i < hit.authors.length - 1) return `${author}, `
+                  else return author
+                })
               : ''}
           </td>
           <td className={`${columnStyles.right}`}>

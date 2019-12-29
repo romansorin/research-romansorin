@@ -1,7 +1,7 @@
-import React from "react"
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import { SecondaryButton } from "Components/Button"
+import { SecondaryButton } from 'Components/Button'
+import { Link } from 'gatsby'
+import PropTypes from 'prop-types'
+import React from 'react'
 
 const Header = ({ siteTitle }) => (
   <header className='py-5 px-8 text-lg'>
@@ -38,7 +38,7 @@ Header.propTypes = {
 }
 
 Header.defaultProps = {
-  siteTitle: "",
+  siteTitle: '',
 }
 
 export default Header

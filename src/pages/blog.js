@@ -1,5 +1,5 @@
-import React from "react"
-import { Layout, SEO } from "Components/"
+import { Layout, SEO } from 'Components'
+import React from 'react'
 
 const BlogPage = () => {
   return (
