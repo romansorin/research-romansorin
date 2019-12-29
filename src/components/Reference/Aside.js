@@ -19,16 +19,13 @@ const formatTimestampDate = timestamp => {
   ]
   const date = new Date('Jan 1 1970')
   if (timestamp) date.setSeconds(timestamp.seconds)
-  return `${months[date.getMonth()]}, ${date.getDate()} ${date.getFullYear()}`
+  return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`
 }
 
 const Aside = ({ title, downloadUrl, className, date }) => {
-  useEffect(
-    () => {
-      download(downloadUrl)
-    },
-    [download, downloadUrl]
-  )
+  useEffect(() => {
+    download(downloadUrl)
+  }, [download, downloadUrl])
 
   function download (url) {
     if (url) {
