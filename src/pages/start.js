@@ -7,7 +7,7 @@ import { PrimaryButton } from 'Components/Button/index'
 import { Checkbox } from 'Components/Checkbox'
 import { Link } from 'gatsby'
 const commonStyles =
-  'text-theme-5-.8 absolute right-0 top-0 mt-2 pt-px -mb-px leading-none uppercase mr-4 font-medium'
+  'text-theme-5 opacity-80 absolute right-0 top-0 mt-2 pt-px -mb-px leading-none uppercase mr-4 font-medium'
 const strokeWidth = 2
 const size = 24
 
