@@ -29,8 +29,13 @@ const StartPage = () => {
           <Label for='email' className='mb-2'>
             Email address
           </Label>
-          <div className='relative'>
-            <Input name='email' id='email' placeholder='Email address' />
+          <div className='relative mb-8'>
+            <Input
+              autocomplete='email'
+              name='email'
+              id='email'
+              placeholder='Email address'
+            />
             <Mail
               strokeWidth={strokeWidth}
               size={size}
@@ -38,6 +43,8 @@ const StartPage = () => {
             />
           </div>
           <Checkbox
+            labelClasses='w-1/2'
+            checkboxClasses='shadow'
             checked={checked}
             onClick={() => setChecked(!checked)}
             id='consent'
@@ -58,10 +65,11 @@ const StartPage = () => {
             </Link>
             .
           </Checkbox>
+
+          <PrimaryButton className='mt-10 w-1/6' variant={1}>
+            Start
+          </PrimaryButton>
         </div>
-        <PrimaryButton className='mt-12 w-1/6' variant={1}>
-          Start
-        </PrimaryButton>
       </div>
     </Layout>
   )

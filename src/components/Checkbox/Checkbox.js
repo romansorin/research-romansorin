@@ -23,7 +23,7 @@ const Checkbox = props => {
         <label
           className={`${
             defaultProps.labelClasses ? defaultProps.labelClasses + ' ' : ''
-          }`}
+          }ml-6`}
           htmlFor={defaultProps.id}
         >
           {defaultProps.checked ? (
@@ -31,17 +31,25 @@ const Checkbox = props => {
               width={defaultProps.width}
               height={defaultProps.height}
               viewBox={`0 0 ${defaultProps.height} ${defaultProps.width}`}
-              className={`${commonStyles}`}
+              className={`${
+                defaultProps.checkboxClasses
+                  ? defaultProps.checkboxClasses + ' '
+                  : ''
+              }${commonStyles}`}
             />
           ) : (
             <CheckboxUnchecked
               width={defaultProps.width}
               height={defaultProps.height}
               viewBox={`0 0 ${defaultProps.height} ${defaultProps.width}`}
-              className={`${commonStyles}`}
+              className={`${
+                defaultProps.checkboxClasses
+                  ? defaultProps.checkboxClasses + ' '
+                  : ''
+              }${commonStyles}`}
             />
           )}
-          <span className='ml-6 select-none'>{children}</span>{' '}
+          <span className='select-none'>{children}</span>{' '}
         </label>
       ) : (
         ''
