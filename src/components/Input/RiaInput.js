@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { ArrowRight, X } from 'react-feather'
+import { ArrowRight, X, Mail } from 'react-feather'
 
 import Input from './Input'
 
@@ -34,6 +34,14 @@ const RiaInput = props => {
       case 'ArrowRight':
         return (
           <ArrowRight
+            onClick={handleIconClick}
+            strokeWidth={iconStrokeWidth}
+            size={iconSize}
+          />
+        )
+      case 'Mail':
+        return (
+          <Mail
             onClick={handleIconClick}
             strokeWidth={iconStrokeWidth}
             size={iconSize}

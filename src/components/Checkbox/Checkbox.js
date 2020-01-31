@@ -5,42 +5,43 @@ import { CheckboxChecked, CheckboxUnchecked } from 'Icons/Checkbox'
 const commonStyles = 'absolute top-0 left-0'
 
 const Checkbox = props => {
+  const { children, ...defaultProps } = props
   return (
     <div
       className={`${
-        props.className ? props.className + ' ' : ''
+        defaultProps.className ? defaultProps.className + ' ' : ''
       }relative flex flex-wrap`}
     >
       <input
-        defaultChecked={props.checked}
-        onChange={props.onChange}
+        defaultChecked={defaultProps.checked}
+        onChange={defaultProps.handleOnChange}
         className='opacity-0'
         type='checkbox'
-        {...props}
+        {...defaultProps}
       />
-      {props.label ? (
+      {children ? (
         <label
           className={`${
-            props.labelClasses ? props.labelClasses + ' ' : ''
-          }cursor-pointer`}
-          htmlFor={props.id}
+            defaultProps.labelClasses ? defaultProps.labelClasses + ' ' : ''
+          }`}
+          htmlFor={defaultProps.id}
         >
-          {props.checked ? (
+          {defaultProps.checked ? (
             <CheckboxChecked
-              width={props.width}
-              height={props.height}
-              viewBox={`0 0 ${props.height} ${props.width}`}
+              width={defaultProps.width}
+              height={defaultProps.height}
+              viewBox={`0 0 ${defaultProps.height} ${defaultProps.width}`}
               className={`${commonStyles}`}
             />
           ) : (
             <CheckboxUnchecked
-              width={props.width}
-              height={props.height}
-              viewBox={`0 0 ${props.height} ${props.width}`}
+              width={defaultProps.width}
+              height={defaultProps.height}
+              viewBox={`0 0 ${defaultProps.height} ${defaultProps.width}`}
               className={`${commonStyles}`}
             />
           )}
-          <span className='ml-6 select-none'>{props.label}</span>{' '}
+          <span className='ml-6 select-none'>{children}</span>{' '}
         </label>
       ) : (
         ''

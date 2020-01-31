@@ -4,7 +4,7 @@ const Label = props => {
   return (
     <label
       className={`${props.className ? props.className + ' ' : ''}text-text-2`}
-      {...props}
+      htmlFor={props.for}
     >
       {props.children}
     </label>
