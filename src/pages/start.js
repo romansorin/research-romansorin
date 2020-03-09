@@ -1,12 +1,5 @@
 import React from "react"
 
-const BlogPage = () => {
-  return <div />
-}
-
-export default BlogPage
-import React from "react"
-
 import { Layout, SEO } from "Components"
 import { Input, Label, TextArea, RiaInput } from "Components/Input"
 import { PrimaryButton, SecondaryButton } from "Components/Button"
@@ -17,11 +10,11 @@ const IndexPage = () => {
     <Layout>
       <SEO title='Start' />
       <h1 className='mb-3 text-text-2 text-3xl md:text-4xl leading-snug font-medium'>
-        Thank you for participating in this study!
+        Welcome to my research study.
       </h1>
       <p>
-        A little bit of info on when the results will come out, how to keep up
-        to date, etc.
+        A little bit of info on what this is about, how long it will take, etc.
+        Directions:
       </p>
       ;
       <form onSubmit={null}>
@@ -39,9 +32,9 @@ const IndexPage = () => {
         </Row>
         <input type='checkbox' name='agree' />
         <label for='agree'>
-          Be notified about updates and release of the paper.
+          By checking this box, you acknowledge that you have read the data
+          usage and privacy policy clauses, and agree to the terms of service.{" "}
         </label>
-        <p>Thank you! A confirmation email will be sent to you shortly.</p>
         <PrimaryButton
           variant={0}
           className='mt-12 px-16 tracking-wide'
