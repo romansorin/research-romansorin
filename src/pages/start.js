@@ -5,7 +5,7 @@ import { Input, Label, TextArea, RiaInput } from "Components/Input"
 import { PrimaryButton, SecondaryButton } from "Components/Button"
 import { Row, Column } from "Components/index"
 
-const IndexPage = () => {
+const StartPage = () => {
   return (
     <Layout>
       <SEO title='Start' />
@@ -47,4 +47,4 @@ const IndexPage = () => {
   )
 }
 
-export default IndexPage
+export default StartPage
