@@ -9,17 +9,17 @@ const StartPage = () => {
   return (
     <Layout>
       <SEO title='Start' />
-      <h1 className='mb-3 text-text-2 text-3xl md:text-4xl leading-snug font-medium'>
+      <h1 className='mb-3 text-3xl font-medium leading-snug text-text-2 md:text-4xl'>
         Welcome to my research study.
       </h1>
       <p>
         A little bit of info on what this is about, how long it will take, etc.
-        Directions:
+        Directions: Goal: Please reach registration of service presented.
       </p>
       ;
       <form onSubmit={null}>
-        <Row className='my-6 flex-wrap'>
-          <Column className='my-6 md:my-0 w-full md:w-1/2 md:pr-12'>
+        <Row className='flex-wrap my-6'>
+          <Column className='w-full my-6 md:my-0 md:w-1/2 md:pr-12'>
             <Label htmlFor='title'>Title</Label>
             <Input
               type='text'
@@ -37,7 +37,7 @@ const StartPage = () => {
         </label>
         <PrimaryButton
           variant={0}
-          className='mt-12 px-16 tracking-wide'
+          className='px-16 mt-12 tracking-wide'
           type='submit'
         >
           Begin
