@@ -6,9 +6,6 @@ const VariantThree = () => {
       <div class='mt-8 mx-auto max-w-screen-xl px-4 sm:mt-12 sm:px-6 md:mt-20 xl:mt-24'>
         <div class='lg:grid lg:grid-cols-12 lg:gap-8'>
           <div class='sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left'>
-            <div class='text-sm font-semibold uppercase tracking-wide text-gray-500 sm:text-base lg:text-sm xl:text-base'>
-              Coming soon
-            </div>
             <h2 class='mt-1 text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:leading-none sm:text-6xl lg:text-5xl xl:text-6xl'>
               Data to enrich your
               <br class='hidden md:inline' />
@@ -20,9 +17,6 @@ const VariantThree = () => {
               fugiat aliqua ad ad non deserunt sunt.
             </p>
             <div class='mt-5 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0'>
-              <p class='text-base font-medium text-gray-900'>
-                Sign up to get notified when it’s ready.
-              </p>
               <form action='#' method='POST' class='mt-3 sm:flex'>
                 <input
                   aria-label='Email'
@@ -33,7 +27,7 @@ const VariantThree = () => {
                   type='submit'
                   class='mt-3 w-full px-6 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-gray-800 shadow-sm hover:bg-gray-700 focus:outline-none focus:shadow-outline active:bg-gray-900 transition duration-150 ease-in-out sm:mt-0 sm:ml-3 sm:flex-shrink-0 sm:inline-flex sm:items-center sm:w-auto'
                 >
-                  Notify me
+                  Get started
                 </button>
               </form>
               <p class='mt-3 text-sm leading-5 text-gray-500'>
@@ -120,142 +114,9 @@ const VariantThree = () => {
               massa dictumst amet. Sapien tortor lacus arcu.
             </p>
           </div>
-          <div class='mt-12 grid gap-16 border-t-2 border-gray-100 pt-12 lg:grid-cols-3 lg:col-gap-5 lg:row-gap-12'>
-            <div>
-              <div>
-                <a href='#' class='inline-block'>
-                  <span class='inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium leading-5 bg-indigo-100 text-indigo-800'>
-                    Article
-                  </span>
-                </a>
-              </div>
-              <a href='#' class='block'>
-                <h3 class='mt-4 text-xl leading-7 font-semibold text-gray-900'>
-                  Boost your conversion rate
-                </h3>
-                <p class='mt-3 text-base leading-6 text-gray-500'>
-                  Nullam risus blandit ac aliquam justo ipsum. Quam mauris
-                  volutpat massa dictumst amet. Sapien tortor lacus arcu.
-                </p>
-              </a>
-              <div class='mt-6 flex items-center'>
-                <div class='flex-shrink-0'>
-                  <a href='#'>
-                    <img
-                      class='h-10 w-10 rounded-full'
-                      src='https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
-                      alt=''
-                    />
-                  </a>
-                </div>
-                <div class='ml-3'>
-                  <p class='text-sm leading-5 font-medium text-gray-900'>
-                    <a href='#'>Paul York</a>
-                  </p>
-                  <div class='flex text-sm leading-5 text-gray-500'>
-                    <time datetime='2020-03-16'>Mar 16, 2020</time>
-                    <span class='mx-1'>&middot;</span>
-                    <span>6 min read</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div>
-                <a href='#' class='inline-block'>
-                  <span class='inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium leading-5 bg-pink-100 text-pink-800'>
-                    Video
-                  </span>
-                </a>
-              </div>
-              <a href='#' class='block'>
-                <h3 class='mt-4 text-xl leading-7 font-semibold text-gray-900'>
-                  How to use search engine optimization to drive sales
-                </h3>
-                <p class='mt-3 text-base leading-6 text-gray-500'>
-                  Nullam risus blandit ac aliquam justo ipsum. Quam mauris
-                  volutpat massa dictumst amet. Sapien tortor lacus arcu.
-                </p>
-              </a>
-              <div class='mt-6 flex items-center'>
-                <div class='flex-shrink-0'>
-                  <a href='#'>
-                    <img
-                      class='h-10 w-10 rounded-full'
-                      src='https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
-                      alt=''
-                    />
-                  </a>
-                </div>
-                <div class='ml-3'>
-                  <p class='text-sm leading-5 font-medium text-gray-900'>
-                    <a href='#'>Dessie Ryan</a>
-                  </p>
-                  <div class='flex text-sm leading-5 text-gray-500'>
-                    <time datetime='2020-03-15'>Mar 15, 2020</time>
-                    <span class='mx-1'>&middot;</span>
-                    <span>4 min read</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div>
-                <a href='#' class='inline-block'>
-                  <span class='inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium leading-5 bg-green-100 text-green-800'>
-                    Case Study
-                  </span>
-                </a>
-              </div>
-              <a href='#' class='block'>
-                <h3 class='mt-4 text-xl leading-7 font-semibold text-gray-900'>
-                  Improve your customer experience
-                </h3>
-                <p class='mt-3 text-base leading-6 text-gray-500'>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab
-                  iure iusto fugiat commodi sequi.
-                </p>
-              </a>
-              <div class='mt-6 flex items-center'>
-                <div class='flex-shrink-0'>
-                  <a href='#'>
-                    <img
-                      class='h-10 w-10 rounded-full'
-                      src='https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
-                      alt=''
-                    />
-                  </a>
-                </div>
-                <div class='ml-3'>
-                  <p class='text-sm leading-5 font-medium text-gray-900'>
-                    <a href='#'>Easter Collins</a>
-                  </p>
-                  <div class='flex text-sm leading-5 text-gray-500'>
-                    <time datetime='2020-03-10'>Mar 10, 2020</time>
-                    <span class='mx-1'>&middot;</span>
-                    <span>11 min read</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
 
-      <div class='relative bg-gray-50 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8'>
-        <div class='absolute inset-0'>
-          <div class='bg-white h-1/3 sm:h-2/3'></div>
-        </div>
-        <div class='relative max-w-7xl mx-auto'>
-          <div class='text-center'>
-            <h2 class='text-3xl leading-9 tracking-tight font-extrabold text-gray-900 sm:text-4xl sm:leading-10'>
-              From the blog
-            </h2>
-            <p class='mt-3 max-w-2xl mx-auto text-xl leading-7 text-gray-500 sm:mt-4'>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa
-              libero labore natus atque, ducimus sed.
-            </p>
-          </div>
+        <div class='relative bg-gray-50 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8'>
           <div class='mt-12 grid gap-5 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-none'>
             <div class='flex flex-col rounded-lg shadow-lg overflow-hidden'>
               <div class='flex-shrink-0'>
