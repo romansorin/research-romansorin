@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-import React from "react"
-=======
 import { Layout, SEO } from 'Components'
 import React from 'react'
->>>>>>> master
 
 const BlogPage = () => {
   return (
