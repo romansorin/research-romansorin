@@ -5,6 +5,7 @@ import 'firebase/firestore'
 import 'firebase/functions'
 import 'firebase/analytics'
 import 'firebase/storage'
+import 'firebase/auth'
 
 const config = {
   apiKey: process.env.FIREBASE_API_KEY,
@@ -21,13 +22,15 @@ let database = {}
 let storage = {}
 let analytics = {}
 let functions = {}
+let auth = {}
 
 if (firebase) {
   firebase.initializeApp(config)
+  auth = firebase.auth()
   database = firebase.firestore()
   storage = firebase.storage()
   analytics = firebase.analytics()
   functions = firebase.functions()
 }
 
-export { database, storage, analytics, functions }
+export { database, storage, analytics, functions, auth }

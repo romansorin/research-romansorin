@@ -27,9 +27,9 @@ const ResultsTable = ({ hits }) => (
           <td className={`${columnStyles.middle} text-text-2`}>
             {hit.authors
               ? hit.authors.map((author, i) => {
-                if (i < hit.authors.length - 1) return `${author}, `
-                else return author
-              })
+                  if (i < hit.authors.length - 1) return `${author}, `
+                  else return author
+                })
               : ''}
           </td>
           <td className={`${columnStyles.right}`}>

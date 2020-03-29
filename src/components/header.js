@@ -1,12 +1,33 @@
-import React from 'react'
+import { SecondaryButton } from 'Components/Button'
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
+import React from 'react'
 
 const Header = ({ siteTitle }) => (
-  <header className='py-8 px-8 tracking-tight text-xl'>
+  <header className='py-5 px-8 text-lg'>
     <div className='container mx-auto flex flex-row'>
-      <Link className='ml-auto hover:text-theme-2 text-text-3' to='/references'>
+      <Link className='hover:text-theme-2 my-auto mr-auto text-text-3' to='/'>
+        Research
+      </Link>
+      <Link
+        className='hover:text-theme-2 my-auto mx-5 text-text-3'
+        to='/whitepaper'
+      >
+        Whitepaper
+      </Link>
+      <Link
+        className='hover:text-theme-2 my-auto mx-5 text-text-3'
+        to='/references'
+      >
         References
+      </Link>
+      <Link className='hover:text-theme-2 my-auto mx-5 text-text-3' to='/blog'>
+        Blog
+      </Link>
+      <Link to='/paper'>
+        <SecondaryButton className='px-6 ml-4' variant={0}>
+          Paper
+        </SecondaryButton>
       </Link>
     </div>
   </header>

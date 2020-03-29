@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react'
-import Modal from 'react-modal'
-import Select from 'react-select'
 import { PrimaryButton, SecondaryButton } from 'Components/Button'
 import { Column, Layout, Row } from 'Components/index'
 import { Input, Label, RiaInput, TextArea } from 'Components/Input'
 import { Database } from 'Firebase'
 import { navigate } from 'gatsby'
+import React, { useEffect, useState } from 'react'
+import Modal from 'react-modal'
+import Select from 'react-select'
 
 Modal.setAppElement('#___gatsby')
 
@@ -43,39 +43,36 @@ const EditReferencePage = props => {
 
   const [isLoading, setIsLoading] = useState(false)
 
-  useEffect(
-    () => {
-      const data = []
-      setIsLoading(true)
-      DB.where('slug', '==', props.reference)
-        .limit(1)
-        .get()
-        .then(querySnapshot => {
-          if (querySnapshot.size === 0) navigate('/404')
-          else {
-            querySnapshot.forEach(doc => {
-              data.push(doc.data())
-              setDocumentId(doc.id)
-            })
-            setInputs({
-              title: data[0].title,
-              summary: data[0].summary,
-              slug: data[0].slug,
-              citation: data[0].citation,
-              date_posted: data[0].date_posted,
-              storage_url: data[0].storage_url
-            })
-            setAuthors(data[0].authors)
-            setIsLoading(false)
-          }
-        })
-        .catch(error => {
-          console.log(error)
-          navigate('/404')
-        })
-    },
-    [props.reference]
-  )
+  useEffect(() => {
+    const data = []
+    setIsLoading(true)
+    DB.where('slug', '==', props.reference)
+      .limit(1)
+      .get()
+      .then(querySnapshot => {
+        if (querySnapshot.size === 0) navigate('/404')
+        else {
+          querySnapshot.forEach(doc => {
+            data.push(doc.data())
+            setDocumentId(doc.id)
+          })
+          setInputs({
+            title: data[0].title,
+            summary: data[0].summary,
+            slug: data[0].slug,
+            citation: data[0].citation,
+            date_posted: data[0].date_posted,
+            storage_url: data[0].storage_url
+          })
+          setAuthors(data[0].authors)
+          setIsLoading(false)
+        }
+      })
+      .catch(error => {
+        console.log(error)
+        navigate('/404')
+      })
+  }, [props.reference])
 
   const handleAuthorInputChange = (event, index) => {
     if (authorErrorMessage.length) setAuthorErrorMessage('')
