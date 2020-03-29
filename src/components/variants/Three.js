@@ -108,7 +108,7 @@ const VariantThree = () => {
           </div>
         </div>
       </div>
-      ;
+
       <div class='bg-white pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8'>
         <div class='relative max-w-lg mx-auto lg:max-w-7xl'>
           <div>
@@ -241,7 +241,7 @@ const VariantThree = () => {
           </div>
         </div>
       </div>
-      ;
+
       <div class='relative bg-gray-50 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8'>
         <div class='absolute inset-0'>
           <div class='bg-white h-1/3 sm:h-2/3'></div>
@@ -416,7 +416,7 @@ const VariantThree = () => {
           </div>
         </div>
       </div>
-      ;
+
       <div class='bg-white'>
         <div class='max-w-screen-xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8'>
           <p class='text-center text-base leading-6 font-semibold uppercase text-gray-600 tracking-wider'>
@@ -468,7 +468,7 @@ const VariantThree = () => {
           </div>
         </div>
       </div>
-      ;
+
       <div class='bg-white'>
         <div class='max-w-screen-xl mx-auto py-12 px-4 sm:px-6 lg:px-8'>
           <div class='grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5'>
@@ -502,7 +502,7 @@ const VariantThree = () => {
           </div>
         </div>
       </div>
-      ;
+
       <div class='bg-gray-50'>
         <div class='max-w-screen-xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between'>
           <h2 class='text-3xl leading-9 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10'>

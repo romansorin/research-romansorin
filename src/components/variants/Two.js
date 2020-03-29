@@ -35,7 +35,7 @@ const VariantTwo = () => {
           </div>
         </div>
       </div>
-      ;
+
       <div class='py-12 bg-white'>
         <div class='max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8'>
           <div class='lg:text-center'>
@@ -181,7 +181,7 @@ const VariantTwo = () => {
           </div>
         </div>
       </div>
-      ;
+
       <div class='py-12 bg-white'>
         <div class='max-w-xl mx-auto px-4 sm:px-6 lg:max-w-screen-xl lg:px-8'>
           <div class='lg:grid lg:grid-cols-3 lg:gap-8'>
@@ -269,7 +269,7 @@ const VariantTwo = () => {
           </div>
         </div>
       </div>
-      ;
+
       <div class='bg-gray-100'>
         <div class='pt-12 sm:pt-16 lg:pt-20'>
           <div class='max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8'>
@@ -418,7 +418,7 @@ const VariantTwo = () => {
           </div>
         </div>
       </div>
-      ;
+
       <div class='relative bg-gray-50 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8'>
         <div class='absolute inset-0'>
           <div class='bg-white h-1/3 sm:h-2/3'></div>
@@ -593,7 +593,7 @@ const VariantTwo = () => {
           </div>
         </div>
       </div>
-      ;
+
       <div class='relative bg-gray-800'>
         <div class='h-56 bg-indigo-600 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2'>
           <img

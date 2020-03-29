@@ -404,7 +404,7 @@ const VariantOne = () => {
           </div>
         </div>
       </div>
-      ;
+
       <div class='relative bg-gray-50 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8'>
         <div class='absolute inset-0'>
           <div class='bg-white h-1/3 sm:h-2/3'></div>
@@ -579,7 +579,7 @@ const VariantOne = () => {
           </div>
         </div>
       </div>
-      ;
+
       <div class='bg-white pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8'>
         <div class='relative max-w-lg mx-auto lg:max-w-7xl'>
           <div>
@@ -712,7 +712,7 @@ const VariantOne = () => {
           </div>
         </div>
       </div>
-      ;
+
       <div class='bg-indigo-800'>
         <div class='max-w-screen-xl mx-auto py-12 px-4 sm:py-16 sm:px-6 lg:px-8 lg:py-20'>
           <div class='max-w-4xl mx-auto text-center'>
@@ -752,7 +752,7 @@ const VariantOne = () => {
           </div>
         </div>
       </div>
-      ;
+
       <div class='bg-gray-800'>
         <div class='max-w-screen-xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center'>
           <div class='lg:w-0 lg:flex-1'>

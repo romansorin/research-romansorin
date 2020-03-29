@@ -4,6 +4,7 @@ import { Layout, SEO } from 'Components'
 import { Input, Label, TextArea, RiaInput } from 'Components/Input'
 import { PrimaryButton, SecondaryButton } from 'Components/Button'
 import { Row, Column } from 'Components/index'
+import VariantOne from 'Components/variants/One'
 
 const StartPage = () => {
   return (
@@ -43,6 +44,8 @@ const StartPage = () => {
           Begin
         </PrimaryButton>
       </form>
+
+      <VariantOne />
     </Layout>
   )
 }
