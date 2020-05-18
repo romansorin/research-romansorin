@@ -4,7 +4,7 @@ import VariantOne from 'Components/variants/one'
 
 const VariantOnePage = () => {
   return (
-    <Layout>
+    <Layout minimal>
       <SEO title='Variant One' />
       <VariantOne />
     </Layout>

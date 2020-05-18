@@ -9,26 +9,26 @@ const Header = ({ siteTitle }) => (
       <Link className='my-auto mr-auto hover:text-theme-2 text-text-3' to='/'>
         Research
       </Link>
-      <Link
+      {/* <Link
         className='mx-5 my-auto hover:text-theme-2 text-text-3'
         to='/whitepaper'
       >
         Whitepaper
-      </Link>
+      </Link> */}
       <Link
         className='mx-5 my-auto hover:text-theme-2 text-text-3'
         to='/references'
       >
         References
       </Link>
-      <Link className='mx-5 my-auto hover:text-theme-2 text-text-3' to='/blog'>
+      {/* <Link className='mx-5 my-auto hover:text-theme-2 text-text-3' to='/blog'>
         Blog
       </Link>
       <Link to='/paper'>
         <SecondaryButton className='px-8 ml-4' variant={0}>
           Paper
         </SecondaryButton>
-      </Link>
+      </Link> */}
     </div>
   </header>
 )

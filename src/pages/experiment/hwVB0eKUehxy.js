@@ -4,7 +4,7 @@ import VariantTwo from 'Components/variants/two'
 
 const VariantTwoPage = () => {
   return (
-    <Layout>
+    <Layout minimal>
       <SEO title='Variant Two' />
       <VariantTwo />
     </Layout>

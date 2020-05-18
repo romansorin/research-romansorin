@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Header from './header'
 import './layout.css'
 
-const Layout = ({ children }) => {
+const Layout = ({ minimal = false, children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -19,7 +19,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div className='container px-6 my-16 mx-auto'>
+      <div className={`${minimal ? '' : 'container px-6 mx-auto '}my-16`}>
         <main>{children}</main>
         {/* <footer>
           © {new Date().getFullYear()}, Built with
