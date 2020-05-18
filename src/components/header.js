@@ -4,28 +4,28 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 const Header = ({ siteTitle }) => (
-  <header className='py-5 px-8 text-lg'>
-    <div className='container mx-auto flex flex-row'>
-      <Link className='hover:text-theme-2 my-auto mr-auto text-text-3' to='/'>
+  <header className='px-8 py-5 text-lg'>
+    <div className='container flex flex-row mx-auto'>
+      <Link className='my-auto mr-auto hover:text-theme-2 text-text-3' to='/'>
         Research
       </Link>
       <Link
-        className='hover:text-theme-2 my-auto mx-5 text-text-3'
+        className='mx-5 my-auto hover:text-theme-2 text-text-3'
         to='/whitepaper'
       >
         Whitepaper
       </Link>
       <Link
-        className='hover:text-theme-2 my-auto mx-5 text-text-3'
+        className='mx-5 my-auto hover:text-theme-2 text-text-3'
         to='/references'
       >
         References
       </Link>
-      <Link className='hover:text-theme-2 my-auto mx-5 text-text-3' to='/blog'>
+      <Link className='mx-5 my-auto hover:text-theme-2 text-text-3' to='/blog'>
         Blog
       </Link>
       <Link to='/paper'>
-        <SecondaryButton className='px-6 ml-4' variant={0}>
+        <SecondaryButton className='px-8 ml-4' variant={0}>
           Paper
         </SecondaryButton>
       </Link>

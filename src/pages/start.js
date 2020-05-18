@@ -1,10 +1,9 @@
-<<<<<<< HEAD
-import React from "react"
+import React from 'react'
 
-import { Layout, SEO } from "Components"
-import { Input, Label, TextArea, RiaInput } from "Components/Input"
-import { PrimaryButton, SecondaryButton } from "Components/Button"
-import { Row, Column } from "Components/index"
+import { Layout, SEO } from 'Components'
+import { Input, Label, TextArea, RiaInput } from 'Components/Input'
+import { PrimaryButton, SecondaryButton } from 'Components/Button'
+import { Row, Column } from 'Components/index'
 
 const StartPage = () => {
   return (
@@ -34,7 +33,7 @@ const StartPage = () => {
         <input type='checkbox' name='agree' />
         <label for='agree'>
           By checking this box, you acknowledge that you have read the data
-          usage and privacy policy clauses, and agree to the terms of service.{" "}
+          usage and privacy policy clauses, and agree to the terms of service.{' '}
         </label>
         <PrimaryButton
           variant={0}
@@ -46,14 +45,6 @@ const StartPage = () => {
       </form>
     </Layout>
   )
-=======
-import React from 'react'
-
-import { Layout } from 'Components'
-
-const StartPage = () => {
-  return <Layout>Start/consent page for application & experiment.</Layout>
->>>>>>> master
 }
 
 export default StartPage
