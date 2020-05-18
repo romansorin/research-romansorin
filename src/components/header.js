@@ -7,7 +7,7 @@ const Header = ({ siteTitle }) => (
   <header className='px-8 py-5 text-lg'>
     <div className='container flex flex-row mx-auto'>
       <Link className='my-auto mr-auto hover:text-theme-2 text-text-3' to='/'>
-        Research
+        Research - Roman Sorin
       </Link>
       {/* <Link
         className='mx-5 my-auto hover:text-theme-2 text-text-3'
@@ -15,12 +15,12 @@ const Header = ({ siteTitle }) => (
       >
         Whitepaper
       </Link> */}
-      <Link
+      {/* <Link
         className='mx-5 my-auto hover:text-theme-2 text-text-3'
         to='/references'
       >
         References
-      </Link>
+      </Link> */}
       {/* <Link className='mx-5 my-auto hover:text-theme-2 text-text-3' to='/blog'>
         Blog
       </Link>
