@@ -4,8 +4,20 @@ import { Layout, SEO } from 'Components'
 import { Input, Label, TextArea, RiaInput } from 'Components/Input'
 import { PrimaryButton, SecondaryButton } from 'Components/Button'
 import { Row, Column } from 'Components/index'
+import { Database } from 'Firebase'
 
 const StartPage = () => {
+  const [email, setEmail] = useState(null)
+
+  const begin = () => {
+    Database.collection('users').add({
+      email: email,
+      date: new Date(),
+      session_start: new Date(),
+      session_end: null
+    })
+  }
+
   return (
     <Layout>
       <SEO title='Start' />
@@ -20,12 +32,14 @@ const StartPage = () => {
       <form onSubmit={null}>
         <Row className='flex-wrap my-6'>
           <Column className='w-full my-6 md:my-0 md:w-1/2 md:pr-12'>
-            <Label htmlFor='title'>Title</Label>
+            <Label htmlFor='email'>Email address</Label>
             <Input
-              type='text'
-              placeholder='Reference title'
-              id='title'
-              name='title'
+              onChange={event => setEmail(event.target.value)}
+              value={email}
+              type='email'
+              placeholder='Your email'
+              id='email'
+              name='email'
               className='mt-3'
             />
           </Column>

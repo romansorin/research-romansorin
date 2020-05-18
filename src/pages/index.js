@@ -1,16 +1,27 @@
 import { Layout, SEO } from 'Components'
-import React from 'react'
+import React, { useState } from 'react'
 import { navigate } from '@reach/router'
 
 import { Input, Label, TextArea, RiaInput } from 'Components/Input'
 import { PrimaryButton, SecondaryButton } from 'Components/Button'
 import { Row, Column } from 'Components/index'
+import { Database } from 'Firebase'
 
 const pages = ['8nqXhdl3JD8u', 'hwVB0eKUehxy', 'vtc5qYP2r8Ut']
 
 const IndexPage = () => {
+  const [email, setEmail] = useState(null)
+
   const beginExperiment = () => {
     const randomVariant = pages[Math.floor(Math.random() * 3)]
+    Database.collection('users').add({
+      email: email,
+      date: new Date(),
+      variant: randomVariant,
+      session_start: new Date(),
+      session_end: null
+    })
+
     navigate(`/experiment/${randomVariant}`)
   }
 
@@ -28,11 +39,14 @@ const IndexPage = () => {
         <Row className='flex-wrap my-6'>
           <Column className='w-full my-6 md:my-0 md:w-1/2 md:pr-12'>
             <Label htmlFor='title'>Title</Label>
+
             <Input
-              type='text'
-              placeholder='Reference title'
-              id='title'
-              name='title'
+              onChange={event => setEmail(event.target.value)}
+              value={email}
+              type='email'
+              placeholder='Your email'
+              id='email'
+              name='email'
               className='mt-3'
             />
           </Column>
