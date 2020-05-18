@@ -1,23 +1,30 @@
 import { Layout, SEO } from 'Components'
 import React from 'react'
+import { navigate } from '@reach/router'
 
 import { Input, Label, TextArea, RiaInput } from 'Components/Input'
 import { PrimaryButton, SecondaryButton } from 'Components/Button'
 import { Row, Column } from 'Components/index'
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title='Start' />
-    <section className='lg:block hidden'>
-      <h1 className='mb-3 text-3xl font-medium leading-snug text-text-2 md:text-4xl'>
-        Welcome to my research study.
-      </h1>
-      <p>
-        A little bit of info on what this is about, how long it will take, etc.
-        Directions: Goal: Please reach registration of service presented.
-      </p>
-      ;
-      <form onSubmit={null}>
+const pages = ['8nqXhdl3JD8u', 'hwVB0eKUehxy', 'vtc5qYP2r8Ut']
+
+const IndexPage = () => {
+  const beginExperiment = () => {
+    const randomVariant = pages[Math.floor(Math.random() * 3)]
+    navigate(`/experiment/${randomVariant}`)
+  }
+
+  return (
+    <Layout>
+      <SEO title='Start' />
+      <section className='lg:block hidden'>
+        <h1 className='mb-3 text-3xl font-medium leading-snug text-text-2 md:text-4xl'>
+          Welcome to my research study.
+        </h1>
+        <p>
+          A little bit of info on what this is about, how long it will take,
+          etc. Directions: Goal: Please reach registration of service presented.
+        </p>
         <Row className='flex-wrap my-6'>
           <Column className='w-full my-6 md:my-0 md:w-1/2 md:pr-12'>
             <Label htmlFor='title'>Title</Label>
@@ -37,17 +44,17 @@ const IndexPage = () => (
         </label>
         <PrimaryButton
           variant={0}
+          onClick={() => beginExperiment()}
           className='px-16 mt-12 tracking-wide'
-          type='submit'
         >
           Begin
         </PrimaryButton>
-      </form>
-    </section>
+      </section>
 
-    <div className='lg:hidden block container mx-auto'>
-      A desktop device is required to participate.
-    </div>
-  </Layout>
-)
+      <div className='lg:hidden block container mx-auto'>
+        A desktop device is required to participate.
+      </div>
+    </Layout>
+  )
+}
 export default IndexPage
