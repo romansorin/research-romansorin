@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 
 const VariantOne = () => {
   return (
@@ -198,12 +199,12 @@ const VariantOne = () => {
                           </ul>
                           <div class='mt-8'>
                             <div class='rounded-lg shadow-md'>
-                              <a
-                                href='#'
+                              <Link
+                                to='end'
                                 class='block w-full text-center rounded-lg border border-transparent bg-white-0 px-6 py-3 text-base leading-6 font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:shadow-outline transition ease-in-out duration-150'
                               >
                                 Start your trial
-                              </a>
+                              </Link>
                             </div>
                           </div>
                         </div>
@@ -343,12 +344,12 @@ const VariantOne = () => {
                         </ul>
                         <div class='mt-10'>
                           <div class='rounded-lg shadow-md'>
-                            <a
-                              href='#'
+                            <Link
+                              to='end'
                               class='block w-full text-center rounded-lg border border-transparent bg-indigo-600 px-6 py-4 text-xl leading-6 font-medium text-white-0 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo transition ease-in-out duration-150'
                             >
                               Start your trial
-                            </a>
+                            </Link>
                           </div>
                         </div>
                       </div>
@@ -440,12 +441,12 @@ const VariantOne = () => {
                           </ul>
                           <div class='mt-8'>
                             <div class='rounded-lg shadow-md'>
-                              <a
-                                href='#'
+                              <Link
+                                to='end'
                                 class='block w-full text-center rounded-lg border border-transparent bg-white-0 px-6 py-3 text-base leading-6 font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:shadow-outline transition ease-in-out duration-150'
                               >
                                 Start your trial
-                              </a>
+                              </Link>
                             </div>
                           </div>
                         </div>
