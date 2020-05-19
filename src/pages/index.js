@@ -14,15 +14,15 @@ const IndexPage = () => {
 
   const beginExperiment = () => {
     const randomVariant = pages[Math.floor(Math.random() * 3)]
-    Database.collection('users').add({
-      email: email,
-      date: new Date(),
-      variant: randomVariant,
-      session_start: new Date(),
-      session_end: null
-    })
-
-    navigate(`/experiment/${randomVariant}`)
+    Database.collection('users')
+      .add({
+        email: email,
+        date: new Date(),
+        variant: randomVariant,
+        session_start: new Date(),
+        session_end: null
+      })
+      .then(docRef => navigate(`/experiment/${randomVariant}?doc=${docRef.id}`))
   }
 
   return (

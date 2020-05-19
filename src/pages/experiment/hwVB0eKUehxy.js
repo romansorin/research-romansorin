@@ -1,12 +1,18 @@
 import { Layout, SEO } from 'Components'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import VariantTwo from 'Components/variants/two'
 
 const VariantTwoPage = () => {
+  const [doc, setDoc] = useState(null)
+
+  useEffect(() => {
+    setDoc(props.location.search.substring(5))
+  }, [])
+
   return (
     <Layout minimal>
       <SEO title='Experiment' />
-      <VariantTwo />
+      <VariantTwo doc={doc} />
     </Layout>
   )
 }
