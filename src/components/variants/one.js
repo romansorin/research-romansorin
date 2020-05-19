@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-const VariantOne = () => {
+const VariantOne = ({ doc }) => {
   return (
     <section>
       <div className='hidden lg:block'>
@@ -110,7 +110,7 @@ const VariantOne = () => {
 
           <div class='mt-16 bg-white-0 pb-12 lg:mt-20 lg:pb-20'>
             <div class='relative z-0'>
-              <div class='absolute inset-0 h-5/6 bg-gray-900 lg:h-2/3'></div>
+              <div class='absolute inset-0 h-5/6 bg-gray-900 lg:h-2/3' />
               <div class='pb-20 max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8'>
                 <div class='relative lg:grid lg:grid-cols-7'>
                   <div class='mx-auto max-w-md lg:mx-0 lg:max-w-none lg:col-start-1 lg:col-end-3 lg:row-start-2 lg:row-end-3'>
@@ -200,7 +200,7 @@ const VariantOne = () => {
                           <div class='mt-8'>
                             <div class='rounded-lg shadow-md'>
                               <Link
-                                to='end'
+                                to={`/finished?doc=${doc}`}
                                 class='block w-full text-center rounded-lg border border-transparent bg-white-0 px-6 py-3 text-base leading-6 font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:shadow-outline transition ease-in-out duration-150'
                               >
                                 Start your trial
@@ -213,7 +213,7 @@ const VariantOne = () => {
                   </div>
                   <div class='mt-10 max-w-lg mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-start-3 lg:col-end-6 lg:row-start-1 lg:row-end-4'>
                     <div class='relative z-10 rounded-lg shadow-xl'>
-                      <div class='pointer-events-none absolute inset-0 rounded-lg border-2 border-indigo-600'></div>
+                      <div class='pointer-events-none absolute inset-0 rounded-lg border-2 border-indigo-600' />
                       <div class='absolute inset-x-0 top-0 transform translate-y-px'>
                         <div class='flex justify-center transform -translate-y-1/2'>
                           <span class='inline-flex rounded-full bg-indigo-600 px-4 py-1 text-sm leading-5 font-semibold tracking-wider uppercase text-white-0'>
@@ -345,7 +345,7 @@ const VariantOne = () => {
                         <div class='mt-10'>
                           <div class='rounded-lg shadow-md'>
                             <Link
-                              to='end'
+                              to={`/finished?doc=${doc}`}
                               class='block w-full text-center rounded-lg border border-transparent bg-indigo-600 px-6 py-4 text-xl leading-6 font-medium text-white-0 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo transition ease-in-out duration-150'
                             >
                               Start your trial
@@ -442,7 +442,7 @@ const VariantOne = () => {
                           <div class='mt-8'>
                             <div class='rounded-lg shadow-md'>
                               <Link
-                                to='end'
+                                to={`/finished?doc=${doc}`}
                                 class='block w-full text-center rounded-lg border border-transparent bg-white-0 px-6 py-3 text-base leading-6 font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:shadow-outline transition ease-in-out duration-150'
                               >
                                 Start your trial

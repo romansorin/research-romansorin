@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-const VariantThree = () => {
+const VariantThree = ({ doc }) => {
   return (
     <section>
       <div className='hidden lg:block'>
@@ -29,7 +29,7 @@ const VariantThree = () => {
                     placeholder='Enter your email'
                   />
                   <Link
-                    to='/finished'
+                    to={`/finished?doc=${doc}`}
                     class='mt-3 w-full px-6 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white-0 bg-gray-800 shadow-sm hover:bg-gray-700 focus:outline-none focus:shadow-outline active:bg-gray-900 transition duration-150 ease-in-out sm:mt-0 sm:ml-3 sm:flex-shrink-0 sm:inline-flex sm:items-center sm:w-auto'
                   >
                     Get Started
@@ -297,7 +297,7 @@ const VariantThree = () => {
             <div class='mt-8 flex lg:flex-shrink-0 lg:mt-0'>
               <div class='inline-flex rounded-md shadow'>
                 <Link
-                  to='/finished'
+                  to={`/finished?doc=${doc}`}
                   class='inline-flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white-0 bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out'
                 >
                   Get started

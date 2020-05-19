@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 
-import { Database } from 'firebase'
+import { Database } from 'Firebase'
 
 const FinishedPage = ({ doc }) => {
   useEffect(() => {
@@ -8,9 +8,9 @@ const FinishedPage = ({ doc }) => {
       .doc(doc)
       .get()
       .then(res => console.log(res))
-  }, [])
+  }, [doc])
 
-  return <div>Finihed</div>
+  return <div>Finished</div>
 }
 
 export default FinishedPage

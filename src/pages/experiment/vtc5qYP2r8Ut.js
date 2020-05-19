@@ -2,7 +2,7 @@ import { Layout, SEO } from 'Components'
 import React, { useEffect, useState } from 'react'
 import VariantThree from 'Components/variants/three'
 
-const VariantThreePage = () => {
+const VariantThreePage = props => {
   const [doc, setDoc] = useState(null)
 
   useEffect(() => {

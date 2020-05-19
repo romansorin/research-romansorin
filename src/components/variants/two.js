@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-const VariantTwo = () => {
+const VariantTwo = ({ doc }) => {
   return (
     <section>
       <div className='hidden lg:block'>
@@ -367,7 +367,7 @@ const VariantTwo = () => {
                     <div class='mt-6'>
                       <div class='rounded-md shadow'>
                         <Link
-                          to='/finished'
+                          to={`/finished?doc=${doc}`}
                           class='flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white-0 bg-gray-900 hover:bg-gray-800 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out'
                         >
                           Get Access

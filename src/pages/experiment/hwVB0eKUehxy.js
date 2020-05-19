@@ -2,7 +2,7 @@ import { Layout, SEO } from 'Components'
 import React, { useEffect, useState } from 'react'
 import VariantTwo from 'Components/variants/two'
 
-const VariantTwoPage = () => {
+const VariantTwoPage = props => {
   const [doc, setDoc] = useState(null)
 
   useEffect(() => {
