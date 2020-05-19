@@ -17,7 +17,6 @@
     "gatsby-plugin-config": "^1.0.7",
     "gatsby-plugin-create-client-paths": "^2.1.17",
     "gatsby-plugin-manifest": "^2.2.28",
-    "gatsby-plugin-offline": "^3.0.21",
     "gatsby-plugin-postcss": "^2.1.15",
     "gatsby-plugin-react-helmet": "^3.1.15",
     "gatsby-plugin-remove-trailing-slashes": "^2.1.14",
