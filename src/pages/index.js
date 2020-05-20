@@ -47,6 +47,8 @@ const IndexPage = () => {
           algorithm.
           <br />
           <br />
+          <b>Directions:</b>
+          <br />
           This experiment should take approximately three minutes or less.
           Please navigate within the layout and attempt to identify how to begin
           using or signing up for the presented product. None of the copy or

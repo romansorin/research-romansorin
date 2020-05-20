@@ -672,7 +672,7 @@ const VariantOne = ({ doc }) => {
           </div>
         </div>
       </div>
-      <div className='lg:hidden block container mx-auto'>
+      <div className='container block mx-auto lg:hidden'>
         A desktop device is required to participate.
       </div>
     </section>

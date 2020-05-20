@@ -242,7 +242,7 @@ const VariantTwo = ({ doc }) => {
           <div class='pt-12 sm:pt-16 lg:pt-20'>
             <div class='max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8'>
               <div class='text-center'>
-                <h2 class='text-3xl leading-9 font-extrabold text-gray-900 sm:text-4xl sm:leading-10 lg:text-5xl lg:leading-none'>
+                <h2 class='text-3xl leading-9 font-semibold text-gray-900 sm:text-4xl sm:leading-10 lg:text-5xl lg:leading-none'>
                   Simple no-tricks pricing
                 </h2>
                 <p class='mt-4 text-xl leading-7 text-gray-500'>
@@ -258,7 +258,7 @@ const VariantTwo = ({ doc }) => {
               <div class='relative max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8'>
                 <div class='max-w-lg mx-auto rounded-lg shadow-lg overflow-hidden lg:max-w-none lg:flex'>
                   <div class='bg-white px-6 py-8 lg:flex-shrink-1 lg:p-12'>
-                    <h3 class='text-2xl leading-8 font-extrabold text-gray-900 sm:text-3xl sm:leading-9'>
+                    <h3 class='text-2xl leading-8 font-semibold text-gray-900 sm:text-3xl sm:leading-9'>
                       Lifetime Membership
                     </h3>
                     <p class='mt-6 text-base leading-6 text-gray-500'>
@@ -353,7 +353,7 @@ const VariantTwo = ({ doc }) => {
                     <p class='text-lg leading-6 font-medium text-gray-900'>
                       Pay once, own it forever
                     </p>
-                    <div class='mt-4 flex items-center justify-center text-5xl leading-none font-extrabold text-gray-900'>
+                    <div class='mt-4 flex items-center justify-center text-5xl leading-none font-semibold text-gray-900'>
                       <span>$349</span>
                       <span class='ml-3 text-xl leading-7 font-medium text-gray-500'>
                         USD
@@ -376,7 +376,7 @@ const VariantTwo = ({ doc }) => {
                     </div>
                     <div class='mt-4 text-sm leading-5'>
                       <a href='#' class='font-medium text-gray-900'>
-                        Get a free sample
+                        Get a free sample{' '}
                         <span class='font-normal text-gray-500'>(20MB)</span>
                       </a>
                     </div>
@@ -607,7 +607,7 @@ const VariantTwo = ({ doc }) => {
           </div>
         </div>
       </div>
-      <div className='lg:hidden block container mx-auto'>
+      <div className='container block mx-auto lg:hidden'>
         A desktop device is required to participate.
       </div>
     </section>
